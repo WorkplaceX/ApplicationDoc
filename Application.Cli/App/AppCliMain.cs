@@ -1,4 +1,4 @@
-﻿namespace Application.Cli
+﻿namespace Application.Cli.Doc
 {
     using Application.Doc;
     using Database.Doc;

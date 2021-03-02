@@ -1,7 +1,6 @@
 ﻿namespace Application.Cli
 {
-    using Framework.Cli;
-    using System;
+    using Application.Cli.Doc;
 
     class Program
     {
