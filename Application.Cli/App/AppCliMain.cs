@@ -34,6 +34,9 @@
                 FolderNameNpmBuild = "Application.Website/LayoutBulma/",
                 FolderNameDist = "Application.Website/LayoutBulma/dist/",
             });
+
+            configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
+            configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
         }
 
         /// <summary>
