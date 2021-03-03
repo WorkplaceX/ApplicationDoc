@@ -6,6 +6,7 @@
     using Framework.Cli;
     using Framework.Cli.Config;
     using Framework.DataAccessLayer;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -27,7 +28,7 @@
         /// </summary>
         protected override void InitConfigCli(ConfigCli configCli)
         {
-            string appTypeName = typeof(AppMain).FullName + ", " + typeof(AppMain).Namespace;
+            string appTypeName = typeof(AppMain).FullName + ", " + typeof(AppMain).Assembly.GetName().Name;
             configCli.WebsiteList.Add(new ConfigCliWebsite()
             {
                 DomainNameList = new List<ConfigCliWebsiteDomain>(new ConfigCliWebsiteDomain[] { new ConfigCliWebsiteDomain { EnvironmentName = "DEV", DomainName = "localhost", AppTypeName = appTypeName } }),
@@ -35,8 +36,19 @@
                 FolderNameDist = "Application.Website/LayoutBulma/dist/",
             });
 
-            configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
-            configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                // Default ConnectionString (Windows)
+                configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
+                configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
+            }
+
+            if (Environment.OSVersion.Platform == PlatformID.Unix)
+            {
+                // Default ConnectionString (Ubuntu)
+                configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;";
+                configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;";
+            }
         }
 
         /// <summary>
