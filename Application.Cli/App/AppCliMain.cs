@@ -6,9 +6,9 @@
     using Framework.Cli;
     using Framework.Cli.Config;
     using Framework.DataAccessLayer;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Runtime.InteropServices;
 
     /// <summary>
     /// Command line interface application.
@@ -36,16 +36,16 @@
                 FolderNameDist = "Application.Website/LayoutBulma/dist/",
             });
 
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 // Default ConnectionString (Windows)
                 configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
                 configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
             }
 
-            if (Environment.OSVersion.Platform == PlatformID.Unix)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                // Default ConnectionString (Ubuntu)
+                // Default ConnectionString (Linux)
                 configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;";
                 configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;";
             }
