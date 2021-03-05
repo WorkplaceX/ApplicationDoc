@@ -15,6 +15,8 @@ namespace DatabaseIntegrate.dbo
             {
                 var result = new List<FrameworkConfigGridIntegrate>
                 {
+                    new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.LoginUser; ", TableId = 0, TableIdName = "Doc.LoginUser", TableNameCSharp = "Doc.LoginUser", ConfigName = null, RowCountMax = null, IsAllowInsert = null, IsShowHeader = null, IsShowPagination = null, IsDelete = false },
+                    new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.LoginUser; SignIn", TableId = 0, TableIdName = "Doc.LoginUser", TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", RowCountMax = null, IsAllowInsert = false, IsShowHeader = false, IsShowPagination = false, IsDelete = false },
                 };
                 return result;
             }
@@ -29,6 +31,10 @@ namespace DatabaseIntegrate.dbo
             {
                 var result = new List<FrameworkConfigFieldIntegrate>
                 {
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; ", FieldId = 0, FieldIdName = "Doc.LoginUser; IsDelete", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = null, FieldNameCSharp = "IsDelete", Text = null, Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; SignIn", FieldId = 0, FieldIdName = "Doc.LoginUser; IsDelete", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", FieldNameCSharp = "IsDelete", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; ", FieldId = 0, FieldIdName = "Doc.LoginUser; IsIntegrate", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = null, FieldNameCSharp = "IsIntegrate", Text = null, Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; SignIn", FieldId = 0, FieldIdName = "Doc.LoginUser; IsIntegrate", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", FieldNameCSharp = "IsIntegrate", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
                 };
                 return result;
             }
@@ -52,28 +58,14 @@ namespace DatabaseIntegrate.Doc
                 var result = new List<NavigateIntegrate>
                 {
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Admin", TextHtml = "<i class=\"fas fa-shield-alt\"></i> Admin", IsDivider = false, IsNavbarEnd = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Admin", ParentIdName = null },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminLoginUserRole", TextHtml = "<i class=\"fas fa-user\"></i> User", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-user-role/", PageTypeName = "PageAdminLoginUserRole", Sort = 5, IdName = "AdminLoginUserRole", ParentIdName = "Home" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminLoginUser", TextHtml = "<i class=\"fas fa-user\"></i> User", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-user/", PageTypeName = "PageAdminLoginUser", Sort = 5, IdName = "AdminLoginUser", ParentIdName = "Admin" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminNavigate", TextHtml = "<i class=\"fas fa-sitemap\"></i> Navigate", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-navigate/", PageTypeName = "PageAdminNavigate", Sort = 1, IdName = "AdminNavigate", ParentIdName = "Developer" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminStorage", TextHtml = "<i class=\"far fa-folder\"></i> Storage", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/storage/", PageTypeName = "PageAdminStorage", Sort = null, IdName = "AdminStorage", ParentIdName = "Admin" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Developer", TextHtml = "<i class=\"fas fa-coffee\"></i> Developer", IsDivider = false, IsNavbarEnd = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Developer", ParentIdName = null },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Home", TextHtml = "<i class=\"fas fa-home\"></i> Home", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/", PageTypeName = "PageHome", Sort = 1, IdName = "Home", ParentIdName = null },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignIn", TextHtml = "<i class=\"fas fa-sign-in-alt\"></i> Sign in", IsDivider = false, IsNavbarEnd = true, NavigatePath = "/signin/", PageTypeName = "PageLoginSignIn", Sort = 2, IdName = "LoginSignIn", ParentIdName = null },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignOut", TextHtml = "<i class=\"fas fa-sign-out-alt\"></i> Sign out", IsDivider = false, IsNavbarEnd = true, NavigatePath = "/signout/", PageTypeName = "PageLoginSignOut", Sort = 3, IdName = "LoginSignOut", ParentIdName = null },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignUp", TextHtml = "<i class=\"fas fa-user-plus\"></i> Sign up", IsDivider = false, IsNavbarEnd = true, NavigatePath = "/signup/", PageTypeName = "PageLoginSignUp", Sort = 1, IdName = "LoginSignUp", ParentIdName = null },
-                };
-                return result;
-            }
-        }
-    }
-
-    public static class LoginUserIntegrateAppCli
-    {
-        public static List<LoginUserIntegrate> RowList
-        {
-            get
-            {
-                var result = new List<LoginUserIntegrate>
-                {
-                    new LoginUserIntegrate { Id = 0, Name = "Admin", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Admin" },
-                    new LoginUserIntegrate { Id = 0, Name = "Developer", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Developer" },
-                    new LoginUserIntegrate { Id = 0, Name = "Guest", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Guest" },
                 };
                 return result;
             }
@@ -88,8 +80,8 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginUserRoleIntegrate>
                 {
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = null, LoginUserIsIntegrate = true, LoginUserIdName = "Admin", LoginRoleIdName = "Admin" },
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = null, LoginUserIsIntegrate = true, LoginUserIdName = "Developer", LoginRoleIdName = "Developer" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Developer", LoginRoleIdName = "Admin" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Developer", LoginRoleIdName = "Developer" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Guest", LoginRoleIdName = "Guest" },
                 };
                 return result;
@@ -105,8 +97,18 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<NavigateRoleIntegrate>
                 {
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Home", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Admin", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminLoginUser", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminNavigate", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminStorage", LoginRoleIdName = "Admin" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminStorage", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Developer", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Home", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Developer" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignOut", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Guest" },
                 };
                 return result;
             }

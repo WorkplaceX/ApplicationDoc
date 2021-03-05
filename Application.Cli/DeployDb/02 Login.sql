@@ -75,6 +75,6 @@ SELECT
 FROM
     Doc.LoginUser LoginUser
 LEFT JOIN
-    Doc.LoginUserRole LoginUserRole ON (LoginUserRole.LoginRoleId = LoginUser.Id)
+    Doc.LoginUserRole LoginUserRole ON (LoginUserRole.LoginUserId = LoginUser.Id)
 LEFT JOIN
     Doc.LoginRole LoginRole ON (LoginRole.Id = LoginUserRole.LoginRoleId)

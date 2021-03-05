@@ -17,3 +17,13 @@ SELECT
     FileName AS IdName
 FROM
     Doc.StorageFile Data
+
+GO
+CREATE VIEW Doc.StorageFileDisplay AS
+SELECT
+    Id,
+    FileName,
+    Description,
+    SourceUrl
+FROM
+    Doc.StorageFile Data

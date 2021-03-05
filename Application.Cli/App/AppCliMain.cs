@@ -66,7 +66,7 @@
             result.AddKey<Language>(nameof(Language.Name));
 
             // LoginUser
-            result.Add(Data.Query<LoginUserIntegrate>().Where(item => item.IsIntegrate == true).OrderBy(item => item.IdName));
+            result.Add(Data.Query<LoginUserIntegrate>().Where(item => item.IsIntegrate == true).OrderBy(item => item.IdName), isApplication: true);
             result.AddKey<LoginUser>(nameof(LoginUser.Name));
 
             // LoginRole
@@ -112,7 +112,7 @@
             result.Add(rowList, (item) => item.IdName, (item) => item.ParentIdName, (item) => item.Sort);
 
             // LoginUser
-            result.Add(LoginUserIntegrateAppCli.RowList);
+            result.Add(LoginUserIntegrateApp.RowList);
             result.Add(LoginRoleIntegrateApp.RowList);
             result.Add(LoginUserRoleIntegrateAppCli.RowList);
 

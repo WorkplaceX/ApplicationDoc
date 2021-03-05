@@ -20,7 +20,7 @@
             {
                 TextHtml =
                 @"
-                <section class='hero is-primary'>
+                <section class='hero is-primary' style='background: url(''https://workplacex.org/assets/image/background.jpg''); center center; '>
                   <div class='hero-body'>
                     <div class='container'>
                       <h1 class='title'>
@@ -32,7 +32,7 @@
                     </div>
                   </div>
                 </section>
-                "
+                ".Replace("''", "\""), IsNoSanatize = true
             };
 
 
@@ -82,10 +82,13 @@
             get
             {
                 string result = LoginUserRoleAppList.FirstOrDefault()?.LoginUserName;
+                
+                // Assert
                 foreach (var item in LoginUserRoleAppList)
                 {
                     Util.Assert(item.LoginUserName == result);
                 }
+
                 return result;
             }
         }
@@ -128,7 +131,7 @@
             if (loginUserName == null)
             {
                 // IdName of Guest User
-                loginUserName = LoginRoleIntegrateApp.IdEnum.Guest.IdName();
+                loginUserName = LoginUserIntegrateApp.IdEnum.Guest.IdName();
             }
 
             result.IsRowSelectFirst = false;

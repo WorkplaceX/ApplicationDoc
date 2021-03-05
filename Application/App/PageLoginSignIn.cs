@@ -72,7 +72,7 @@
 
         protected override void QueryConfig(QueryConfigArgs args, QueryConfigResult result)
         {
-            result.ConfigName = "SignIn";
+            result.ConfigName = "SignIn"; // Special configuration. Grid also used in uer role mapping.
             result.GridMode = GridMode.Stack;
         }
 

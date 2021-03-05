@@ -376,6 +376,22 @@ namespace Database.Doc
         public bool IsDelete { get; set; }
     }
 
+    [SqlTable("Doc", "StorageFileDisplay")]
+    public class StorageFileDisplay : Row
+    {
+        [SqlField("Id", FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField("FileName", FrameworkTypeEnum.Nvarcahr)]
+        public string FileName { get; set; }
+
+        [SqlField("Description", FrameworkTypeEnum.Nvarcahr)]
+        public string Description { get; set; }
+
+        [SqlField("SourceUrl", FrameworkTypeEnum.Nvarcahr)]
+        public string SourceUrl { get; set; }
+    }
+
     [SqlTable("Doc", "StorageFileIntegrate")]
     public class StorageFileIntegrate : Row
     {

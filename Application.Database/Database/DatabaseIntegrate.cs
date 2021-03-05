@@ -48,9 +48,48 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
-    public static class LoginRoleIntegrateApp
+    public static class LoginUserIntegrateApp
     {
         public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("Developer")]Developer = -2, [IdEnum("Guest")]Guest = -3 }
+
+        public static LoginUserIntegrate Row(this IdEnum value)
+        {
+            return RowList.Where(item => item.IdName == IdEnumAttribute.IdNameFromEnum(value)).SingleOrDefault();
+        }
+
+        public static IdEnum IdName(string value)
+        {
+            return IdEnumAttribute.IdNameToEnum<IdEnum>(value);
+        }
+
+        public static string IdName(this IdEnum value)
+        {
+            return IdEnumAttribute.IdNameFromEnum(value);
+        }
+
+        public static async Task<int> Id(this IdEnum value)
+        {
+            return (await Data.Query<LoginUserIntegrate>().Where(item => item.IdName == IdEnumAttribute.IdNameFromEnum(value)).QueryExecuteAsync()).Single().Id;
+        }
+
+        public static List<LoginUserIntegrate> RowList
+        {
+            get
+            {
+                var result = new List<LoginUserIntegrate>
+                {
+                    new LoginUserIntegrate { Id = 0, Name = "Admin", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Admin" },
+                    new LoginUserIntegrate { Id = 0, Name = "Developer", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Developer" },
+                    new LoginUserIntegrate { Id = 0, Name = "Guest", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Guest" },
+                };
+                return result;
+            }
+        }
+    }
+
+    public static class LoginRoleIntegrateApp
+    {
+        public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("Customer")]Customer = -2, [IdEnum("Developer")]Developer = -3, [IdEnum("Guest")]Guest = -4 }
 
         public static LoginRoleIntegrate Row(this IdEnum value)
         {
@@ -78,8 +117,9 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginRoleIntegrate>
                 {
-                    new LoginRoleIntegrate { Id = 0, Name = "Admin", Sort = null, IdName = "Admin" },
-                    new LoginRoleIntegrate { Id = 0, Name = "Developer", Sort = null, IdName = "Developer" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Admin", Sort = 2, IdName = "Admin" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Customer", Sort = 4, IdName = "Customer" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Developer", Sort = 1, IdName = "Developer" },
                     new LoginRoleIntegrate { Id = 0, Name = "Guest", Sort = 3, IdName = "Guest" },
                 };
                 return result;
