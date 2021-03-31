@@ -4,6 +4,7 @@
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
+    using System.Threading.Tasks;
 
     public static class Util
     {
@@ -36,6 +37,18 @@
                 imageFormat = ImageFormat.Jpeg; // Keep size low
                 imageDest.Save(memoryStream, image.RawFormat);
                 return memoryStream.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Parse and publish content from sql table Content to sql table Navigate.
+        /// </summary>
+        public static async Task ContentPublish(string textMd)
+        {
+            var pageList = Framework.UtilFramework.TextMdToHtmlPageList(textMd);
+            foreach (var page in pageList)
+            {
+
             }
         }
 

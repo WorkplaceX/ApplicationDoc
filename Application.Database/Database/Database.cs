@@ -5,6 +5,47 @@ namespace Database.Doc
     using Framework.DataAccessLayer;
     using System;
 
+    [SqlTable("Doc", "Content")]
+    public class Content : Row
+    {
+        [SqlField("Id", true, FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
+        public string Name { get; set; }
+
+        [SqlField("TextMd", FrameworkTypeEnum.Nvarcahr)]
+        public string TextMd { get; set; }
+
+        [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
+        public bool IsIntegrate { get; set; }
+
+        [SqlField("IsDelete", FrameworkTypeEnum.Bit)]
+        public bool IsDelete { get; set; }
+    }
+
+    [SqlTable("Doc", "ContentIntegrate")]
+    public class ContentIntegrate : Row
+    {
+        [SqlField("Id", FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
+        public string Name { get; set; }
+
+        [SqlField("TextMd", FrameworkTypeEnum.Nvarcahr)]
+        public string TextMd { get; set; }
+
+        [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
+        public bool IsIntegrate { get; set; }
+
+        [SqlField("IsDelete", FrameworkTypeEnum.Bit)]
+        public bool IsDelete { get; set; }
+
+        [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
+        public string IdName { get; set; }
+    }
+
     [SqlTable("Doc", "Language")]
     public class Language : Row
     {

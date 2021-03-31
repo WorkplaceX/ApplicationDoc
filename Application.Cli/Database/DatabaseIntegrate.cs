@@ -15,6 +15,7 @@ namespace DatabaseIntegrate.dbo
             {
                 var result = new List<FrameworkConfigGridIntegrate>
                 {
+                    new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.Content; ", TableId = 0, TableIdName = "Doc.Content", TableNameCSharp = "Doc.Content", ConfigName = null, RowCountMax = null, IsAllowInsert = false, IsShowHeader = false, IsShowPagination = false, IsDelete = false },
                     new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.LoginUser; ", TableId = 0, TableIdName = "Doc.LoginUser", TableNameCSharp = "Doc.LoginUser", ConfigName = null, RowCountMax = null, IsAllowInsert = null, IsShowHeader = null, IsShowPagination = null, IsDelete = false },
                     new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.LoginUser; SignIn", TableId = 0, TableIdName = "Doc.LoginUser", TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", RowCountMax = null, IsAllowInsert = false, IsShowHeader = false, IsShowPagination = false, IsDelete = false },
                 };
@@ -31,10 +32,16 @@ namespace DatabaseIntegrate.dbo
             {
                 var result = new List<FrameworkConfigFieldIntegrate>
                 {
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.Content; ", FieldId = 0, FieldIdName = "Doc.Content; IsDelete", InstanceName = null, TableNameCSharp = "Doc.Content", ConfigName = null, FieldNameCSharp = "IsDelete", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.Content; ", FieldId = 0, FieldIdName = "Doc.Content; IsIntegrate", InstanceName = null, TableNameCSharp = "Doc.Content", ConfigName = null, FieldNameCSharp = "IsIntegrate", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.Content; ", FieldId = 0, FieldIdName = "Doc.Content; Name", InstanceName = null, TableNameCSharp = "Doc.Content", ConfigName = null, FieldNameCSharp = "Name", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.Content; ", FieldId = 0, FieldIdName = "Doc.Content; TextMd", InstanceName = null, TableNameCSharp = "Doc.Content", ConfigName = null, FieldNameCSharp = "TextMd", Text = null, Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = true, Sort = null, IsDelete = false },
                     new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; ", FieldId = 0, FieldIdName = "Doc.LoginUser; IsDelete", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = null, FieldNameCSharp = "IsDelete", Text = null, Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
                     new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; SignIn", FieldId = 0, FieldIdName = "Doc.LoginUser; IsDelete", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", FieldNameCSharp = "IsDelete", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
                     new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; ", FieldId = 0, FieldIdName = "Doc.LoginUser; IsIntegrate", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = null, FieldNameCSharp = "IsIntegrate", Text = null, Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
                     new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; SignIn", FieldId = 0, FieldIdName = "Doc.LoginUser; IsIntegrate", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", FieldNameCSharp = "IsIntegrate", Text = null, Description = null, IsVisible = false, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; ", FieldId = 0, FieldIdName = "Doc.LoginUser; Name", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = null, FieldNameCSharp = "Name", Text = "Email", Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
+                    new FrameworkConfigFieldIntegrate { Id = 0, ConfigGridId = 0, ConfigGridIdName = "Doc.LoginUser; SignIn", FieldId = 0, FieldIdName = "Doc.LoginUser; Name", InstanceName = null, TableNameCSharp = "Doc.LoginUser", ConfigName = "SignIn", FieldNameCSharp = "Name", Text = "Email", Description = null, IsVisible = null, IsReadOnly = null, IsMultiline = null, Sort = null, IsDelete = false },
                 };
                 return result;
             }
@@ -58,6 +65,7 @@ namespace DatabaseIntegrate.Doc
                 var result = new List<NavigateIntegrate>
                 {
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Admin", TextHtml = "<i class=\"fas fa-shield-alt\"></i> Admin", IsDivider = false, IsNavbarEnd = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Admin", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminContent", TextHtml = "<i class=\"fas fa-book\"></i> Content", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-content/", PageTypeName = "PageAdminContent", Sort = 3, IdName = "AdminContent", ParentIdName = "Admin" },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminLoginUser", TextHtml = "<i class=\"fas fa-user\"></i> User", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-user/", PageTypeName = "PageAdminLoginUser", Sort = 1, IdName = "AdminLoginUser", ParentIdName = "Admin" },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminNavigate", TextHtml = "<i class=\"fas fa-sitemap\"></i> Navigate", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-navigate/", PageTypeName = "PageAdminNavigate", Sort = 1, IdName = "AdminNavigate", ParentIdName = "Developer" },
                     new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminStorage", TextHtml = "<i class=\"far fa-folder\"></i> Storage", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/storage/", PageTypeName = "PageAdminStorage", Sort = 2, IdName = "AdminStorage", ParentIdName = "Admin" },
@@ -101,6 +109,8 @@ namespace DatabaseIntegrate.Doc
                 {
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Admin", LoginRoleIdName = "Admin" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Admin", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminContent", LoginRoleIdName = "Admin" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminContent", LoginRoleIdName = "Developer" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminLoginUser", LoginRoleIdName = "Admin" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminLoginUser", LoginRoleIdName = "Developer" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminNavigate", LoginRoleIdName = "Developer" },

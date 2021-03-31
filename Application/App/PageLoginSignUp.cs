@@ -13,7 +13,7 @@
     {
         public PageLoginSignUp(ComponentJson owner) : base(owner)
         {
-            new Html(this) { TextHtml = "<h1>User Sign Up</h1>", CssClass = "title" };
+            new Html(this) { TextHtml = "<h1 class='title'>User Sign Up</h1>" };
             new Html(this) { TextHtml = "<p>After sign up you'll receive an email with confirmation link to click and finish registration.</p>" };
             Grid = new GridLoginUserSignUp(this);
             Button = new Button(this) { TextHtml = "Sign Up", CssClass = "button is-primary" };
