@@ -6,7 +6,7 @@
     {
         public PageHome(ComponentJson owner) : base(owner) 
         {
-            new Html(this) { TextHtml = "<h1>Home</h1>" };
+            new Html(this) { TextHtml = "<h1>Web Application Framework</h1>", CssClass="title" };
         }
     }
 }

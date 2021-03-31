@@ -16,25 +16,8 @@
         {
             BulmaNavbar = new Navbar(this) { BrandTextHtml = "<b>WorkplaceX</b>.org" };
 
-            new Html(this)
-            {
-                TextHtml =
-                @"
-                <section class='hero is-primary' style='background: url(''https://workplacex.org/assets/image/background.jpg''); center center; '>
-                  <div class='hero-body'>
-                    <div class='container'>
-                      <h1 class='title'>
-                        WorkplaceX.org
-                      </h1>
-                      <h2 class='subtitle'>
-                        Boost your Business App
-                      </h2>
-                    </div>
-                  </div>
-                </section>
-                ".Replace("''", "\""), IsNoSanatize = true
-            };
-
+            // Hero
+            new Custom01(this);
 
             Container = new Div(this) { CssClass = "container" };
             Content = new Div(Container);
@@ -42,19 +25,8 @@
             GridNavigate = new GridNavigate(this) { IsHide = true };
             GridLanguage = new Grid<Language>(this) { IsHide = true };
 
-            new Html(this)
-            {
-                TextHtml =
-                @"
-                <footer class='footer'>
-                  <div class='content has-text-centered'>
-                    <p>
-	                  (C) 2021 by WorkplaceX.org " + Util.Version + @"
-                    </p>
-                  </div>
-                </footer>
-                "
-            };
+            // Footer
+            new Custom02(this) { TextHtml = Util.Version };
 
             BulmaNavbar.GridAdd(GridLanguage, isNavbarEnd: true, isSelectMode: true);
             BulmaNavbar.GridAdd(GridNavigate);

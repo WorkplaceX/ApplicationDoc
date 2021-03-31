@@ -2,15 +2,12 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "Framework\\Framework.Angular\\application"
 		}
 	],
 	"settings": {
 		"workbench.colorCustomizations": {
 			"terminal.background": "#000055",
-			"activityBar.background": "#000983",
+			"activityBar.background": "#1d803e",
 		},
 		"html.format.wrapLineLength": 0
 	}

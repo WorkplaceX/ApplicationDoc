@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: '[data-Custom01]',
-  templateUrl: "./custom01.component.html",
+  selector: '[data-Custom03]',
+  templateUrl: "./custom03.component.html",
   styles: [
   ]
 })
-export class Custom01Component implements OnInit {
+export class Custom03Component implements OnInit {
 
   constructor() { }
 

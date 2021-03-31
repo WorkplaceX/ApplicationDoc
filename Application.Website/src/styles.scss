@@ -1,3 +1,35 @@
-@import "~bulma/css/bulma.min.css";
+@import "~bulma/bulma.sass";
 
 @import "frameworkStyle.scss";
+
+// Footer
+.footer-main {
+  background-color: $dark; // See also https://bulma.io/documentation/overview/colors/
+  padding: 20px;
+}
+
+.footer-main a {
+  color: $grey;
+}
+
+@media (min-width: $tablet) {
+  .footer-main {
+    padding: 70px;
+  }
+}
+
+.footer-divider {
+  border-bottom: 1px solid $grey;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+@media (min-width: $tablet) {
+  .footer-breakpoint-left {
+    text-align: right;
+  }
+}
