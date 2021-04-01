@@ -3,9 +3,11 @@
     using Database.Doc;
     using Framework.DataAccessLayer;
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public static class Util
@@ -45,35 +47,23 @@
         /// <summary>
         /// Parse and publish content from sql table Content to sql table Navigate.
         /// </summary>
-        public static async Task ContentPublish(string textMd)
+        public static async Task ContentPublish()
         {
             // Delete all content pages and it's guest roles
             var sql = @"
             DELETE Doc.NavigateRole WHERE NavigateId IN (SELECT Id FROM Doc.Navigate WHERE IsContent = CAST(1 AS BIT))
             GO
             DELETE Doc.Navigate WHERE IsContent = CAST(1 AS BIT)
-            GO
-             DELETE Doc.ContentPage
             ";
             await Data.ExecuteNonQueryAsync(sql);
 
-            var pageList = Framework.UtilFramework.TextMdToHtmlPageList(textMd);
-            var count = 1;
-            foreach (var page in pageList)
+            List<Content> contentList = (await Data.Query<Content>().QueryExecuteAsync());
+
+            foreach (var page in contentList)
             {
-                string pagePath = page.Path;
-                string name = string.Format("Content{0:000}", count);
-                string html = page.Html;
-
-                // Insert ContentPage
-                var contentPageRow = new ContentPage { Name = name, TextHtml = html };
-                await Data.InsertAsync(contentPageRow);
-
                 // Insert Navigate
-                var navigateRow = new Navigate { Name = name, TextHtml = page.TitleHtml, IsContent = true, NavigatePath = pagePath, Sort = 1000 + count };
+                var navigateRow = new Navigate { Name = page.Name, TextHtml = page.TitleHtml, IsContent = true, NavigatePath = page.NavigatePath, Sort = 1000 + page.Sort.GetValueOrDefault() };
                 await Data.InsertAsync(navigateRow);
-
-                count += 1;
             }
 
             // Assign Guest role to all IsContent pages.

@@ -64,8 +64,7 @@
                 if (row.IsContent)
                 {
                     string name = row.Name;
-                    Util.Assert(name.StartsWith("Content"));
-                    var contentPage = (await Data.Query<ContentPage>().Where(item => item.Name == name).QueryExecuteAsync()).FirstOrDefault();
+                    var contentPage = (await Data.Query<Content>().Where(item => item.Name == name).QueryExecuteAsync()).FirstOrDefault();
                     if (contentPage != null)
                     {
                         PageMain.Content.ComponentListClear();

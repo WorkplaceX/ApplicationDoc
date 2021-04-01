@@ -14,14 +14,23 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
+        [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigatePath { get; set; }
+
+        [SqlField("TitleHtml", FrameworkTypeEnum.Nvarcahr)]
+        public string TitleHtml { get; set; }
+
+        [SqlField("TitleLong", FrameworkTypeEnum.Nvarcahr)]
+        public string TitleLong { get; set; }
+
         [SqlField("TextMd", FrameworkTypeEnum.Nvarcahr)]
         public string TextMd { get; set; }
 
-        [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
-        public bool IsIntegrate { get; set; }
+        [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
+        public string TextHtml { get; set; }
 
-        [SqlField("IsDelete", FrameworkTypeEnum.Bit)]
-        public bool IsDelete { get; set; }
+        [SqlField("Sort", FrameworkTypeEnum.Float)]
+        public double? Sort { get; set; }
     }
 
     [SqlTable("Doc", "ContentIntegrate")]
@@ -33,30 +42,26 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
+        [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigatePath { get; set; }
+
+        [SqlField("TitleHtml", FrameworkTypeEnum.Nvarcahr)]
+        public string TitleHtml { get; set; }
+
+        [SqlField("TitleLong", FrameworkTypeEnum.Nvarcahr)]
+        public string TitleLong { get; set; }
+
         [SqlField("TextMd", FrameworkTypeEnum.Nvarcahr)]
         public string TextMd { get; set; }
 
-        [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
-        public bool IsIntegrate { get; set; }
+        [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
+        public string TextHtml { get; set; }
 
-        [SqlField("IsDelete", FrameworkTypeEnum.Bit)]
-        public bool IsDelete { get; set; }
+        [SqlField("Sort", FrameworkTypeEnum.Float)]
+        public double? Sort { get; set; }
 
         [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
         public string IdName { get; set; }
-    }
-
-    [SqlTable("Doc", "ContentPage")]
-    public class ContentPage : Row
-    {
-        [SqlField("Id", true, FrameworkTypeEnum.Int)]
-        public int Id { get; set; }
-
-        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
-        public string Name { get; set; }
-
-        [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
-        public string TextHtml { get; set; }
     }
 
     [SqlTable("Doc", "Language")]
