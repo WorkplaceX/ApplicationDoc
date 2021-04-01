@@ -29,6 +29,9 @@
             {
                 string textMd = GridContent.RowSelect.TextMd;
                 await Util.ContentPublish(textMd);
+
+                // Refresh navigation
+                await this.ComponentOwner<PageMain>().GridNavigate.LoadAsync();
             }
         }
     }

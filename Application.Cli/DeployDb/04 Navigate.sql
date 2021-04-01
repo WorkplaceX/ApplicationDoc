@@ -6,6 +6,7 @@
     TextHtml NVARCHAR(256),
     IsDivider BIT NOT NULL,
     IsNavbarEnd BIT NOT NULL,
+    IsContent BIT NOT NULL, -- Content from field Doc.Content.TextMd
     NavigatePath NVARCHAR(256),
     PageTypeName NVARCHAR(256),
     Sort FLOAT,

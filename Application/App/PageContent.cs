@@ -4,10 +4,10 @@
 
     public class PageContent : Page
     {
-        public PageContent(ComponentJson owner) : base(owner) 
+        public PageContent(ComponentJson owner, string textHtml) : base(owner) 
         {
-            new Html(this) { TextHtml = "<h1 class='title'>Content</h1>" };
-
+            var content = new Div(this) { CssClass = "content" };
+            new Html(content) { TextHtml = textHtml };
         }
     }
 }

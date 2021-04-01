@@ -50,8 +50,18 @@
             }
         }
 
+
         /// <summary>
-        /// Cli Generate command.
+        /// Command cli generate.
+        /// </summary>
+        protected override void CommandGenerateFilter(GenerateFilterArgs args, GenerateFilterResult result)
+        {
+            result.FieldSqlList = args.FieldSqlList.Where(item => item.SchemaName == "Doc").ToList();
+            result.TypeRowCalculatedList = new List<System.Type>();
+        }
+
+        /// <summary>
+        /// Cli generate command.
         /// </summary>
         protected override void CommandGenerateIntegrate(GenerateIntegrateResult result)
         {
@@ -87,19 +97,14 @@
             // StorageFile
             result.Add(Data.Query<StorageFileIntegrate>().OrderBy(item => item.IdName));
             result.AddKey<StorageFile>(nameof(StorageFile.FileName));
+
+            // Content
+            result.Add(Data.Query<ContentIntegrate>().OrderBy(item => item.IdName));
+            result.AddKey<Content>(nameof(Content.Name));
         }
 
         /// <summary>
-        /// Command cli generate.
-        /// </summary>
-        protected override void CommandGenerateFilter(GenerateFilterArgs args, GenerateFilterResult result)
-        {
-            result.FieldSqlList = args.FieldSqlList.Where(item => item.SchemaName == "Doc").ToList();
-            result.TypeRowCalculatedList = new List<System.Type>();
-        }
-
-        /// <summary>
-        /// Cli Deploy command.
+        /// Cli deployDb command.
         /// </summary>
         protected override void CommandDeployDbIntegrate(DeployDbIntegrateResult result)
         {
@@ -120,6 +125,9 @@
 
             // StorageFile
             result.Add(StorageFileIntegrateAppCli.RowList);
+
+            // Content
+            result.Add(ContentIntegrateAppCli.RowList);
         }
     }
 }

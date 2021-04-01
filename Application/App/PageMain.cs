@@ -65,10 +65,13 @@
             }
         }
 
+        /// <summary>
+        /// Gets GridNavigate. Loaded once on login.
+        /// </summary>
         public GridNavigate GridNavigate;
 
         /// <summary>
-        /// Gets GridLanguage. Currently selected language.
+        /// Gets GridLanguage. Currently selected language. Loaded once on login.
         /// </summary>
         public Grid GridLanguage;
 

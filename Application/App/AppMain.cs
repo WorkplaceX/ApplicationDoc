@@ -61,19 +61,37 @@
                 {
                     PageMain.GridNavigate.RowSelect = row;
                 }
-                var pageType = Type.GetType("Application.Doc." + row.PageTypeName);
-                if (pageType?.IsSubclassOf(typeof(Page)) == true)
+                if (row.IsContent)
                 {
-                    if (PageMain.Content.List.FirstOrDefault()?.GetType() != pageType)
+                    string name = row.Name;
+                    Util.Assert(name.StartsWith("Content"));
+                    var contentPage = (await Data.Query<ContentPage>().Where(item => item.Name == name).QueryExecuteAsync()).FirstOrDefault();
+                    if (contentPage != null)
                     {
                         PageMain.Content.ComponentListClear();
-                        var page = (Page)Activator.CreateInstance(pageType, new object[] { PageMain.Content });
-                        await page.InitAsync();
+                        new PageContent(PageMain.Content, contentPage.TextHtml);
+                    }
+                    else
+                    {
+                        isPageNotFound = true;
                     }
                 }
                 else
                 {
-                    isPageNotFound = true;
+                    var pageType = Type.GetType("Application.Doc." + row.PageTypeName);
+                    if (pageType?.IsSubclassOf(typeof(Page)) == true)
+                    {
+                        if (PageMain.Content.List.FirstOrDefault()?.GetType() != pageType)
+                        {
+                            PageMain.Content.ComponentListClear();
+                            var page = (Page)Activator.CreateInstance(pageType, new object[] { PageMain.Content });
+                            await page.InitAsync();
+                        }
+                    }
+                    else
+                    {
+                        isPageNotFound = true;
+                    }
                 }
                 if (row.Name == "Download")
                 {

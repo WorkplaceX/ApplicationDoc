@@ -46,6 +46,19 @@ namespace Database.Doc
         public string IdName { get; set; }
     }
 
+    [SqlTable("Doc", "ContentPage")]
+    public class ContentPage : Row
+    {
+        [SqlField("Id", true, FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
+        public string Name { get; set; }
+
+        [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
+        public string TextHtml { get; set; }
+    }
+
     [SqlTable("Doc", "Language")]
     public class Language : Row
     {
@@ -248,6 +261,9 @@ namespace Database.Doc
         [SqlField("IsNavbarEnd", FrameworkTypeEnum.Bit)]
         public bool IsNavbarEnd { get; set; }
 
+        [SqlField("IsContent", FrameworkTypeEnum.Bit)]
+        public bool IsContent { get; set; }
+
         [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
         public string NavigatePath { get; set; }
 
@@ -285,6 +301,9 @@ namespace Database.Doc
         [SqlField("IsNavbarEnd", FrameworkTypeEnum.Bit)]
         public bool IsNavbarEnd { get; set; }
 
+        [SqlField("IsContent", FrameworkTypeEnum.Bit)]
+        public bool IsContent { get; set; }
+
         [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
         public string NavigatePath { get; set; }
 
@@ -315,6 +334,9 @@ namespace Database.Doc
 
         [SqlField("IsNavbarEnd", FrameworkTypeEnum.Bit)]
         public bool IsNavbarEnd { get; set; }
+
+        [SqlField("IsContent", FrameworkTypeEnum.Bit)]
+        public bool IsContent { get; set; }
 
         [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
         public string NavigatePath { get; set; }

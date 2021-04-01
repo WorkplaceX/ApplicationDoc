@@ -64,16 +64,18 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<NavigateIntegrate>
                 {
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Admin", TextHtml = "<i class=\"fas fa-shield-alt\"></i> Admin", IsDivider = false, IsNavbarEnd = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Admin", ParentIdName = null },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminContent", TextHtml = "<i class=\"fas fa-book\"></i> Content", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-content/", PageTypeName = "PageAdminContent", Sort = 3, IdName = "AdminContent", ParentIdName = "Admin" },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminLoginUser", TextHtml = "<i class=\"fas fa-user\"></i> User", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-user/", PageTypeName = "PageAdminLoginUser", Sort = 1, IdName = "AdminLoginUser", ParentIdName = "Admin" },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminNavigate", TextHtml = "<i class=\"fas fa-sitemap\"></i> Navigate", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/admin-navigate/", PageTypeName = "PageAdminNavigate", Sort = 1, IdName = "AdminNavigate", ParentIdName = "Developer" },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminStorage", TextHtml = "<i class=\"far fa-folder\"></i> Storage", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/storage/", PageTypeName = "PageAdminStorage", Sort = 2, IdName = "AdminStorage", ParentIdName = "Admin" },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Developer", TextHtml = "<i class=\"fas fa-coffee\"></i> Developer", IsDivider = false, IsNavbarEnd = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Developer", ParentIdName = null },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Home", TextHtml = "<i class=\"fas fa-home\"></i> Home", IsDivider = false, IsNavbarEnd = false, NavigatePath = "/", PageTypeName = "PageHome", Sort = 1, IdName = "Home", ParentIdName = null },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignIn", TextHtml = "<i class=\"fas fa-sign-in-alt\"></i> Sign in", IsDivider = false, IsNavbarEnd = true, NavigatePath = "/signin/", PageTypeName = "PageLoginSignIn", Sort = 2, IdName = "LoginSignIn", ParentIdName = null },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignOut", TextHtml = "<i class=\"fas fa-sign-out-alt\"></i> Sign out", IsDivider = false, IsNavbarEnd = true, NavigatePath = "/signout/", PageTypeName = "PageLoginSignOut", Sort = 3, IdName = "LoginSignOut", ParentIdName = null },
-                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignUp", TextHtml = "<i class=\"fas fa-user-plus\"></i> Sign up", IsDivider = false, IsNavbarEnd = true, NavigatePath = "/signup/", PageTypeName = "PageLoginSignUp", Sort = 1, IdName = "LoginSignUp", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Admin", TextHtml = "<i class=\"fas fa-shield-alt\"></i> Admin", IsDivider = false, IsNavbarEnd = false, IsContent = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Admin", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminContent", TextHtml = "<i class=\"fas fa-book\"></i> Content", IsDivider = false, IsNavbarEnd = false, IsContent = false, NavigatePath = "/admin-content/", PageTypeName = "PageAdminContent", Sort = 3, IdName = "AdminContent", ParentIdName = "Admin" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminLoginUser", TextHtml = "<i class=\"fas fa-user\"></i> User", IsDivider = false, IsNavbarEnd = false, IsContent = false, NavigatePath = "/admin-user/", PageTypeName = "PageAdminLoginUser", Sort = 1, IdName = "AdminLoginUser", ParentIdName = "Admin" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminNavigate", TextHtml = "<i class=\"fas fa-sitemap\"></i> Navigate", IsDivider = false, IsNavbarEnd = false, IsContent = false, NavigatePath = "/admin-navigate/", PageTypeName = "PageAdminNavigate", Sort = 1, IdName = "AdminNavigate", ParentIdName = "Developer" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "AdminStorage", TextHtml = "<i class=\"far fa-folder\"></i> Storage", IsDivider = false, IsNavbarEnd = false, IsContent = false, NavigatePath = "/storage/", PageTypeName = "PageAdminStorage", Sort = 2, IdName = "AdminStorage", ParentIdName = "Admin" },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Content001", TextHtml = "<i class=\'fas fa-home\'></i> Home", IsDivider = false, IsNavbarEnd = false, IsContent = true, NavigatePath = "/", PageTypeName = null, Sort = 1001, IdName = "Content001", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Content002", TextHtml = "<i class=\'fas fa-desktop\'></i> Install", IsDivider = false, IsNavbarEnd = false, IsContent = true, NavigatePath = "Install/", PageTypeName = null, Sort = 1002, IdName = "Content002", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Content003", TextHtml = "<i class=\'fas fa-code-branch\'></i> Code", IsDivider = false, IsNavbarEnd = false, IsContent = true, NavigatePath = "Code/", PageTypeName = null, Sort = 1003, IdName = "Content003", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "Developer", TextHtml = "<i class=\"fas fa-coffee\"></i> Developer", IsDivider = false, IsNavbarEnd = false, IsContent = false, NavigatePath = null, PageTypeName = null, Sort = 21, IdName = "Developer", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignIn", TextHtml = "<i class=\"fas fa-sign-in-alt\"></i> Sign in", IsDivider = false, IsNavbarEnd = true, IsContent = false, NavigatePath = "/signin/", PageTypeName = "PageLoginSignIn", Sort = 2, IdName = "LoginSignIn", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignOut", TextHtml = "<i class=\"fas fa-sign-out-alt\"></i> Sign out", IsDivider = false, IsNavbarEnd = true, IsContent = false, NavigatePath = "/signout/", PageTypeName = "PageLoginSignOut", Sort = 3, IdName = "LoginSignOut", ParentIdName = null },
+                    new NavigateIntegrate { Id = 0, ParentId = 0, Name = "LoginSignUp", TextHtml = "<i class=\"fas fa-user-plus\"></i> Sign up", IsDivider = false, IsNavbarEnd = true, IsContent = false, NavigatePath = "/signup/", PageTypeName = "PageLoginSignUp", Sort = 1, IdName = "LoginSignUp", ParentIdName = null },
                 };
                 return result;
             }
@@ -89,10 +91,17 @@ namespace DatabaseIntegrate.Doc
                 var result = new List<LoginUserRoleIntegrate>
                 {
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Admin" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Customer" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Guest" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "c", LoginRoleIdName = "Customer" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "c", LoginRoleIdName = "Guest" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "d", LoginRoleIdName = "Admin" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "d", LoginRoleIdName = "Customer" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "d", LoginRoleIdName = "Developer" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "d", LoginRoleIdName = "Guest" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "d", LoginRoleIdName = "Login" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Guest", LoginRoleIdName = "Guest" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Guest", LoginRoleIdName = "Login" },
                 };
                 return result;
             }
@@ -116,18 +125,20 @@ namespace DatabaseIntegrate.Doc
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminNavigate", LoginRoleIdName = "Developer" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminStorage", LoginRoleIdName = "Admin" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "AdminStorage", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Content001", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Content002", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Content003", LoginRoleIdName = "Guest" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Developer", LoginRoleIdName = "Developer" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Home", LoginRoleIdName = "Admin" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Home", LoginRoleIdName = "Customer" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Home", LoginRoleIdName = "Developer" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "Home", LoginRoleIdName = "Guest" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Developer" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = null, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = null, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignIn", LoginRoleIdName = "Login" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignOut", LoginRoleIdName = "Admin" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignOut", LoginRoleIdName = "Customer" },
                     new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignOut", LoginRoleIdName = "Developer" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Developer" },
-                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = null, NavigateIdName = "LoginSignOut", LoginRoleIdName = "Login" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = null, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Developer" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = null, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Guest" },
+                    new NavigateRoleIntegrate { Id = 0, NavigateId = 0, LoginRoleId = 0, IsActive = true, NavigateIdName = "LoginSignUp", LoginRoleIdName = "Login" },
                 };
                 return result;
             }
@@ -142,6 +153,21 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<StorageFileIntegrate>
                 {
+                };
+                return result;
+            }
+        }
+    }
+
+    public static class ContentIntegrateAppCli
+    {
+        public static List<ContentIntegrate> RowList
+        {
+            get
+            {
+                var result = new List<ContentIntegrate>
+                {
+                    new ContentIntegrate { Id = 0, Name = "Main", TextMd = "(Page Path=\"/\" Title=\"<i class=\'fas fa-home\'></i> Home\")\n# Web Application Framework\nWorkplaceX is an open source framework to simplify business application development. It provides the following features “out of the box”:\n* Data grids (high performance with millions of records and hundreds of columns)\n* Paging (horizontal and vertical), sorting, filtering\n* Lookup window and autocomplete function\n* Master detail relations\n* Modern looking browser web front end (desktop and mobile)\n* Menu Navigation\n* Data access to SQL server and/or memory\n* Multilanguage support\n* Configuration\n\nIt standardizes and simplifies the process of building enterprise business applications on top of existing SQL Server Databases. It can be hosted on premise or in the cloud and is based on the following products:\n\n* ASP.NET Core 5.0\n* Bootstrap 4 and/or Bulma\n* Angular 11 (Also server side rendering for high performance first page load)\n* SQL Server\n\nAllow thousands of users to access and manage your companies data in a controlled manner. Be flexible and evolve business models as the marked changes.\n\nDeliver complex web applications, without having to touch Html or JavaScript when adding new sql columns, tables or views. The framework fully supports continuous integration and delivery (CI/CD) and seamlessly integrates with\n\n* [Travis CI](https://travis-ci.org/)\n* [GitHub Actions](https://github.com/features/actions)\n* [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)\n\n# Live Example\nSee a live example: [https://demo.WorkplaceX.org](https://demo.workplacex.org)\n\n## GitHub\nOr download the source code from GitHub: **[ApplicationDemo](https://github.com/WorkplaceX/ApplicationDemo)** \n\nAdditionally, WorkplaceX business applications run also embedded in SharePoint or on any already existing company web page by just adding a few lines of html code.\n\n(Page Path=\"Install/\" Title=\"<i class=\'fas fa-desktop\'></i> Install\")\n# Getting Started\nWeb [Application Demo](https://github.com/WorkplaceX/ApplicationDemo) is a comprehensive example to get started with. The following two components need to be installed on the machine as prerequisite:\n* [Node.js](https://nodejs.org/en/) (LTS Version)\n* [.NET Core](https://dotnet.microsoft.com/download) (Version 5.0)\n\n## Git Clone\n```cmd\ngit clone https://github.com/WorkplaceX/ApplicationDemo.git --recursive\n```\nArgument \"--Recursive\" clones also necessary submodule \"Framework\".\n\n## Command Line Interface (CLI)\nThe framework provides a command line interface (CLI) with all necessary functions like build, deploy and so on. In the root folder type cli.\n```cmd\ncd ApplicationDemo\n.\\cli.cmd\n```\nAll available framework CLI commands are listed like this:\n\n(Page Path=\"Code/\" Title=\"<i class=\'fas fa-code-branch\'></i> Code\")\n# Code Examples\nGet started with the following simple code examples:\n* [Hello World Text](#hello-world-text) (Show simple hello world text)\n* [Data Grid](#data-grid) (Add sql server data grid to web application)\n* [Data Annotation](#data-annotation) (Green arrow up for positive numbers)\n* [Data Lookup Window](#data-lookup-window) (Data lookup up or autocomplete window)", IsIntegrate = true, IsDelete = false, IdName = "Main" },
                 };
                 return result;
             }
