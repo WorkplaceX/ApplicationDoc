@@ -23,6 +23,8 @@ CREATE VIEW Doc.StorageFileDisplay AS
 SELECT
     Id,
     FileName,
+    CASE WHEN Data IS NULL THEN CAST(0 AS BIT) ELSE CAST(1 AS BIT) END AS IsData,
+    CASE WHEN DataImageThumbnail IS NULL THEN CAST(0 AS BIT) ELSE CAST(1 AS BIT) END AS IsDataImageThumbnail,
     Description,
     SourceUrl
 FROM

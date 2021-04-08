@@ -453,6 +453,12 @@ namespace Database.Doc
         [SqlField("FileName", FrameworkTypeEnum.Nvarcahr)]
         public string FileName { get; set; }
 
+        [SqlField("IsData", FrameworkTypeEnum.Bit)]
+        public bool? IsData { get; set; }
+
+        [SqlField("IsDataImageThumbnail", FrameworkTypeEnum.Bit)]
+        public bool? IsDataImageThumbnail { get; set; }
+
         [SqlField("Description", FrameworkTypeEnum.Nvarcahr)]
         public string Description { get; set; }
 
