@@ -35,13 +35,16 @@
 
         protected override async Task NavigateAsync(NavigateArgs args, NavigateResult result)
         {
-            if (args.IsFileName("/storage/", out string fileName))
+            if (args.IsFileName("/assets/", out string fileName))
             {
-                var row = (await Data.Query<StorageFile>().Where(item => item.FileName == fileName).QueryExecuteAsync()).Single();
-                result.Data = row.Data;
-                if (args.HttpQuery.ContainsKey("imageThumbnail"))
+                var row = (await Data.Query<StorageFile>().Where(item => item.FileName == fileName).QueryExecuteAsync()).SingleOrDefault();
+                if (row != null)
                 {
-                    result.Data = row.DataImageThumbnail;
+                    result.Data = row.Data;
+                    if (args.HttpQuery.ContainsKey("imageThumbnail"))
+                    {
+                        result.Data = row.DataImageThumbnail;
+                    }
                 }
             }
             else

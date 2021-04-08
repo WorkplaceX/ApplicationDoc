@@ -43,7 +43,7 @@
                 result.IsFileUpload = true;
                 if (args.Row.IsData != null)
                 {
-                    result.HtmlRight = $"<a href=\"" + "/storage/" + args.Row.FileName + "\">" + "Open" + "</a>";
+                    result.HtmlRight = $"<a href=\"" + "/assets/" + args.Row.FileName + "\">" + "Open" + "</a>";
                 }
             }
         }

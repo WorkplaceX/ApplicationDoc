@@ -2,6 +2,14 @@
 
 @import "frameworkStyle.scss";
 
+img {
+  box-shadow: 8px 8px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 50%);
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
 // Footer
 .footer-main {
   background-color: $dark; // See also https://bulma.io/documentation/overview/colors/
