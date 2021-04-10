@@ -10,6 +10,14 @@ img {
   margin-bottom: 32px;
 }
 
+.is-fixed-top-offset {
+  margin-bottom: $navbar-height;
+}
+
+.navbar {
+  border-bottom: 1px solid black;
+}
+
 // Footer
 .footer-main {
   background-color: $dark; // See also https://bulma.io/documentation/overview/colors/
