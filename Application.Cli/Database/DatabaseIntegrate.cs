@@ -15,6 +15,7 @@ namespace DatabaseIntegrate.dbo
             {
                 var result = new List<FrameworkConfigGridIntegrate>
                 {
+                    new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.Calculated.LoginUserSignUp; ", TableId = 0, TableIdName = "Doc.Calculated.LoginUserSignUp", TableNameCSharp = "Doc.Calculated.LoginUserSignUp", ConfigName = null, RowCountMax = null, IsAllowInsert = false, IsShowHeader = false, IsShowPagination = false, IsDelete = false },
                     new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.Content; ", TableId = 0, TableIdName = "Doc.Content", TableNameCSharp = "Doc.Content", ConfigName = null, RowCountMax = null, IsAllowInsert = null, IsShowHeader = null, IsShowPagination = null, IsDelete = false },
                     new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.Content; Md", TableId = 0, TableIdName = "Doc.Content", TableNameCSharp = "Doc.Content", ConfigName = "Md", RowCountMax = null, IsAllowInsert = false, IsShowHeader = false, IsShowPagination = false, IsDelete = false },
                     new FrameworkConfigGridIntegrate { Id = 0, IdName = "Doc.LoginUser; ", TableId = 0, TableIdName = "Doc.LoginUser", TableNameCSharp = "Doc.LoginUser", ConfigName = null, RowCountMax = null, IsAllowInsert = null, IsShowHeader = null, IsShowPagination = null, IsDelete = false },

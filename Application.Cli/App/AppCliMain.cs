@@ -50,14 +50,13 @@
             }
         }
 
-
         /// <summary>
         /// Command cli generate.
         /// </summary>
         protected override void CommandGenerateFilter(GenerateFilterArgs args, GenerateFilterResult result)
         {
             result.FieldSqlList = args.FieldSqlList.Where(item => item.SchemaName == "Doc").ToList();
-            result.TypeRowCalculatedList = new List<System.Type>();
+            result.TypeRowCalculatedList = args.TypeRowCalculatedList.Where(item => item.Namespace == "Database.Doc.Calculated").ToList();
         }
 
         /// <summary>
