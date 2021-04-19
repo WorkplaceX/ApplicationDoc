@@ -3,7 +3,8 @@ CREATE TABLE Doc.Content
 (
     Id INT PRIMARY KEY IDENTITY,
     Name NVARCHAR(256) NOT NULL UNIQUE,
-    NavigatePath NVARCHAR(256),
+    NavigateTree NVARCHAR(256), -- Insted of ParentId
+    NavigatePath NVARCHAR(256), -- Can be null for group
     TitleHtml NVARCHAR(256),
     TitleLong NVARCHAR(256),
     TextMd NVARCHAR(MAX),

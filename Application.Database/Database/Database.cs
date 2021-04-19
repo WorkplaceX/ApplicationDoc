@@ -14,6 +14,9 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
+        [SqlField("NavigateTree", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigateTree { get; set; }
+
         [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
         public string NavigatePath { get; set; }
 
@@ -41,6 +44,9 @@ namespace Database.Doc
 
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
+
+        [SqlField("NavigateTree", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigateTree { get; set; }
 
         [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
         public string NavigatePath { get; set; }

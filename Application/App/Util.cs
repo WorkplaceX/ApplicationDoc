@@ -59,17 +59,17 @@
 
             List<Content> contentList = (await Data.Query<Content>().OrderBy(item => item.NavigatePath).QueryExecuteAsync());
 
-            // (NavigatePath, Id)
-            var navigatePathList = new Dictionary<string, int>();
+            // (NavigateTree, Id)
+            var navigateTreeList = new Dictionary<string, int>();
 
             // Returns closest parent.
-            int? NavigatePathParentId(string navigatePath)
+            int? NavigateParentId(string navigateTree)
             {
                 int? result = null;
                 string find = "";
-                foreach (var item in navigatePathList.Keys)
+                foreach (var item in navigateTreeList.Keys)
                 {
-                    if (navigatePath.StartsWith(item))
+                    if (navigateTree.StartsWith(item))
                     {
                         if (item.Length > find.Length)
                         {
@@ -79,7 +79,7 @@
                 }
                 if (find != "" && find != "/")
                 {
-                    result = navigatePathList[find];
+                    result = navigateTreeList[find];
                 }
                 return result;
             }
@@ -87,10 +87,10 @@
             foreach (var page in contentList)
             {
                 // Insert Navigate
-                var parentId = NavigatePathParentId(page.NavigatePath);
+                var parentId = NavigateParentId(page.NavigateTree);
                 var navigateRow = new Navigate { ParentId = parentId, Name = page.Name, TextHtml = page.TitleHtml, IsContent = true, NavigatePath = page.NavigatePath, Sort = 1000 + page.Sort.GetValueOrDefault() };
                 await Data.InsertAsync(navigateRow);
-                navigatePathList.Add(navigateRow.NavigatePath, navigateRow.Id);
+                navigateTreeList.Add(page.NavigateTree, navigateRow.Id);
             }
 
             // Assign Guest role to all IsContent pages.
