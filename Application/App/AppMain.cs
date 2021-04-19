@@ -35,6 +35,45 @@
 
         protected override async Task NavigateAsync(NavigateArgs args, NavigateResult result)
         {
+            // Download robots.txt and sitemap.xml
+            if (args.IsFileName("/", out string fileNameRoot))
+            {
+                if (fileNameRoot == "robots.txt")
+                {
+                    var robots = string.Format("Sitemap: {0}sitemap.xml", args.RequestUrlHost);
+                    result.Data = Encoding.UTF8.GetBytes(robots);
+                    return;
+                }
+                if (fileNameRoot == "sitemap.xml")
+                {
+                    var sitemap = new StringBuilder();
+                    sitemap.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+                    sitemap.Append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
+                    var rowList = (await Data.Query<Navigate>().Where(item => item.IsContent == true).QueryExecuteAsync());
+                    foreach (var row in rowList)
+                    {
+                        if (row.NavigatePath != null) // Not a group
+                        {
+                            sitemap.Append("<url>");
+                            var loc = string.Format("{0}{1}", args.RequestUrlHost, row.NavigatePath?.Substring(1));
+                            sitemap.Append("<loc>" + loc + "</loc>");
+                            if (row.SitemapDate is DateTime sitemapDate)
+                            {
+                                var lastmod = sitemapDate.ToString("yyyy-MM-dd");
+                                sitemap.Append("<lastmod>");
+                                sitemap.Append(lastmod);
+                                sitemap.Append("</lastmod>");
+                            }
+                            sitemap.Append("</url>");
+                        }
+                    }
+                    sitemap.Append("</urlset>");
+                    result.Data = Encoding.UTF8.GetBytes(sitemap.ToString());
+                    return;
+                }
+            }
+
+            // Download file
             if (args.IsFileName("/assets/", out string fileName))
             {
                 var row = (await Data.Query<StorageFile>().Where(item => item.FileName == fileName).QueryExecuteAsync()).SingleOrDefault();
@@ -45,19 +84,18 @@
                     {
                         result.Data = row.DataImageThumbnail;
                     }
+                    return;
                 }
             }
-            else
-            {
-                result.IsSession = true;
-            }
+         
+            // Request session deserialize
+            result.IsSession = true;
         }
 
         protected override async Task NavigateSessionAsync(NavigateArgs args, NavigateSessionResult result)
         {
             var row = PageMain.GridNavigate.RowList.SingleOrDefault(item => item.NavigatePath == args.NavigatePath);
 
-            bool isPageNotFound = row == null;
             if (row != null)
             {
                 if (PageMain.GridNavigate.RowSelect != row)
@@ -72,10 +110,7 @@
                     {
                         PageMain.Content.ComponentListClear();
                         new PageContent(PageMain.Content, contentPage.TextHtml);
-                    }
-                    else
-                    {
-                        isPageNotFound = true;
+                        return;
                     }
                 }
                 else
@@ -88,25 +123,27 @@
                             PageMain.Content.ComponentListClear();
                             var page = (Page)Activator.CreateInstance(pageType, new object[] { PageMain.Content });
                             await page.InitAsync();
+                            return;
                         }
                     }
-                    else
-                    {
-                        isPageNotFound = true;
-                    }
-                }
-                if (row.Name == "Download")
-                {
-                    result.Data = Encoding.UTF8.GetBytes("Hello world!");
                 }
             }
 
-            if (isPageNotFound)
+            // Redirect trailing slash
+            if (!args.NavigatePath.EndsWith("/"))
             {
-                PageMain.Content.ComponentListClear();
-                await new PageNotFound(PageMain.Content).InitAsync();
-                result.IsPageNotFound = true;
+                row = PageMain.GridNavigate.RowList.SingleOrDefault(item => item.NavigatePath == args.NavigatePath + "/");
+                if (row != null)
+                {
+                    result.RedirectPath = args.NavigatePath + "/";
+                    return;
+                }
             }
+
+            // Page not found
+            PageMain.Content.ComponentListClear();
+            await new PageNotFound(PageMain.Content).InitAsync();
+            result.IsPageNotFound = true;
         }
 
         public Alert AlertSessionExpired;

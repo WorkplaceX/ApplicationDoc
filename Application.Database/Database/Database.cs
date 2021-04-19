@@ -34,6 +34,9 @@ namespace Database.Doc
 
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
+
+        [SqlField("SitemapDate", FrameworkTypeEnum.Datetime2)]
+        public DateTime? SitemapDate { get; set; }
     }
 
     [SqlTable("Doc", "ContentIntegrate")]
@@ -65,6 +68,9 @@ namespace Database.Doc
 
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
+
+        [SqlField("SitemapDate", FrameworkTypeEnum.Datetime2)]
+        public DateTime? SitemapDate { get; set; }
 
         [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
         public string IdName { get; set; }
@@ -283,6 +289,9 @@ namespace Database.Doc
 
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
+
+        [SqlField("SitemapDate", FrameworkTypeEnum.Datetime2)]
+        public DateTime? SitemapDate { get; set; }
     }
 
     [SqlTable("Doc", "NavigateDisplay")]
@@ -323,6 +332,9 @@ namespace Database.Doc
 
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
+
+        [SqlField("SitemapDate", FrameworkTypeEnum.Datetime2)]
+        public DateTime? SitemapDate { get; set; }
     }
 
     [SqlTable("Doc", "NavigateIntegrate")]
@@ -357,6 +369,9 @@ namespace Database.Doc
 
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
+
+        [SqlField("SitemapDate", FrameworkTypeEnum.Datetime2)]
+        public DateTime? SitemapDate { get; set; }
 
         [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
         public string IdName { get; set; }

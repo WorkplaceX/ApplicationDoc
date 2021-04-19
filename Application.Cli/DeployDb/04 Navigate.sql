@@ -10,6 +10,7 @@
     NavigatePath NVARCHAR(256),
     PageTypeName NVARCHAR(256),
     Sort FLOAT,
+    SitemapDate DATETIME2
 )
 GO
 CREATE VIEW Doc.NavigateIntegrate AS

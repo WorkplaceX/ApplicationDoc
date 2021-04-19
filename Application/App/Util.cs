@@ -88,7 +88,7 @@
             {
                 // Insert Navigate
                 var parentId = NavigateParentId(page.NavigateTree);
-                var navigateRow = new Navigate { ParentId = parentId, Name = page.Name, TextHtml = page.TitleHtml, IsContent = true, NavigatePath = page.NavigatePath, Sort = 1000 + page.Sort.GetValueOrDefault() };
+                var navigateRow = new Navigate { ParentId = parentId, Name = page.Name, TextHtml = page.TitleHtml, IsContent = true, NavigatePath = page.NavigatePath, Sort = 1000 + page.Sort.GetValueOrDefault(), SitemapDate = page.SitemapDate };
                 await Data.InsertAsync(navigateRow);
                 navigateTreeList.Add(page.NavigateTree, navigateRow.Id);
             }

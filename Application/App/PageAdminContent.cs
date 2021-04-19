@@ -4,6 +4,7 @@
     using Framework;
     using Framework.DataAccessLayer;
     using Framework.Json;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -106,6 +107,7 @@
         protected override async Task UpdateAsync(UpdateArgs args, UpdateResult result)
         {
             result.Row.TextHtml = UtilFramework.TextMdToHtml(args.Row.TextMd);
+            result.Row.SitemapDate = DateTime.UtcNow;
             await Data.UpdateAsync(result.Row);
             Data.RowCopy(result.Row, PageAdminContent.GridContent.RowSelect);
             PageAdminContent.Html.TextHtml = result.Row.TextHtml;

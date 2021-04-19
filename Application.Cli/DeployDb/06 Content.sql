@@ -9,7 +9,8 @@ CREATE TABLE Doc.Content
     TitleLong NVARCHAR(256),
     TextMd NVARCHAR(MAX),
     TextHtml NVARCHAR(MAX),
-    Sort FLOAT
+    Sort FLOAT,
+    SitemapDate DATETIME2
 )
 GO
 CREATE VIEW Doc.ContentIntegrate AS
