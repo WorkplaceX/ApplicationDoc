@@ -92,6 +92,7 @@ ng generate component bulma-navbar --skip-import --inlineStyle=true --skipTests=
 Add "--outputHashing=none --progress=false"
 
 ## Modify Files
+* angular.json (Add deployUrl) Ensures Angular css and js files start with absolute path /
 * main.ts (Find jsonServerSideRendering)
 * server.ts (Find tag // Framework: Enable SSR POST)
 

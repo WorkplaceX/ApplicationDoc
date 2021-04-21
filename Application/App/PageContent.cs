@@ -7,7 +7,7 @@
         public PageContent(ComponentJson owner, string textHtml) : base(owner) 
         {
             var content = new Div(this) { CssClass = "content" };
-            new Html(content) { TextHtml = textHtml };
+            new Html(content) { TextHtml = textHtml, IsNoSanatize = true }; // IsNoSanatize because of html id for named anchor.
         }
     }
 }

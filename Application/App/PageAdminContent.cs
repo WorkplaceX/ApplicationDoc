@@ -18,7 +18,7 @@
             GridContentMd = new GridContentMd(this);
             ButtonPublish = new Button(this) { TextHtml = "Publish", CssClass = "button is-primary" };
             var content = new Div(this) { CssClass = "content" };
-            Html = new Html(content);
+            Html = new Html(content) { IsNoSanatize = true }; // IsNoSanatize because of html id for named anchor.
         }
 
         public Button ButtonPublish;

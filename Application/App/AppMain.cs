@@ -15,9 +15,14 @@
         {
             CssFrameworkEnum = CssFrameworkEnum.Bulma;
 
+            // Fixed navbar offset
+            HtmlNavbarOffset = new Html(this) { TextHtml = "<div class=\"is-fixed-top-offset\"></div>" };
+
             PageMain = new PageMain(this);
             await PageMain.InitAsync();
         }
+
+        public Html HtmlNavbarOffset;
 
         public PageMain PageMain;
 
@@ -154,7 +159,7 @@
             {
                 if (AlertSessionExpired == null)
                 {
-                    AlertSessionExpired = new Alert(this, "Session expired!", AlertEnum.Warning);
+                    AlertSessionExpired = new Alert(this, "Session expired!", AlertEnum.Warning, HtmlNavbarOffset.ComponentIndex() + 1);
                     IsScrollToTop = true;
                 }
             }
