@@ -13,7 +13,7 @@
     {
         public PageAdminContent(ComponentJson owner) : base(owner)
         {
-            new Html(this) { TextHtml = "<h1 class='title'>Content</h1>" };
+            new Html(this) { TextHtml = "<h1 class='title'>Content Page</h1>" };
             GridContent = new GridContent(this);
             GridContentMd = new GridContentMd(this);
             ButtonPublish = new Button(this) { TextHtml = "Publish", CssClass = "button is-primary" };

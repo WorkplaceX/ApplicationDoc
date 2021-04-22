@@ -57,7 +57,7 @@
             ";
             await Data.ExecuteNonQueryAsync(sql);
 
-            List<Content> contentList = (await Data.Query<Content>().OrderBy(item => item.NavigatePath).QueryExecuteAsync());
+            List<Content> contentList = (await Data.Query<Content>().OrderBy(item => item.NavigateTree).QueryExecuteAsync());
 
             // (NavigateTree, Id)
             var navigateTreeList = new Dictionary<string, int>();
