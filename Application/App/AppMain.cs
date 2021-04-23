@@ -114,7 +114,7 @@
                     if (contentPage != null)
                     {
                         PageMain.Content.ComponentListClear();
-                        new PageContent(PageMain.Content, contentPage.TextHtml);
+                        new PageContent(PageMain.Content, contentPage.TextHtml, contentPage.TitleLong);
                         return;
                     }
                 }

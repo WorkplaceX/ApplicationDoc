@@ -4,10 +4,11 @@
 
     public class PageContent : Page
     {
-        public PageContent(ComponentJson owner, string textHtml) : base(owner) 
+        public PageContent(ComponentJson owner, string textHtml, string titleLong) : base(owner) 
         {
             var content = new Div(this) { CssClass = "content" };
             new Html(content) { TextHtml = textHtml, IsNoSanatize = true }; // IsNoSanatize because of html id for named anchor.
+            this.ComponentOwner<AppJson>().Title = titleLong;
         }
     }
 }
