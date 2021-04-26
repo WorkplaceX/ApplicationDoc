@@ -15,7 +15,7 @@
         {
             CssFrameworkEnum = CssFrameworkEnum.Bulma;
 
-            // Fixed navbar offset
+            // Offset navbar
             HtmlNavbarOffset = new Html(this) { TextHtml = "<div class=\"is-fixed-top-offset\"></div>" };
 
             PageMain = new PageMain(this);
