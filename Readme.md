@@ -1,7 +1,5 @@
-# Application Demo
+# Application Doc
 ASP.NET Core application with Angular and MS-SQL Server.
-
-See [A](#project-folder-and-file-structure)
 
 ![Build Status](https://github.com/WorkplaceX/ApplicationDemo/workflows/CI/badge.svg) (ApplicationDemo; github actions;)
 
