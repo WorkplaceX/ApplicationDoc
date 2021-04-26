@@ -1,9 +1,9 @@
 # Application Doc
 ASP.NET Core application with Angular and MS-SQL Server.
 
-![Build Status](https://github.com/WorkplaceX/ApplicationDemo/workflows/CI/badge.svg) (ApplicationDemo; github actions;)
+![Build Status](https://github.com/WorkplaceX/ApplicationDoc/workflows/CI/badge.svg) (ApplicationDoc; github actions;)
 
-[![Build Status](https://travis-ci.org/WorkplaceX/ApplicationDemo.svg?branch=master)](https://travis-ci.org/WorkplaceX/ApplicationDemo) (ApplicationDemo; travis;)
+[![Build Status](https://travis-ci.org/WorkplaceX/ApplicationDoc.svg?branch=master)](https://travis-ci.org/WorkplaceX/ApplicationDoc) (ApplicationDoc; travis;)
 
 # Getting Started
 The following components need to be installed on the machine as a prerequisite (Windows or Linux):
