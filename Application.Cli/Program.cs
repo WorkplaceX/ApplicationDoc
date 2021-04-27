@@ -1,7 +1,5 @@
-﻿namespace Application.Cli
+﻿namespace Application.Cli.Doc
 {
-    using Application.Cli.Doc;
-
     class Program
     {
         static void Main(string[] args)

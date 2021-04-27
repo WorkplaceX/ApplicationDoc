@@ -1,0 +1,29 @@
+<h1><a id="getting-started" class="anchor" aria-hidden="true"></a>Getting Started</h1><p>The following two components need to be installed on the machine as prerequisite:</p><ul><li><a href="https://nodejs.org/en/">Node.js</a> (LTS Version)</li><li><a href="https://dotnet.microsoft.com/download">.NET Core</a> (Version 5.0)</li><li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server</a> (Free Express Edition)</li></ul><p>Web <a href="https://github.com/WorkplaceX/ApplicationDemo">Application Demo</a> is a comprehensive example to get started with:</p><p></p><h2><a id="install" class="anchor" aria-hidden="true"></a>Install</h2><p></p><pre><code class="language-cmd">### Git clone (parameter recursive clones also required submodule Framework):
+git clone https://github.com/WorkplaceX/ApplicationDemo.git --recursive
+
+cd ApplicationDemo
+
+### On first launch it will ask to register wpx command in environment path:
+./wpx.cmd # For Windows
+./wpx.sh # For Linux
+
+### From now on just use:
+wpx
+
+### Build
+wpx build # Builds client (Angular) and server (.NET)
+
+### Set ConnectionString
+wpx config connectionString="Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;" # Example Windows
+wpx config connectionString="Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;" # Example Linux
+
+### Deploy Database
+wpx deployDb
+
+### Start
+wpx start # http://localhost:5000/
+
+### Stop
+killall -g -SIGKILL -r Application.S # Example Linux. Close group (regular expression for Application.Server)
+sudo netstat -ltp # Show all program listening to port # Example Linux</code></pre><p></p><h2><a id="command-line-interface-(cli)" class="anchor" aria-hidden="true"></a>Command Line Interface (CLI)</h2><p>The framework provides a command line interface (CLI) with all necessary functions like build, deploy and so on. In the root folder type cli.</p><pre><code class="language-cmd">cd ApplicationDemo
+wpx</code></pre><p>All available framework CLI commands are listed like this:</p><img src="/assets/cli.png" alt="/assets/cli.png" />

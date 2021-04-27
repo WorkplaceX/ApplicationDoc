@@ -1,0 +1,51 @@
+<h1><a id="data-annotation" class="anchor" aria-hidden="true"></a>Data Annotation</h1><p>Adding visual icons to a data grid can improve readability substantially. Following example shows positive numbers with a green up arrow. And negative numbers with a red down arrow.</p><img src="/assets/data-grid-annotation.png" alt="/assets/data-grid-annotation.png" /><p></p><h2><a id="implementation" class="anchor" aria-hidden="true"></a>Implementation</h2><p>This example builds on <a href="/data-grid">Data Grid Example</a> and shows how to annotate data grid cells.</p><p></p><pre><code class="language-csharp">// File: Application/App/AppMain.cs
+
+namespace Application.Doc
+{
+    using Database.dbo;
+    using Framework.DataAccessLayer;
+    using Framework.Json;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    public class AppMain : AppJson
+    {
+        public override async Task InitAsync()
+        {
+            await new GridHelloWorld(this).LoadAsync();
+        }
+    }
+
+    public class GridHelloWorld : Grid&lt;HelloWorld&gt;
+    {
+        public GridHelloWorld(ComponentJson owner) 
+            : base(owner)
+        {
+
+        }
+
+        protected override void Query(QueryArgs args, QueryResult result)
+        {
+            result.Query = Data.Query&lt;HelloWorld&gt;().OrderBy(item =&gt; item.Text);
+        }
+
+        protected override void CellAnnotation(AnnotationArgs args, AnnotationResult result)
+        {
+            if (args.FieldName == nameof(HelloWorld.Number))
+            {
+                if (args.Row.Number &gt; 0)
+                {
+                    result.HtmlLeft = &quot;&lt;i class=&apos;fas fa-arrow-up green&apos;&gt;&lt;/i&gt;&quot;;
+                }
+                if (args.Row.Number &lt; 0)
+                {
+                    result.HtmlLeft = &quot;&lt;i class=&apos;fas fa-arrow-down red&apos;&gt;&lt;/i&gt;&quot;;
+                }
+                if (args.Row.Number == 0)
+                {
+                    result.HtmlLeft = &quot;&lt;i class=&apos;fas fa-arrow-right&apos;&gt;&lt;/i&gt;&quot;;
+                }
+            }
+        }
+    }
+}</code></pre><p></p>

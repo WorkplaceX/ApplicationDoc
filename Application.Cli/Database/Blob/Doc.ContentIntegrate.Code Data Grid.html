@@ -1,0 +1,56 @@
+<h1><a id="from-database-to-data-grid" class="anchor" aria-hidden="true"></a>From Database to Data Grid</h1><p>This example shows how to bring an sql table or view directly to the browser including filtering, sorting, paging and Excel export.</p><img src="/assets/db-to-data-grid.png" alt="/assets/db-to-data-grid.png" /><p></p><h2><a id="create-sql-table" class="anchor" aria-hidden="true"></a>Create SQL Table</h2><p>First let's create a new database table.</p><pre><code class="language-sql">CREATE TABLE HelloWorld
+(
+    Id INT PRIMARY KEY IDENTITY,
+    Text NVARCHAR(256),
+    Number FLOAT
+)</code></pre><p></p><h2><a id="generate-c#-code" class="anchor" aria-hidden="true"></a>Generate C# Code</h2><p>Next we need C# code for this table. Run command line:</p><pre><code class="language-cmd">wpx generate</code></pre><p>This generates the following code for us:</p><p></p><pre><code class="language-csharp">// File: Application.Database/Database/Database.cs
+
+namespace Database.dbo
+{
+    using Framework.DataAccessLayer;
+    using System;
+
+    [SqlTable(&quot;dbo&quot;, &quot;HelloWorld&quot;)]
+    public class HelloWorld : Row
+    {
+        [SqlField(&quot;Id&quot;, true, FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField(&quot;Text&quot;, FrameworkTypeEnum.Nvarcahr)]
+        public string Text { get; set; }
+
+        [SqlField(&quot;Number&quot;, FrameworkTypeEnum.Float)]
+        public double? Number { get; set; }
+    }
+}</code></pre><p></p><h2><a id="show-data-in-app" class="anchor" aria-hidden="true"></a>Show Data in App</h2><p>In order to load the data grid write:</p><pre><code class="language-csharp">// File: Application/App/AppMain.cs
+
+namespace Application.Doc
+{
+    using Database.dbo;
+    using Framework.DataAccessLayer;
+    using Framework.Json;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    public class AppMain : AppJson
+    {
+        public override async Task InitAsync()
+        {
+            await new GridHelloWorld(this).LoadAsync();
+        }
+    }
+
+    public class GridHelloWorld : Grid&lt;HelloWorld&gt;
+    {
+        public GridHelloWorld(ComponentJson owner) 
+            : base(owner)
+        {
+
+        }
+
+        protected override void Query(QueryArgs args, QueryResult result)
+        {
+            result.Query = Data.Query&lt;HelloWorld&gt;().OrderBy(item =&gt; item.Text);
+        }
+    }
+}</code></pre><p>Start the program. It looks like this, sorting and filtering already included and working:</p><img src="/assets/data-grid.png" alt="/assets/data-grid.png" />

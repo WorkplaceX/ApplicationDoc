@@ -7,6 +7,7 @@
     using Framework.Cli.Config;
     using Framework.DataAccessLayer;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Runtime.InteropServices;
 
@@ -38,15 +39,15 @@
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 // Default ConnectionString (Windows)
-                configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
-                configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;";
+                configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDoc; Integrated Security=True;";
+                configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDoc; Integrated Security=True;";
             }
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 // Default ConnectionString (Linux)
-                configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;";
-                configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDemo; User Id=SA; Password=MyPassword;";
+                configCli.EnvironmentGet().ConnectionStringApplication = "Data Source=localhost; Initial Catalog=ApplicationDoc; User Id=SA; Password=MyPassword;";
+                configCli.EnvironmentGet().ConnectionStringFramework = "Data Source=localhost; Initial Catalog=ApplicationDoc; User Id=SA; Password=MyPassword;";
             }
         }
 
@@ -96,10 +97,13 @@
             // StorageFile
             result.Add(Data.Query<StorageFileIntegrate>().OrderBy(item => item.IdName));
             result.AddKey<StorageFile>(nameof(StorageFile.FileName));
+            result.AddBlob<StorageFileIntegrate>(nameof(StorageFile.Data));
 
             // Content
             result.Add(Data.Query<ContentIntegrate>().OrderBy(item => item.IdName));
             result.AddKey<Content>(nameof(Content.Name));
+            result.AddBlob<ContentIntegrate>(nameof(Content.TextMd), (row) => ".md");
+            result.AddBlob<ContentIntegrate>(nameof(Content.TextHtml), (row) => ".html");
         }
 
         /// <summary>

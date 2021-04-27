@@ -1,0 +1,12 @@
+<h1><a id="hello-world-example" class="anchor" aria-hidden="true"></a>Hello World Example</h1><p>Following example shows how to display a simple text.</p><p>The namespace Framework.Json contains all semantic components to build a logical tree. It contains components like button, navbar or data grid. This logical tree is different from the html tree. The logical tree contains only relevant data to build an html tree. Only the logical tree is serialized and stored on the server at the end of a request.</p><p></p><article class="message is-warning"><div class="message-body"><p><strong>AppJson</strong> is the root component of any application. On an incoming request the framework looks in the file ConfigServer.json to decide which root component to take.</p></div></article><p></p><pre><code class="language-csharp">namespace Application
+{
+    using Framework.Json;
+
+    public class AppMain : AppJson
+    {
+        public AppMain()
+        {
+            new Html(this) { TextHtml = "Hello World" };
+        }
+    }
+}</code></pre><p>Output looks like this:</p><img src="/assets/hello-world.png" alt="/assets/hello-world.png" />
