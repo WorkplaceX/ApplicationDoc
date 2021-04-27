@@ -29,7 +29,7 @@
         /// </summary>
         protected override void InitConfigCli(ConfigCli configCli)
         {
-            string appTypeName = typeof(AppMain).FullName + ", " + typeof(AppMain).Assembly.GetName().Name;
+            string appTypeName = UtilCli.AppTypeName(typeof(AppMain));
             configCli.WebsiteList.Add(new ConfigCliWebsite()
             {
                 DomainNameList = new List<ConfigCliWebsiteDomain>(new ConfigCliWebsiteDomain[] { new ConfigCliWebsiteDomain { EnvironmentName = "DEV", DomainName = "localhost", AppTypeName = appTypeName } }),
@@ -97,13 +97,13 @@
             // StorageFile
             result.Add(Data.Query<StorageFileIntegrate>().OrderBy(item => item.IdName));
             result.AddKey<StorageFile>(nameof(StorageFile.FileName));
-            result.AddBlob<StorageFileIntegrate>(nameof(StorageFile.Data));
+            result.AddBlob<StorageFileIntegrate>(nameof(StorageFile.Data), (row) => row.FileName);
 
             // Content
             result.Add(Data.Query<ContentIntegrate>().OrderBy(item => item.IdName));
             result.AddKey<Content>(nameof(Content.Name));
-            result.AddBlob<ContentIntegrate>(nameof(Content.TextMd), (row) => ".md");
-            result.AddBlob<ContentIntegrate>(nameof(Content.TextHtml), (row) => ".html");
+            result.AddBlob<ContentIntegrate>(nameof(Content.TextMd), (row) => row.IdName + ".md");
+            result.AddBlob<ContentIntegrate>(nameof(Content.TextHtml), (row) => row.IdName + ".html");
         }
 
         /// <summary>
