@@ -1,5 +1,5 @@
 # Getting Started
-The following two components need to be installed on the machine as prerequisite:
+The following components need to be installed on the machine as prerequisite:
 * [Node.js](https://nodejs.org/en/) (LTS Version)
 * [.NET Core](https://dotnet.microsoft.com/download) (Version 5.0)
 * [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (Free Express Edition)
