@@ -1,0 +1,93 @@
+<h1><a id="configuration" class="anchor" aria-hidden="true"></a>Configuration</h1><p>All configuration values are stored in the file <strong>ConfigCli.json</strong>. It contains for example different configurations for DEV, TEST and PROD environment.</p><p></p><ul><li>File <strong>ConfigCli.json</strong> contains DEV, TEST and PROD configuration values</li><li>File <strong>ConfigServer.json</strong> is deployed and contains <strong>only</strong> runtime (webserver) relevant values of <strong>one</strong> (currently selected) environment. Do not change the values in this file!</li></ul><p>To switch for example to PROD environment configuration call:</p><p></p><pre><code class="language-cmd">wpx env name=PROD</code></pre><p></p><article class="message is-warning"><div class="message-body"><p>Webserver relevant configuration values are copied on every wpx command from file <strong>ConfigCli.json</strong> to file <strong>ConfigServer.json</strong>.</p></div></article><p></p><h2><a id="configuration-example" class="anchor" aria-hidden="true"></a>Configuration Example</h2><p>Following example contains a configuration for DEV and one for PROD environment.</p><pre><code class="language-json">// File: ConfigCli.json
+
+{
+  &quot;EnvironmentName&quot;: &quot;DEV&quot;,
+  &quot;EnvironmentList&quot;: [
+    {
+      &quot;EnvironmentName&quot;: &quot;DEV&quot;,
+      &quot;IsUseDeveloperExceptionPage&quot;: false,
+      &quot;IsRedirectHttps&quot;: false,
+      &quot;IsRedirectWww&quot;: false,
+      &quot;ConnectionStringFramework&quot;: &quot;Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;&quot;,
+      &quot;ConnectionStringApplication&quot;: &quot;Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;&quot;,
+      &quot;DeployAzureGitUrl&quot;: null
+    },
+    {
+      &quot;EnvironmentName&quot;: &quot;PROD&quot;,
+      &quot;IsUseDeveloperExceptionPage&quot;: false,
+      &quot;IsRedirectHttps&quot;: true,
+      &quot;IsRedirectWww&quot;: true,
+      &quot;ConnectionStringFramework&quot;: &quot;Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;&quot;,
+      &quot;ConnectionStringApplication&quot;: &quot;Data Source=localhost; Initial Catalog=ApplicationDemo; Integrated Security=True;&quot;,
+      &quot;DeployAzureGitUrl&quot;: null
+    }
+  ],
+  &quot;WebsiteList&quot;: [
+    {
+      &quot;FolderNameAngular&quot;: &quot;Application.Website/&quot;,
+      &quot;DomainNameList&quot;: [
+        {
+          &quot;EnvironmentName&quot;: &quot;DEV&quot;,
+          &quot;DomainName&quot;: &quot;localhost&quot;,
+          &quot;AppTypeName&quot;: &quot;Application.Demo.AppMain, Application&quot;,
+          &quot;IsRedirectHttps&quot;: false,
+          &quot;BingMapKey&quot;: null,
+          &quot;GoogleAnalyticsId&quot;: null
+        },
+        {
+          &quot;EnvironmentName&quot;: &quot;PROD&quot;,
+          &quot;DomainName&quot;: &quot;demo.workplacex.org&quot;,
+          &quot;AppTypeName&quot;: &quot;Application.Demo.AppMain, Application&quot;,
+          &quot;IsRedirectHttps&quot;: false,
+          &quot;BingMapKey&quot;: null,
+          &quot;GoogleAnalyticsId&quot;: null
+        }
+      ]
+    }
+  ],
+  &quot;ExternalGitList&quot;: []
+}</code></pre><p></p><h2><a id="default-configuration" class="anchor" aria-hidden="true"></a>Default Configuration</h2><p>It's possible to define programmatically a default <strong>ConfigCli.json</strong> configuration. If there is no <strong>ConfigCli.json</strong> file it is created on any wpx command.</p><p></p><pre><code class="language-csharp">// File: Application.Cli/App\AppCliMain.cs
+
+namespace Application.Cli.Doc
+{
+    using Application.Doc;
+    using Framework.Cli;
+    using Framework.Cli.Config;
+    using System.Collections.Generic;
+    using System.Runtime.InteropServices;
+
+    /// &lt;summary&gt;
+    /// Command line interface application.
+    /// &lt;/summary&gt;
+    public class AppCliMain : AppCli
+    {
+...
+        /// &lt;summary&gt;
+        /// Set default values if file ConfigCli.json does not exist.
+        /// &lt;/summary&gt;
+        protected override void InitConfigCli(ConfigCli configCli)
+        {
+            string appTypeName = UtilCli.AppTypeName(typeof(AppMain));
+            configCli.WebsiteList.Add(new ConfigCliWebsite()
+            {
+                DomainNameList = new List&lt;ConfigCliWebsiteDomain&gt;(new ConfigCliWebsiteDomain[] { new ConfigCliWebsiteDomain { EnvironmentName = &quot;DEV&quot;, DomainName = &quot;localhost&quot;, AppTypeName = appTypeName } }),
+                FolderNameAngular = &quot;Application.Website/&quot;,
+            });
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                // Default ConnectionString (Windows)
+                configCli.EnvironmentGet().ConnectionStringApplication = &quot;Data Source=localhost; Initial Catalog=ApplicationDoc; Integrated Security=True;&quot;;
+                configCli.EnvironmentGet().ConnectionStringFramework = &quot;Data Source=localhost; Initial Catalog=ApplicationDoc; Integrated Security=True;&quot;;
+            }
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                // Default ConnectionString (Linux)
+                configCli.EnvironmentGet().ConnectionStringApplication = &quot;Data Source=localhost; Initial Catalog=ApplicationDoc; User Id=SA; Password=MyPassword;&quot;;
+                configCli.EnvironmentGet().ConnectionStringFramework = &quot;Data Source=localhost; Initial Catalog=ApplicationDoc; User Id=SA; Password=MyPassword;&quot;;
+            }
+        }
+...
+    }
+}</code></pre>
