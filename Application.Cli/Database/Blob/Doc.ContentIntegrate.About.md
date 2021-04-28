@@ -1,5 +1,5 @@
 # About
-WorkplaceX is an initiative to standardize and streamline the development of business applications. It is based on ASP.NET Core, Angular, SQL Server, Bootstrap or Bulma. No further third party components are used. And it's all open source.
+WorkplaceX is an initiative to standardize and streamline the development of business applications. It is based on ASP.NET Core, Angular, SQL Server, Bootstrap or Bulma. **No further third party** components are used. And it's all open source.
 
 ![](/assets/pillar.png)
 
