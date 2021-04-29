@@ -7,6 +7,7 @@
     using System;
     using System.Linq;
     using System.Text;
+    using System.Text.Json;
     using System.Threading.Tasks;
 
     public class AppMain : AppJson
@@ -74,6 +75,12 @@
                     }
                     sitemap.Append("</urlset>");
                     result.Data = Encoding.UTF8.GetBytes(sitemap.ToString());
+                    return;
+                }
+
+                if (fileNameRoot == "ads.txt" && args.ConfigCustom is JsonElement jsonElement && jsonElement.TryGetProperty("GoogleAdsTxt", out var googleAdsTxt))
+                {
+                    result.Data = Encoding.UTF8.GetBytes(googleAdsTxt.GetString());
                     return;
                 }
             }
