@@ -43,7 +43,7 @@ namespace Database.dbo
 }
 ```
 
-## Show Data in App
+## Show Data in Web App
 In order to load the data grid write:
 ```csharp
 // File: Application/App/AppMain.cs

@@ -1,4 +1,4 @@
-# Configuration
+# Feature Configuration
 All configuration values are stored in the file **ConfigCli.json**. It contains for example different configurations for DEV, TEST and PROD environment.
 
 * File **ConfigCli.json** contains DEV, TEST and PROD configuration values
@@ -71,7 +71,7 @@ Following example contains a configuration for DEV and one for PROD environment.
 It's possible to define programmatically a default **ConfigCli.json** configuration. If there is no **ConfigCli.json** file it is created on any wpx command.
 
 ```csharp
-// File: Application.Cli/App\AppCliMain.cs
+// File: Application.Cli/App/AppCliMain.cs
 
 namespace Application.Cli.Doc
 {
