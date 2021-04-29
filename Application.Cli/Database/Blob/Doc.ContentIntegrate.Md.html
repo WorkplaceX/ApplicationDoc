@@ -1,0 +1,33 @@
+<h1><a id="markdown-parser" class="anchor" aria-hidden="true"></a>Markdown Parser</h1><p>The framework comes with a markdown (*.md) text parser. It contains a superset of: <a href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a></p><p>Additionally the parser supports custom syntax elements such as:</p><ul><li>(Note) to display a yellow note.</li><li>(Youtube) to display a youtube film.</li></ul><p></p><h2><a id="markdown-to-html" class="anchor" aria-hidden="true"></a>Markdown to Html</h2><p>Markdown (*.md) text can be transformed into (*.html) with the following function:</p><pre><code class="language-csharp">string html = UtilFramework.TextMdToHtml(textMd);</code></pre><p></p><h2><a id="list-of-supported-markdown-syntax-elements" class="anchor" aria-hidden="true"></a>List of Supported Markdown Syntax Elements</h2><p>The following syntax elements are parsed interpreted:</p><pre><code class="language-txt">Header
+    # Title Level 1
+    ## Title Level 2
+
+Font Bold
+    **Bold**
+
+Font Italic
+    *Italic*
+
+Bullet
+    * Bullet 1
+    * Bullet 2
+
+Image
+    ![Description](/assets/my.png)
+
+Hyperlink
+    [Description](https://www.workplacex.org)
+    https://www.workplacex.org
+    
+Code 
+    ` ` `csharp (Without spaces!)
+    int a = 0;   
+    ` ` `
+
+Note (Custom Syntax)
+    (Note)
+    Text shown in a yellow note.
+    (Note)
+
+Youtube (Custom Syntax)
+    (Youtube Link=&quot;https://www.youtube.com/embed/ORDp3uNPrSY&quot;)</code></pre><p></p><h1><a id="custom-syntax-elements" class="anchor" aria-hidden="true"></a>Custom Syntax Elements</h1><p>It's possible to further extend the md syntax parser and define new custom elements. All source code of lexer and syntax parser is in file: Framework/Framework/UtilDoc.cs</p>

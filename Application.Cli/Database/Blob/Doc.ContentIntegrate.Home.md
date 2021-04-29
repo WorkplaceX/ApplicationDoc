@@ -1,8 +1,6 @@
 # Web Application Framework
 WorkplaceX is an open source framework to simplify business application development. It provides the following features “out of the box”:
 
-![](/assets/screen-cast.gif)
-
 * Data grids (high performance with millions of records and hundreds of columns)
 * Paging (horizontal and vertical), sorting, filtering
 * Lookup window and autocomplete function
@@ -12,6 +10,8 @@ WorkplaceX is an open source framework to simplify business application developm
 * Data access to SQL server and/or memory
 * Multilanguage support
 * Configuration
+
+(Youtube Link="https://www.youtube.com/embed/ORDp3uNPrSY")
 
 It standardizes and simplifies the process of building enterprise business applications on top of existing SQL Server Databases. It can be hosted on premise or in the cloud and is based on the following products:
 
