@@ -1,4 +1,4 @@
-# Feature Blob
+# Blob (Feature)
 The Blob feature is part of the **[Integrate](/feature-integrate/)**. By default the **Integrate** feature writes all data into C# code. For binary data such as images one might prefer to store such data into a file.
 
 (Note)

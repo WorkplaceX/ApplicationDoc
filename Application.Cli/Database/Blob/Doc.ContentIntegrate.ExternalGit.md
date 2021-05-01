@@ -1,4 +1,4 @@
-# Feature ExternalGit
+# ExternalGit (Feature)
 This feature allows to bundle multiple WorkplaceX applications stored on different repositories into one main application during cli command **build** process. Like this all applications are built into one ASP.NET Core application. All run on the same framework version. And all run on the same database and need not to be deployed individually. This requires all applications to have a distinct C# code namespace. And all applications need a distinct sql schema.
 
 ## Consolidate C# Code and SQL Scripts

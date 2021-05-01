@@ -1,4 +1,4 @@
-# Markdown Parser
+# Markdown Parser (Feature)
 
 The framework comes with a markdown (*.md) text parser. It contains a superset of: https://www.markdownguide.org/basic-syntax/
 

@@ -1,4 +1,4 @@
-# Feature Build Server (CI)
+# Build Server (CI) (Feature)
 In order to enable build server Continuous integration (CI) on GitHub actions, copy the file **main.yml** (from to)
 * Framework/Framework.Cli/Ci/github.com/main.yml
 * .github/workflows/main.yml

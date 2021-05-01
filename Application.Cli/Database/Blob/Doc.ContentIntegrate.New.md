@@ -1,4 +1,4 @@
-# Create a New Application
+# Create a New Application (Feature)
 To create a new WorkplaceX application go into an empty folder. Then run the following command:
 ```cmd
 npx workplacex-cli new

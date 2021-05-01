@@ -1,4 +1,4 @@
-# Feature Navigate Request
+# Navigate Request (Feature)
 
 WorkplaceX runs as single page application (SPA). The root component of every website is the classt **AppMain** derived from the class Framework.Json.AppJson. But how does **AppMain** know which data to display? There is two methods to override:
 

@@ -1,4 +1,4 @@
-# Feature Integrate
+# Integrate (Feature)
 This feature allows to read sql data and store it in C# code. It is part of the cli command **generate**. Such data can be embedded in:
 * Application
 * Cli
