@@ -7,7 +7,7 @@
         public PageContent(ComponentJson owner, string textHtml, string titleLong) : base(owner) 
         {
             var content = new Div(this) { CssClass = "content" };
-            new Html(content) { TextHtml = textHtml, IsNoSanatize = true }; // IsNoSanatize because of html id for named anchor.
+            new Html(content) { TextHtml = textHtml, IsNoSanatize = true, IsNoSanatizeScript = "Prism.highlightAll();" }; // IsNoSanatize because of html id for named anchor.
             this.ComponentOwner<AppJson>().Title = titleLong;
         }
     }

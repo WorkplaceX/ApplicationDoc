@@ -18,7 +18,7 @@
             GridContentMd = new GridContentMd(this);
             ButtonPublish = new Button(this) { TextHtml = "Publish", CssClass = "button is-primary" };
             var content = new Div(this) { CssClass = "content" };
-            Html = new Html(content) { IsNoSanatize = true }; // IsNoSanatize because of html id for named anchor.
+            Html = new Html(content) { IsNoSanatize = true, IsNoSanatizeScript = "Prism.highlightAll();" }; // IsNoSanatize because of html id for named anchor.
         }
 
         public Button ButtonPublish;
@@ -106,7 +106,7 @@
 
         protected override async Task UpdateAsync(UpdateArgs args, UpdateResult result)
         {
-            result.Row.TextHtml = UtilFramework.TextMdToHtml(args.Row.TextMd);
+            result.Row.TextHtml = UtilFramework.TextMdToHtml(args.Row.TextMd, this.ComponentOwner<AppMain>().CssFrameworkEnum);
             result.Row.SitemapDate = DateTime.UtcNow;
             await Data.UpdateAsync(result.Row);
             Data.RowCopy(result.Row, PageAdminContent.GridContent.RowSelect);
