@@ -9,6 +9,8 @@ The namespace Framework.Json contains all semantic components to build a logical
 
 
 ```csharp
+// File: Application/App/AppMain.cs
+
 namespace Application
 {
     using Framework.Json;

@@ -1,6 +1,8 @@
 # Web Application Framework
 WorkplaceX is an open source framework based on ASP.NET Core 5.0, SQL and Angular. It helps to streamline business application development and provides the following features “out of the box”:
 
+Youtube Link="https://www.youtube.com/embed/ORDp3uNPrSY"
+
 (Note)
 WorkplaceX applications run on **Windows** and **Linux** web servers.
 (Note)
@@ -14,8 +16,6 @@ WorkplaceX applications run on **Windows** and **Linux** web servers.
 * Data access to SQL server and/or memory
 * Multilanguage support
 * Configuration management
-
-(Youtube Link="https://www.youtube.com/embed/ORDp3uNPrSY")
 
 It standardizes and simplifies the process of building enterprise business applications on top of existing SQL Server Databases. It can be hosted on premise or in the cloud and is based on the following products:
 
