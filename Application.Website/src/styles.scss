@@ -7,6 +7,22 @@
   all: unset;
 }
 
+// Content reset for framework data gird
+.content-framework table td
+{
+  border:unset;
+  padding: unset;
+}
+.content-framework h1:first-child
+{
+  margin-top: 1em;
+}
+.content-framework h1
+{
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+}
+
 // Image shadow
 img {
   box-shadow: 8px 8px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 50%);

@@ -35,7 +35,7 @@ Deliver complex web applications, without having to touch Html or JavaScript whe
 # Live Example
 See a live example: [https://demo.WorkplaceX.org](https://demo.workplacex.org)
 
-## GitHub
+# GitHub
 Or download the source code from GitHub: **[ApplicationDemo](https://github.com/WorkplaceX/ApplicationDemo)** 
 
 Additionally, WorkplaceX business applications run also embedded in SharePoint or on any already existing company web page by just adding a few lines of html code.

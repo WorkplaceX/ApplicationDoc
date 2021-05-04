@@ -20,7 +20,7 @@
 
         public override async Task InitAsync()
         {
-            await new PageFeedback(this, NavigatePath).InitAsync();
+            await new PageFeedback(Content, NavigatePath).InitAsync();
         }
     }
 }

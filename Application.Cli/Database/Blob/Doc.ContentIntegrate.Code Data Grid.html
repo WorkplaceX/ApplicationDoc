@@ -1,9 +1,9 @@
-<h1><a id="from-database-to-data-grid" class="anchor" aria-hidden="true"></a>From Database to Data Grid</h1><p>This example shows how to bring an sql table or view directly to the browser including filtering, sorting, paging and Excel export.</p><img src="/assets/db-to-data-grid.png" alt="/assets/db-to-data-grid.png" /><p></p><h2><a id="create-sql-table" class="anchor" aria-hidden="true"></a>Create SQL Table</h2><p>First let's create a new database table.</p><pre><code class="language-sql">CREATE TABLE HelloWorld
+<h1><a id="from-database-to-data-grid" class="anchor" aria-hidden="true"></a>From Database to Data Grid</h1><p>This example shows how to bring an sql table or view directly to the browser including filtering, sorting, paging and Excel export.</p><img src="/assets/db-to-data-grid.png" alt="/assets/db-to-data-grid.png" /><h2><a id="create-sql-table" class="anchor" aria-hidden="true"></a>Create SQL Table</h2><p>First let's create a new database table.</p><pre><code class="language-sql">CREATE TABLE HelloWorld
 (
     Id INT PRIMARY KEY IDENTITY,
     Text NVARCHAR(256),
     Number FLOAT
-)</code></pre><p></p><h2><a id="generate-c#-code" class="anchor" aria-hidden="true"></a>Generate C# Code</h2><p>Next we need C# code for this table. Run command line:</p><pre><code class="language-cmd">wpx generate</code></pre><p>This generates the following code for us:</p><p></p><pre><code class="language-csharp">// File: Application.Database/Database/Database.cs
+)</code></pre><h2><a id="generate-c#-code" class="anchor" aria-hidden="true"></a>Generate C# Code</h2><p>Next we need C# code for this table. Run command line:</p><pre><code class="language-cmd">wpx generate</code></pre><p>This generates the following code for us:</p><pre><code class="language-csharp">// File: Application.Database/Database/Database.cs
 
 namespace Database.dbo
 {
@@ -22,7 +22,7 @@ namespace Database.dbo
         [SqlField(&quot;Number&quot;, FrameworkTypeEnum.Float)]
         public double? Number { get; set; }
     }
-}</code></pre><p></p><h2><a id="show-data-in-web-app" class="anchor" aria-hidden="true"></a>Show Data in Web App</h2><p>In order to load the data grid write:</p><pre><code class="language-csharp">// File: Application/App/AppMain.cs
+}</code></pre><h2><a id="show-data-in-web-app" class="anchor" aria-hidden="true"></a>Show Data in Web App</h2><p>In order to load the data grid write:</p><pre><code class="language-csharp">// File: Application/App/AppMain.cs
 
 namespace Application.Doc
 {

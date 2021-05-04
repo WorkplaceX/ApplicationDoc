@@ -24,7 +24,7 @@
 
         public override async Task InitAsync()
         {
-            new Html(this) { TextHtml = "<h1 class='title'>Feedback <i class='far fa-comment'></i></h1><p>Provide feedback to this page if you have any question regarding content or something should get updated.</p>" };
+            new Html(this) { TextHtml = "<h1 class='title'>Feedback <i class='far fa-comment'></i></h1><p>Provide feedback to this page if you have any question regarding content or something should get updated.</p><div></div>" };
 
             await new GridFeedback(this).LoadAsync();
 
