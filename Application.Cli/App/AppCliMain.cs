@@ -104,6 +104,11 @@
             result.AddKey<Content>(nameof(Content.Name));
             result.AddBlob<ContentIntegrate>(nameof(Content.TextMd), (row) => row.IdName + ".md");
             result.AddBlob<ContentIntegrate>(nameof(Content.TextHtml), (row) => row.IdName + ".html");
+
+            // Feedback
+            result.Add(Data.Query<Feedback>().OrderBy(item => item.Name));
+            result.AddKey<Feedback>(nameof(Feedback.Name));
+            result.AddBlob<Feedback>(nameof(Feedback.AttachmentData), (row) => row.Name + "." + row.AttachmentFileName);
         }
 
         /// <summary>
@@ -131,6 +136,9 @@
 
             // Content
             result.Add(ContentIntegrateAppCli.RowList);
+
+            // Feedback
+            result.Add(FeedbackAppCli.RowList);
         }
     }
 }

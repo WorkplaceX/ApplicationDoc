@@ -1,4 +1,4 @@
-﻿GoogleAnalyticsICREATE TABLE Doc.Navigate
+﻿CREATE TABLE Doc.Navigate
 (
     Id INT PRIMARY KEY IDENTITY,
     ParentId INT FOREIGN KEY REFERENCES Doc.Navigate(Id), -- ParentId Integrate naming convention for hierarchical structure.

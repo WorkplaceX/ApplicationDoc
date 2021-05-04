@@ -76,6 +76,83 @@ namespace Database.Doc
         public string IdName { get; set; }
     }
 
+    [SqlTable("Doc", "Feedback")]
+    public class Feedback : Row
+    {
+        [SqlField("Id", true, FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField("Name", FrameworkTypeEnum.Uniqueidentifier)]
+        public Guid? Name { get; set; }
+
+        [SqlField("Email", FrameworkTypeEnum.Nvarcahr)]
+        public string Email { get; set; }
+
+        [SqlField("Message", FrameworkTypeEnum.Nvarcahr)]
+        public string Message { get; set; }
+
+        [SqlField("AttachmentFileName", FrameworkTypeEnum.Nvarcahr)]
+        public string AttachmentFileName { get; set; }
+
+        [SqlField("AttachmentData", FrameworkTypeEnum.Varbinary)]
+        public byte[] AttachmentData { get; set; }
+
+        [SqlField("Time", FrameworkTypeEnum.Datetime)]
+        public DateTime? Time { get; set; }
+
+        [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigatePath { get; set; }
+
+        [SqlField("IpAddress", FrameworkTypeEnum.Nvarcahr)]
+        public string IpAddress { get; set; }
+
+        [SqlField("UserAgent", FrameworkTypeEnum.Nvarcahr)]
+        public string UserAgent { get; set; }
+
+        [SqlField("IsDone", FrameworkTypeEnum.Bit)]
+        public bool? IsDone { get; set; }
+    }
+
+    [SqlTable("Doc", "FeedbackIntegrate")]
+    public class FeedbackIntegrate : Row
+    {
+        [SqlField("Id", FrameworkTypeEnum.Int)]
+        public int Id { get; set; }
+
+        [SqlField("Name", FrameworkTypeEnum.Uniqueidentifier)]
+        public Guid? Name { get; set; }
+
+        [SqlField("Email", FrameworkTypeEnum.Nvarcahr)]
+        public string Email { get; set; }
+
+        [SqlField("Message", FrameworkTypeEnum.Nvarcahr)]
+        public string Message { get; set; }
+
+        [SqlField("AttachmentFileName", FrameworkTypeEnum.Nvarcahr)]
+        public string AttachmentFileName { get; set; }
+
+        [SqlField("AttachmentData", FrameworkTypeEnum.Varbinary)]
+        public byte[] AttachmentData { get; set; }
+
+        [SqlField("Time", FrameworkTypeEnum.Datetime)]
+        public DateTime? Time { get; set; }
+
+        [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigatePath { get; set; }
+
+        [SqlField("IpAddress", FrameworkTypeEnum.Nvarcahr)]
+        public string IpAddress { get; set; }
+
+        [SqlField("UserAgent", FrameworkTypeEnum.Nvarcahr)]
+        public string UserAgent { get; set; }
+
+        [SqlField("IsDone", FrameworkTypeEnum.Bit)]
+        public bool? IsDone { get; set; }
+
+        [SqlField("IdName", FrameworkTypeEnum.Uniqueidentifier)]
+        public Guid? IdName { get; set; }
+    }
+
     [SqlTable("Doc", "Language")]
     public class Language : Row
     {

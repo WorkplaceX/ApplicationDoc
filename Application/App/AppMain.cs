@@ -85,7 +85,7 @@
                 }
             }
 
-            // Download file
+            // Download file (assets)
             if (args.IsFileName("/assets/", out string fileName))
             {
                 var row = (await Data.Query<StorageFile>().Where(item => item.FileName == fileName).QueryExecuteAsync()).SingleOrDefault();
@@ -99,7 +99,21 @@
                     return;
                 }
             }
-         
+
+            // Download File (feedback)
+            if (args.IsFileName("/feedback/", out var fileNameFeedback))
+            {
+                if (Guid.TryParse(fileNameFeedback, out var name))
+                {
+                    var row = (await Data.Query<Feedback>().Where(item => item.Name == name).QueryExecuteAsync()).SingleOrDefault();
+                    if (row != null)
+                    {
+                        result.Data = row.AttachmentData;
+                        return;
+                    }
+                }
+            }
+
             // Request session deserialize
             result.IsSession = true;
         }
@@ -117,11 +131,11 @@
                 if (row.IsContent)
                 {
                     string name = row.Name;
-                    var contentPage = (await Data.Query<Content>().Where(item => item.Name == name).QueryExecuteAsync()).FirstOrDefault();
-                    if (contentPage != null)
+                    var content = (await Data.Query<Content>().Where(item => item.Name == name).QueryExecuteAsync()).FirstOrDefault();
+                    if (content != null)
                     {
                         PageMain.Content.ComponentListClear();
-                        new PageContent(PageMain.Content, contentPage.TextHtml, contentPage.TitleLong);
+                        await new PageContent(PageMain.Content, content).InitAsync();
                         return;
                     }
                 }
