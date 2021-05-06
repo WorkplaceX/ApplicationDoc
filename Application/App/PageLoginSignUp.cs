@@ -81,6 +81,14 @@
             result.GridMode = GridMode.Stack;
         }
 
+        protected override void CellAnnotation(AnnotationArgs args, AnnotationResult result)
+        {
+            if (args.FieldName == nameof(LoginUser.PasswordHash) || args.FieldName == nameof(LoginUser.PasswordSalt))
+            {
+                result.IsPassword = true;
+            }
+        }
+
         protected override Task UpdateAsync(UpdateArgs args, UpdateResult result)
         {
             LoginUserList[0] = args.Row;

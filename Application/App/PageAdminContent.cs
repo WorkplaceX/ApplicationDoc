@@ -59,7 +59,7 @@
 
         protected override void Query(QueryArgs args, QueryResult result)
         {
-            result.Query = Data.Query<Content>().OrderBy(item => item.NavigatePath);
+            result.Query = Data.Query<Content>().OrderBy(item => item.NavigateTree);
         }
 
         protected override async Task RowSelectAsync()

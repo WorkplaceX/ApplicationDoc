@@ -31,7 +31,7 @@
             if (Button.IsClick)
             {
                 var loginUserSession = (LoginUser)Grid.RowSelect;
-                var loginUserRoleAppList = (await Data.Query<LoginUserRoleApp>().Where(item => item.LoginUserName == loginUserSession.Name).QueryExecuteAsync());
+                var loginUserRoleAppList = (await Data.Query<LoginUserRoleApp>().Where(item => item.LoginUserName == loginUserSession.Name && item.LoginUserRoleIsActive == true).QueryExecuteAsync());
                 if (!loginUserRoleAppList.Any())
                 {
                     this.AlertError = new Alert(this, "Username or password wrong!", AlertEnum.Error);
