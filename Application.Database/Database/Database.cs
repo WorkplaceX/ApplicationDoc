@@ -191,8 +191,8 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
-        [SqlField("Sort", FrameworkTypeEnum.Float)]
-        public double? Sort { get; set; }
+        [SqlField("Description", FrameworkTypeEnum.Nvarcahr)]
+        public string Description { get; set; }
     }
 
     [SqlTable("Doc", "LoginRoleIntegrate")]
@@ -204,8 +204,8 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
-        [SqlField("Sort", FrameworkTypeEnum.Float)]
-        public double? Sort { get; set; }
+        [SqlField("Description", FrameworkTypeEnum.Nvarcahr)]
+        public string Description { get; set; }
 
         [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
         public string IdName { get; set; }
@@ -220,8 +220,20 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
-        [SqlField("Password", FrameworkTypeEnum.Nvarcahr)]
-        public string Password { get; set; }
+        [SqlField("NameFirst", FrameworkTypeEnum.Nvarcahr)]
+        public string NameFirst { get; set; }
+
+        [SqlField("NameLast", FrameworkTypeEnum.Nvarcahr)]
+        public string NameLast { get; set; }
+
+        [SqlField("Email", FrameworkTypeEnum.Nvarcahr)]
+        public string Email { get; set; }
+
+        [SqlField("PasswordHash", FrameworkTypeEnum.Nvarcahr)]
+        public string PasswordHash { get; set; }
+
+        [SqlField("PasswordSalt", FrameworkTypeEnum.Nvarcahr)]
+        public string PasswordSalt { get; set; }
 
         [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
         public bool IsIntegrate { get; set; }
@@ -239,8 +251,20 @@ namespace Database.Doc
         [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
         public string Name { get; set; }
 
-        [SqlField("Password", FrameworkTypeEnum.Nvarcahr)]
-        public string Password { get; set; }
+        [SqlField("NameFirst", FrameworkTypeEnum.Nvarcahr)]
+        public string NameFirst { get; set; }
+
+        [SqlField("NameLast", FrameworkTypeEnum.Nvarcahr)]
+        public string NameLast { get; set; }
+
+        [SqlField("Email", FrameworkTypeEnum.Nvarcahr)]
+        public string Email { get; set; }
+
+        [SqlField("PasswordHash", FrameworkTypeEnum.Nvarcahr)]
+        public string PasswordHash { get; set; }
+
+        [SqlField("PasswordSalt", FrameworkTypeEnum.Nvarcahr)]
+        public string PasswordSalt { get; set; }
 
         [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
         public bool IsIntegrate { get; set; }
@@ -277,8 +301,11 @@ namespace Database.Doc
         [SqlField("LoginUserName", FrameworkTypeEnum.Nvarcahr)]
         public string LoginUserName { get; set; }
 
-        [SqlField("LoginUserPassword", FrameworkTypeEnum.Nvarcahr)]
-        public string LoginUserPassword { get; set; }
+        [SqlField("LoginUserPasswordHash", FrameworkTypeEnum.Nvarcahr)]
+        public string LoginUserPasswordHash { get; set; }
+
+        [SqlField("LoginUserPasswordSalt", FrameworkTypeEnum.Nvarcahr)]
+        public string LoginUserPasswordSalt { get; set; }
 
         [SqlField("LoginRoleName", FrameworkTypeEnum.Nvarcahr)]
         public string LoginRoleName { get; set; }

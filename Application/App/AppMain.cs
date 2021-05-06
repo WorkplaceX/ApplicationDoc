@@ -31,8 +31,8 @@
         {
             if (args.Grid != null)
             {
-                // IsShowConfig for LoginRole Developer, Admin
-                result.GridIsShowConfig = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Developer.IdName() || item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Admin.IdName()).Any();
+                // IsShowConfig for LoginRole Admin
+                result.GridIsShowConfig = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Admin.IdName()).Any();
 
                 // IsShowConfigDeveloper for LoginRole Developer
                 result.GridIsShowConfigDeveloper = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Developer.IdName()).Any();

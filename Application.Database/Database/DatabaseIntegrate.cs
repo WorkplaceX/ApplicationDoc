@@ -78,10 +78,10 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginUserIntegrate>
                 {
-                    new LoginUserIntegrate { Id = 0, Name = "a", Password = null, IsIntegrate = true, IsDelete = false, IdName = "a" },
-                    new LoginUserIntegrate { Id = 0, Name = "c", Password = null, IsIntegrate = true, IsDelete = false, IdName = "c" },
-                    new LoginUserIntegrate { Id = 0, Name = "d", Password = null, IsIntegrate = true, IsDelete = false, IdName = "d" },
-                    new LoginUserIntegrate { Id = 0, Name = "Guest", Password = null, IsIntegrate = true, IsDelete = false, IdName = "Guest" },
+                    new LoginUserIntegrate { Id = 0, Name = "a", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "a" },
+                    new LoginUserIntegrate { Id = 0, Name = "c", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "c" },
+                    new LoginUserIntegrate { Id = 0, Name = "d", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "d" },
+                    new LoginUserIntegrate { Id = 0, Name = "Guest", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "Guest" },
                 };
                 return result;
             }
@@ -90,7 +90,7 @@ namespace DatabaseIntegrate.Doc
 
     public static class LoginRoleIntegrateApp
     {
-        public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("Customer")]Customer = -2, [IdEnum("Developer")]Developer = -3, [IdEnum("Guest")]Guest = -4, [IdEnum("Login")]Login = -5 }
+        public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("Customer")]Customer = -2, [IdEnum("Developer")]Developer = -3, [IdEnum("Guest")]Guest = -4, [IdEnum("LoginShow")]LoginShow = -5 }
 
         public static LoginRoleIntegrate Row(this IdEnum value)
         {
@@ -118,11 +118,11 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginRoleIntegrate>
                 {
-                    new LoginRoleIntegrate { Id = 0, Name = "Admin", Sort = 2, IdName = "Admin" },
-                    new LoginRoleIntegrate { Id = 0, Name = "Customer", Sort = 4, IdName = "Customer" },
-                    new LoginRoleIntegrate { Id = 0, Name = "Developer", Sort = 1, IdName = "Developer" },
-                    new LoginRoleIntegrate { Id = 0, Name = "Guest", Sort = 3, IdName = "Guest" },
-                    new LoginRoleIntegrate { Id = 0, Name = "Login", Sort = 5, IdName = "Login" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Admin", Description = null, IdName = "Admin" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Customer", Description = null, IdName = "Customer" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Developer", Description = null, IdName = "Developer" },
+                    new LoginRoleIntegrate { Id = 0, Name = "Guest", Description = "User not logged in", IdName = "Guest" },
+                    new LoginRoleIntegrate { Id = 0, Name = "LoginShow", Description = "Show sign up and login button", IdName = "LoginShow" },
                 };
                 return result;
             }

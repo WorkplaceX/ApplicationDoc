@@ -2,8 +2,12 @@
 CREATE TABLE Doc.LoginUser
 (
     Id INT PRIMARY KEY IDENTITY,
-    Name NVARCHAR(256) NOT NULL UNIQUE, -- Email
-    Password NVARCHAR(256),
+    Name NVARCHAR(256) NOT NULL UNIQUE, -- Username
+    NameFirst NVARCHAR(256),
+    NameLast NVARCHAR(256),
+    Email NVARCHAR(256),
+    PasswordHash NVARCHAR(128),
+    PasswordSalt NVARCHAR(128),
     IsIntegrate BIT NOT NULL, -- Built into CSharp code with IdNameEnum and deployed with cli deployDb command
     IsDelete BIT NOT NULL,
 )
@@ -21,7 +25,7 @@ CREATE TABLE Doc.LoginRole
 (
     Id INT PRIMARY KEY IDENTITY,
     Name NVARCHAR(256) NOT NULL UNIQUE,
-    Sort FLOAT,
+    Description NVARCHAR(512)
 )
 GO
 CREATE VIEW Doc.LoginRoleIntegrate AS
@@ -69,7 +73,8 @@ CREATE VIEW Doc.LoginUserRoleApp AS -- Used by application only
 SELECT
     LoginUser.Id AS LoginUserId,
     LoginUser.Name AS LoginUserName,
-    LoginUser.Password AS LoginUserPassword,
+    LoginUser.PasswordHash AS LoginUserPasswordHash,
+    LoginUser.PasswordSalt AS LoginUserPasswordSalt,
     LoginRole.Name AS LoginRoleName,
     LoginUserRole.IsActive AS LoginUserRoleIsActive
 FROM
