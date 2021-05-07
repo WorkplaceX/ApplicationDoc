@@ -7,20 +7,34 @@
   all: unset;
 }
 
-// Content reset for framework data gird
-.content-framework table td
+// Bulma content reset for framework data gird
+.content-bulma-framework table td
 {
-  border:unset;
+  border: unset;
   padding: unset;
 }
-.content-framework h1:first-child
+.content-bulma-framework h1:first-child
 {
   margin-top: 1em;
 }
-.content-framework h1
+.content-bulma-framework h1
 {
   margin-bottom: 0.5em;
   font-size: 2rem;
+}
+
+// Bulma modal window
+.modal-bulma-framework {
+  width: 75%;
+}
+.modal-bulma-framework h1:first-child
+{
+  margin-top: unset;
+}
+.modal-bulma-framework h1
+{
+  margin-top: unset;
+  margin-bottom: unset;
 }
 
 // Image shadow

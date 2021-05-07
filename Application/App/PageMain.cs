@@ -20,7 +20,7 @@
             new Custom01(this);
 
             Container = new Div(this) { CssClass = "container" };
-            Content = new Div(Container) { CssClass = "content content-framework" };
+            Content = new Div(Container) { CssClass = "content content-bulma-framework" };
 
             GridNavigate = new GridNavigate(this) { IsHide = true };
             GridLanguage = new Grid<Language>(this) { IsHide = true };
