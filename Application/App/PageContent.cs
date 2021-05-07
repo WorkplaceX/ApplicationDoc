@@ -11,6 +11,7 @@
             Content = new Div(this) { CssClass = "content" };
             new Html(Content) { TextHtml = content.TextHtml, IsNoSanatize = true, IsNoSanatizeScript = "Prism.highlightAll();" }; // IsNoSanatize because of html id for named anchor.
             this.ComponentOwner<AppJson>().Title = content.TitleLong;
+            this.ComponentOwner<AppJson>().Description = content.Description;
             NavigatePath = content.NavigatePath;
         }
 

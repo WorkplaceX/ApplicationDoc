@@ -9,6 +9,7 @@ CREATE TABLE Doc.Content
     TitleLong NVARCHAR(256),
     TextMd NVARCHAR(MAX),
     TextHtml NVARCHAR(MAX),
+    Description NVARCHAR(MAX), -- Html meta description
     Sort FLOAT,
     SitemapDate DATETIME2
 )

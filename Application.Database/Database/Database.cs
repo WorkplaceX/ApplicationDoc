@@ -32,6 +32,9 @@ namespace Database.Doc
         [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
         public string TextHtml { get; set; }
 
+        [SqlField("Description", FrameworkTypeEnum.Nvarcahr)]
+        public string Description { get; set; }
+
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
 
@@ -65,6 +68,9 @@ namespace Database.Doc
 
         [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
         public string TextHtml { get; set; }
+
+        [SqlField("Description", FrameworkTypeEnum.Nvarcahr)]
+        public string Description { get; set; }
 
         [SqlField("Sort", FrameworkTypeEnum.Float)]
         public double? Sort { get; set; }
