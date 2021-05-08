@@ -1,4 +1,4 @@
-# Local IIS Server
+# Local IIS Server <i class="fas fa-server"></i>
 WorkplaceX web application runs on local IIS server on Windows 10.
 
 In order to run .NET applications on local IIS server install:

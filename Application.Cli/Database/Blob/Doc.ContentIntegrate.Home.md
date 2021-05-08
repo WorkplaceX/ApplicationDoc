@@ -1,4 +1,4 @@
-# Web Application Framework
+# Web Application Framework <i class="fas fa-home"></i>
 WorkplaceX is an open source framework based on ASP.NET Core 5.0, SQL and Angular. It helps to streamline business application development and provides the following features “out of the box”:
 
 Youtube Link="https://www.youtube.com/embed/ORDp3uNPrSY"
@@ -32,10 +32,10 @@ Deliver complex web applications, without having to touch Html or JavaScript whe
 * [GitHub Actions](https://github.com/features/actions)
 * [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 
-# Live Example
+# Live Example <i class="fas fa-running"></i>
 See a live example: [https://demo.WorkplaceX.org](https://demo.workplacex.org)
 
-# GitHub
+# GitHub <i class="fab fa-github"></i>
 Or download the source code from GitHub: **[ApplicationDemo](https://github.com/WorkplaceX/ApplicationDemo)** 
 
 Additionally, WorkplaceX business applications run also embedded in SharePoint or on any already existing company web page by just adding a few lines of html code.
