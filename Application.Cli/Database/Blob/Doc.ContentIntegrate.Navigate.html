@@ -1,4 +1,4 @@
-<h1><a id="navigate-request-(feature)" class="anchor" aria-hidden="true"></a>Navigate Request (Feature)</h1><p>WorkplaceX runs as single page application (SPA). The root component of every website is the classt <strong>AppMain</strong> derived from the class Framework.Json.AppJson. But how does <strong>AppMain</strong> know which data to display? There is two methods to override:</p><ul><li>Method <strong>NavigateAsync();</strong> is used to serve static requests which do not need session data. For example to serve a publicly available (*.pdf) file.</li><li>Method <strong>NavigateSessionAsync();</strong> is used to serve requests which need session data. For example the user navigates to the url path /about/. The program can now prepare to display and serve the /about/ page.</li></ul><article class="message is-info"><div class="message-body"><p>In WorkplaceX a <strong>Page</strong> is nothing else than a json component like a <strong>Button</strong> or any other component. The application root json component is <strong>AppMain</strong>. In the method <strong>NavigateSessionAsync();</strong> the json tree is just updated according the incoming url request.</p></div></article><h2><a id="example-home,-about-and-page-not-found" class="anchor" aria-hidden="true"></a>Example Home, About and Page not Found</h2><p>Following example has three pages:</p><ul><li>Home (localhost:5000/)</li><li>About (localhost:5000/about/)</li><li>Page Not Found (localhost:5000/anyotherurl</li></ul><pre><code class="language-csharp">namespace Application
+<h1><a id="navigate-request-(feature)" class="anchor" aria-hidden="true" href="#navigate-request-(feature)"></a>Navigate Request (Feature)</h1><p>WorkplaceX runs as single page application (SPA). The root component of every website is the classt <strong>AppMain</strong> derived from the class Framework.Json.AppJson. But how does <strong>AppMain</strong> know which data to display? There is two methods to override:</p><ul><li>Method <strong>NavigateAsync();</strong> is used to serve static requests which do not need session data. For example to serve a publicly available (*.pdf) file.</li><li>Method <strong>NavigateSessionAsync();</strong> is used to serve requests which need session data. For example the user navigates to the url path /about/. The program can now prepare to display and serve the /about/ page.</li></ul><article class="message is-info"><div class="message-body"><p>In WorkplaceX a <strong>Page</strong> is nothing else than a json component like a <strong>Button</strong> or any other component. The application root json component is <strong>AppMain</strong>. In the method <strong>NavigateSessionAsync();</strong> the json tree is just updated according the incoming url request.</p></div></article><h2><a id="example-home,-about-and-page-not-found" class="anchor" aria-hidden="true" href="#example-home,-about-and-page-not-found"></a>Example Home, About and Page not Found</h2><p>Following example has three pages:</p><ul><li>Home (localhost:5000/)</li><li>About (localhost:5000/about/)</li><li>Page Not Found (localhost:5000/anyotherurl</li></ul><pre><code class="language-csharp">namespace Application
 {
     using Framework.Json;
     using System.Threading.Tasks;
@@ -64,7 +64,7 @@
             new Html(this) { TextHtml = &quot;Page not Found!&quot; };
         }
     }
-}</code></pre><h2><a id="download-public-file" class="anchor" aria-hidden="true"></a>Download Public File</h2><p>Following example shows how to serve a simple public request to download file localhost:5000/my.txt:</p><pre><code class="language-csharp">namespace Application
+}</code></pre><h2><a id="download-public-file" class="anchor" aria-hidden="true" href="#download-public-file"></a>Download Public File</h2><p>Following example shows how to serve a simple public request to download file localhost:5000/my.txt:</p><pre><code class="language-csharp">namespace Application
 {
     using Framework.Json;
     using System.Text;
@@ -83,7 +83,7 @@
         }
     }
 }
-</code></pre><h2><a id="download-private-file" class="anchor" aria-hidden="true"></a>Download Private File</h2><p>Following example shows how to download a private file (for example a customer bill). It only can be downloaded if the customer logged on (or in this example clicked the login button first):</p><pre><code class="language-csharp">namespace Application
+</code></pre><h2><a id="download-private-file" class="anchor" aria-hidden="true" href="#download-private-file"></a>Download Private File</h2><p>Following example shows how to download a private file (for example a customer bill). It only can be downloaded if the customer logged on (or in this example clicked the login button first):</p><pre><code class="language-csharp">namespace Application
 {
     using Framework.Json;
     using System.Text;
@@ -132,7 +132,7 @@
             return base.NavigateSessionAsync(args, result);
         }
     }
-}</code></pre><h2><a id="trailing-slash" class="anchor" aria-hidden="true"></a>Trailing Slash</h2><p>Following example shows how to forward a request to a trailing slash:</p><ul><li>localhost:5000/about</li><li>localhost:5000/about/</li></ul><pre><code class="language-csharp">namespace Application
+}</code></pre><h2><a id="trailing-slash" class="anchor" aria-hidden="true" href="#trailing-slash"></a>Trailing Slash</h2><p>Following example shows how to forward a request to a trailing slash:</p><ul><li>localhost:5000/about</li><li>localhost:5000/about/</li></ul><pre><code class="language-csharp">namespace Application
 {
     using Framework.Json;
     using System.Threading.Tasks;
