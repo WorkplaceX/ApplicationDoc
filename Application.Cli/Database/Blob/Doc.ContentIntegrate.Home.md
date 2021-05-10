@@ -5,11 +5,11 @@ WorkplaceX is an open source framework based on ASP.NET Core 5.0, SQL and Angula
 **Info:** WorkplaceX applications run on **Windows** and **Linux** web servers.
 (Note)
 
-(Image Src="/assets/data-grid-tile.png" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY" Title="Spreadsheet" Description="Edit business data with with spreadsheet like data grid in browser")
-(Image Src="/assets/config.jpg" Href="/config/" Title="Configuration" Description="Every field can be configured")
-(Image Src="/assets/language.jpg" Href="/" Title="Multilanguage" Description="WorkplaceX framework comes with native built in multi language support.")
+(Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY" Title="Spreadsheet" Description="Edit business data with with spreadsheet like data grid in browser")
+(Image Src="/assets/config.jpg" Href="/config/" Title="Configuration" Description="Every data grid and field can be configured")
+(Image Src="/assets/language.jpg" Href="/" Title="Multilanguage" Description="WorkplaceX framework comes with native built in multi language support")
 (Image Src="/assets/database.jpg" Href="/" Title="Database" Description="Framework runs on MS-SQL server")
-(Image Src="/assets/markdown.jpg" Href="/md-markdown/" Title="Content" Description="Manage your business data (ERP) and your content with the built in content management system (CMS).")
+(Image Src="/assets/markdown.jpg" Href="/md-markdown/" Title="Content" Description="Manage business data (ERP) and content with the built in content management system (CMS).")
 (Image Src="/assets/cloud.jpg" Href="/" Title="Cloud Hosting" Description="Deploy application to Azure with one CLI command")
 
 * Data grids (high performance with millions of records and hundreds of columns)
