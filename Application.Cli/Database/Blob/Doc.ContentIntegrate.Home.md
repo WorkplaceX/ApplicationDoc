@@ -1,11 +1,16 @@
 # Web Application Framework <i class="fas fa-home"></i>
 WorkplaceX is an open source framework based on ASP.NET Core 5.0, SQL and Angular. It helps to streamline business application development and provides the following features “out of the box”:
 
-Youtube Link="https://www.youtube.com/embed/ORDp3uNPrSY"
+(Note)
+**Info:** WorkplaceX applications run on **Windows** and **Linux** web servers.
+(Note)
 
-(Note)
-WorkplaceX applications run on **Windows** and **Linux** web servers.
-(Note)
+(Image Src="/assets/data-grid-tile.png" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY" Title="Spreadsheet" Description="Edit business data with with spreadsheet like data grid in browser")
+(Image Src="/assets/config.jpg" Href="/config/" Title="Configuration" Description="Every field can be configured")
+(Image Src="/assets/language.jpg" Href="/" Title="Multilanguage" Description="WorkplaceX framework comes with native built in multi language support.")
+(Image Src="/assets/database.jpg" Href="/" Title="Database" Description="Framework runs on MS-SQL server")
+(Image Src="/assets/markdown.jpg" Href="/md-markdown/" Title="Content" Description="Manage your business data (ERP) and your content with the built in content management system (CMS).")
+(Image Src="/assets/cloud.jpg" Href="/" Title="Cloud Hosting" Description="Deploy application to Azure with one CLI command")
 
 * Data grids (high performance with millions of records and hundreds of columns)
 * Paging (horizontal and vertical), sorting, filtering

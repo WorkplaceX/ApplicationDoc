@@ -77,7 +77,7 @@
         {
             var row = new StorageFile();
             Data.RowCopy(args.Row, row);
-            if (args.FileUpload != null)
+            if (args.FileUpload.Data != null)
             {
                 row.Data = args.FileUpload.Data;
             }
@@ -85,7 +85,6 @@
             { 
                 row.Data = (await Data.Query<StorageFile>().Where(item => item.Id == row.Id).QueryExecuteAsync()).Single().Data;
             }
-            row.IsIntegrate = true;
             await Data.UpdateAsync(row);
             result.IsHandled = true;
         }
