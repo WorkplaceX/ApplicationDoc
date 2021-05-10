@@ -1,7 +1,7 @@
 # About <i class="fas fa-info-circle"></i>
 WorkplaceX is an initiative to standardize and streamline the development of business applications. It is based on ASP.NET Core, Angular, SQL Server, Bootstrap or Bulma. **No further third party** components are used. And it's all open source.
 
-![](/assets/pillar.png)
+(Image Src="/assets/pillar.png")
 
 ## Support <i class="fas fa-at"></i>
 We provide online support. Send us an email to **info(at)workplacex.org**
@@ -15,3 +15,5 @@ Your support is vital in enabling Workplacex.org initiative to fulfill its missi
 * Give us a star on GitHub
 * Submit a pull request
 * Use it for your next project
+
+(Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY")

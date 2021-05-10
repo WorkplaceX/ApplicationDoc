@@ -6,6 +6,8 @@ The following components need to be installed on the machine as prerequisite:
 
 Web [Application Demo](https://github.com/WorkplaceX/ApplicationDemo) is a comprehensive example to get started with:
 
+(Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY")
+
 ## Install
 ```cmd
 ### Git clone (parameter recursive clones also required submodule Framework):

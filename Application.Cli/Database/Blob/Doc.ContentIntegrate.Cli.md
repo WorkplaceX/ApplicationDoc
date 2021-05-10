@@ -14,3 +14,8 @@ List of CLI commands:
 * test (run all unit tests)
 
 ![](/assets/cli.png)
+
+## See also:
+
+(Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY" Title="Spreadsheet" Description="Edit business data (ERP) with with spreadsheet like data grid in browser")
+(Image Src="/assets/continues-integration.jpg" Href="/continues-integration/" Title="Continues Integration" Description="Update application with continues integration (CI)")

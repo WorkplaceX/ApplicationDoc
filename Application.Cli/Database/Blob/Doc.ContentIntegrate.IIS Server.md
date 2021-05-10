@@ -10,3 +10,7 @@ For SSL see: [SSL Installation](https://github.com/WorkplaceX/Util/tree/master/S
 
 After successful installation Windows "add remove programs" should look like this:
 ![](/assets/iis.png)
+
+## See also:
+(Image Src="/assets/continues-integration.jpg" Href="/continues-integration/" Title="Continues Integration" Description="Update application with continues integration (CI)")
+(Image Src="/assets/architecture.jpg" Href="/architecture/" Title="Architecture" Description="Article explains difference between CLI and Web application and how they work together")

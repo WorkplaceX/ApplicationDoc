@@ -1,0 +1,16 @@
+<h1><a id="deploy-(feature)" class="anchor" aria-hidden="true" href="#deploy-(feature)"></a>Deploy (Feature)</h1><p>Deploy a new version of the application to a local IIS server or to Azure App Service. The following configuration contains two entries:</p><ul><li>Deploy to local path. (C:/Temp/Publish/). Typically a local IIS server folder.</li><li>Deploy to Azure App Service (azurewebsites.net)</li></ul><pre><code class="language-json">// File ConfigCli.json
+
+{
+  &quot;EnvironmentName&quot;: &quot;DEV&quot;,
+  &quot;EnvironmentList&quot;: [
+    {
+      &quot;EnvironmentName&quot;: &quot;DEV&quot;,
+      &quot;IsUseDeveloperExceptionPage&quot;: true,
+      &quot;IsRedirectHttps&quot;: false,
+      &quot;IsRedirectWww&quot;: false,
+      &quot;ConnectionStringFramework&quot;: &quot;Data Source=localhost; Initial Catalog=ApplicationDoc; Integrated Security=True;&quot;,
+      &quot;ConnectionStringApplication&quot;: &quot;Data Source=localhost; Initial Catalog=ApplicationDoc; Integrated Security=True;&quot;,
+      &quot;DeployAzureGitUrl&quot;: &quot;https://User:Password@my.scm.azurewebsites.net:443/my.git&quot;,
+      &quot;DeployLocalFolderName&quot;: &quot;C:/Temp/Publish/&quot;
+    },
+...</code></pre><p>Start deployment of application with the following command:</p><pre><code class="language-cmd">npx deploy --azure</code></pre><p>In order to deploy to a local IIS server use the option <strong>--local</strong>.</p><h2><a id="azure-configuration" class="anchor" aria-hidden="true" href="#azure-configuration"></a>Azure Configuration</h2><p>It might be necessary to set the node version (for Angular server side rendering SSR) on the Azure portal. It is found here: </p><p>"Configuration / Application settings / Name (<strong>WEBSITE_NODE_DEFAULT_VERSION</strong>) / Value (12.18.0)"</p><p>The git url is the git repository to deploy to in order to update a website. It can be found under "properties / Git Url"</p><h2><a id="angular-server-side-rendering-status" class="anchor" aria-hidden="true" href="#angular-server-side-rendering-status"></a>Angular Server Side Rendering Status</h2><p>Server side rendering module turns a json object into html. It does never access any data on database or on ASP.NET Core. It's status can be tested by opening the following url:</p><ul><li><a href="http://localhost:4001/">http://localhost:4001/</a> (Application running in Visual Studio)</li><li><a href="https://www.workplacex.org/Framework/Application.Website/Website01/server/main.js">https://www.workplacex.org/Framework/Application.Website/Website01/server/main.js</a> (Application running on IIS)</li></ul><div class="framework-image columns is-multiline"><div class="column is-one-third-desktop is-half-tablet"><a href="/continues-integration/"><img src="/assets/continues-integration.jpg"><h1>Continues Integration</h1><p>Update application with continues integration (CI)</p></a></div><div class="column is-one-third-desktop is-half-tablet"><a href="/architecture/"><img src="/assets/architecture.jpg"><h1>Architecture</h1><p>Article explains difference between CLI and Web application and how they work together</p></a></div><!-- framework-image --></div>
