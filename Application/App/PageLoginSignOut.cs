@@ -17,7 +17,7 @@
             var pageMain = this.ComponentOwner<PageMain>();
             pageMain.LoginUserRoleAppList = new List<LoginUserRoleApp>();
 
-            new Html(this) { TextHtml = "<h1 class='title'>User Sign Out</h1>" };
+            new Html(this) { TextHtml = "<h1>User Sign Out</h1>" };
             new Html(this) { TextHtml = "<p>You successfully signed out.</p>" };
 
             await pageMain.GridNavigate.LoadAsync();

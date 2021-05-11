@@ -11,9 +11,9 @@
     {
         public PageAdminNavigate(ComponentJson owner) : base(owner) 
         {
-            new Html(this) { TextHtml = "<h1 class='title'>Navigate</h1>" };
+            new Html(this) { TextHtml = "<h1>Navigate</h1>" };
             GridNavigate = new GridAdminNavigate(this);
-            new Html(this) { TextHtml = "<h2 class='title'>Role</h1>" };
+            new Html(this) { TextHtml = "<h2>Role</h1>" };
             GridNavigateRole = new GridAdminNavigateRole(this);
         }
 

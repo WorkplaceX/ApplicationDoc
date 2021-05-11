@@ -24,20 +24,24 @@
 
         public override async Task InitAsync()
         {
-            new Html(this) { TextHtml = "<h1 class='title'>Feedback <i class='far fa-comment'></i></h1><p>Provide feedback to this page if you have any question regarding content or something should get updated.</p><div></div>" };
+            // Content
+            new Html(this) { TextHtml = "<h1>Feedback <i class='far fa-comment'></i></h1><p>Provide feedback to this page if you have any question regarding content or something should get updated.</p><div></div>" };
 
+            // Grid
             await new GridFeedback(this).LoadAsync();
-
             Button = new Button(this) { TextHtml = "Send", CssClass = "button is-primary" };
         }
 
         public Button Button;
 
+        public Alert Alert;
+
         protected override Task ProcessAsync()
         {
+            Alert.ComponentRemove();
             if (Button.IsClick)
             {
-                new Alert(this, "Feedback has been sent.", AlertEnum.Info);
+                Alert = new Alert(this.ComponentOwner<AppJson>(), "Feedback has been sent.", AlertEnum.Success);
             }
             return base.ProcessAsync();
         }

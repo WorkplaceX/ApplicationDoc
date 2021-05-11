@@ -11,9 +11,9 @@
     {
         public PageAdminLoginUser(ComponentJson owner) : base(owner)
         {
-            new Html(this) { TextHtml = "<h1 class='title'>User</h1>" };
+            new Html(this) { TextHtml = "<h1>User</h1>" };
             GridLoginUser = new GridAdminLoginUser(this);
-            new Html(this) { TextHtml = "<h2 class='title'>Role</h1>" };
+            new Html(this) { TextHtml = "<h2>Role</h1>" };
             GridLoginUserRole = new GridAdminLoginUserRole(this);
         }
 

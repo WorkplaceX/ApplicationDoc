@@ -14,13 +14,21 @@
         public PageMain(ComponentJson owner) 
             : base(owner) 
         {
-            BulmaNavbar = new Navbar(this) { BrandTextHtml = "<b>WorkplaceX</b>.org" };
+            BulmaNavbar = new BulmaNavbar(this) { BrandTextHtml = "<b>WorkplaceX</b>.org" };
 
             // Hero
             new Custom01(this);
 
-            Container = new Div(this) { CssClass = "container" };
-            Content = new Div(Container) { CssClass = "content content-bulma-framework" };
+            // Columns
+            var columns = new DivContainer(this) { CssClass = "columns" };
+            var column0 = new Div(columns) { CssClass = "column is-one-fifth has-background-white-ter" };
+            var column1 = new Div(columns) { CssClass = "column" };
+            var column2 = new Div(columns) { CssClass = "column is-one-fifth" };
+
+            // Container
+            // var container = new DivContainer(column1) { CssClass = "container" };
+            Content = new Div(column1) { CssClass = "content content-bulma-framework" };
+            // Content = column1;
 
             GridNavigate = new GridNavigate(this) { IsHide = true };
             GridLanguage = new Grid<Language>(this) { IsHide = true };
@@ -30,6 +38,8 @@
 
             BulmaNavbar.GridAdd(GridLanguage, isNavbarEnd: true, isSelectMode: true);
             BulmaNavbar.GridAdd(GridNavigate);
+
+            new BulmaNavbarMenu(column0) { Grid = GridNavigate };
         }
 
         public override async Task InitAsync()
@@ -38,8 +48,6 @@
         }
 
         public Div Content;
-
-        public Div Container;
 
         /// <summary>
         /// Gets LoginUserRoleApp. Currently singed in user with its roles.
@@ -111,35 +119,6 @@
 
             result.IsRowSelectFirst = false;
             result.Query = args.Query.Where(item => item.LoginUserName == loginUserName);
-        }
-    }
-
-    public class Navbar : BulmaNavbar
-    {
-        public Navbar(ComponentJson owner) 
-            : base(owner)
-        {
-
-        }
-
-        protected override void RowMap(BulmaNavbarRowMapArgs args, BulmaNavbarRowMapResult result)
-        {
-            base.RowMap(args, result);
-            if (args.Row is NavigateDisplay navigate) // Or Language
-            {
-                var loginUserName = this.ComponentOwner<PageMain>().LoginUserName;
-                if (navigate.Name == "LoginSignOut")
-                {
-                    if (loginUserName == null)
-                    {
-                        result.IsHide = true;
-                    }
-                    else
-                    {
-                        result.TextHtml += " (" + loginUserName + ")";
-                    }
-                }
-            }
         }
     }
 }

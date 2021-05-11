@@ -12,7 +12,7 @@
         public PageLoginSignIn(ComponentJson owner)
             : base(owner)
         {
-            new Html(this) { TextHtml = "<h1 class='title'>User Sign In</h1>" };
+            new Html(this) { TextHtml = "<h1>User Sign In</h1>" };
             Grid = new GridSignIn(this);
 
             Button = new Button(this) { TextHtml = "Login", CssClass = "button is-primary" };
@@ -34,7 +34,7 @@
                 var loginUserRoleAppList = (await Data.Query<LoginUserRoleApp>().Where(item => item.LoginUserName == loginUserSession.Name && item.LoginUserRoleIsActive == true).QueryExecuteAsync());
                 if (!loginUserRoleAppList.Any())
                 {
-                    this.AlertError = new Alert(this, "Username or password wrong!", AlertEnum.Error);
+                    this.AlertError = new Alert(this.ComponentOwner<AppJson>(), "Username or password wrong!", AlertEnum.Error);
                 }
                 else
                 {

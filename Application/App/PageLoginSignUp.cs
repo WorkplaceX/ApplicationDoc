@@ -12,7 +12,7 @@
     {
         public PageLoginSignUp(ComponentJson owner) : base(owner)
         {
-            new Html(this) { TextHtml = "<h1 class='title'>User Sign Up</h1>" };
+            new Html(this) { TextHtml = "<h1>User Sign Up</h1>" };
             new Html(this) { TextHtml = "<p>After sign up you'll receive an email with confirmation link to click and finish registration.</p><div></div>" };
             Grid = new GridLoginUserSignUp(this);
             Button = new Button(this) { TextHtml = "Sign Up", CssClass = "button is-primary" };
@@ -35,8 +35,8 @@
                 user.PasswordHash = userLocal.PasswordHash;
                 user.PasswordSalt = userLocal.PasswordSalt;
                 await Data.InsertAsync(user);
-                Alert = new Alert(this.ComponentOwner<AppJson>(), "Sign up successfull! Email has been sent for confirmation! Go to <a href='/signin/'>Sign in</a>", AlertEnum.Success, 1);
-                this.ComponentOwner<AppMain>().IsScrollToTop = true;
+                var appMain = this.ComponentOwner<AppMain>();
+                Alert = new Alert(appMain, "Sign up successfull! Email has been sent for confirmation! Go to <a href='/signin/'>Sign in</a>", AlertEnum.Success);
 
                 // InsertUserRole (assign Guest and Customer role)
                 int loginRoleid = await LoginRoleIntegrateApp.IdEnum.Guest.Id();

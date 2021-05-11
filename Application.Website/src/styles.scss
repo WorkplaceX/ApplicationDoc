@@ -8,6 +8,21 @@
 }
 
 // Bulma content reset for framework data gird
+.columns
+{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.column
+{
+  margin-top: 0px;
+  padding-top: 0px;
+  overflow-x: hidden; // Show horizontal scroll bar for code.
+}
+.column aside
+{
+  margin-top: 32px; // Vertical NavbarMenu
+}
 .content-bulma-framework table td
 {
   border: unset;
@@ -15,12 +30,8 @@
 }
 .content-bulma-framework h1:first-child
 {
-  margin-top: 1em;
-}
-.content-bulma-framework h1
-{
-  margin-bottom: 0.5em;
-  font-size: 2rem;
+  margin-top: 32px;
+  margin-bottom: 16px; // Feedback
 }
 
 // Bulma modal window
@@ -29,21 +40,18 @@
 }
 .modal-bulma-framework h1:first-child
 {
-  margin-top: unset;
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-.modal-bulma-framework h1
+.modal-bulma-framework h2
 {
-  margin-top: unset;
-  margin-bottom: unset;
+  font-size: 1em;
 }
 
 // Image shadow
 img {
   box-shadow: 8px 8px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 50%);
-}
-
-.hero {
-  margin-bottom: 32px;
 }
 
 // Bulma navbar because of class is-fixed-top

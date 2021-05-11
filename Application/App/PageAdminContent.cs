@@ -13,12 +13,12 @@
     {
         public PageAdminContent(ComponentJson owner) : base(owner)
         {
-            new Html(this) { TextHtml = "<h1 class='title'>Content Page</h1>" };
+            new Html(this) { TextHtml = "<h1>Content Page</h1>" };
             GridContent = new GridContent(this);
             GridContentMd = new GridContentMd(this);
             ButtonPublish = new Button(this) { TextHtml = "Update Navigation", CssClass = "button is-primary" };
             var content = new Div(this) { CssClass = "content" };
-            Html = new Html(content) { IsNoSanatize = true, IsNoSanatizeScript = "Prism.highlightAll();" }; // IsNoSanatize because of html id for named anchor.
+            Html = new Html(content) { IsNoSanatize = true, IsNoSanatizeScript = "if (typeof Prism != 'undefined') { Prism.highlightAll(); }" }; // IsNoSanatize because of html id for named anchor.
         }
 
         public Button ButtonPublish;

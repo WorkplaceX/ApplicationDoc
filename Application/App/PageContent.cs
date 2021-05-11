@@ -6,22 +6,22 @@
 
     public class PageContent : Page
     {
-        public PageContent(ComponentJson owner, Content content) : base(owner) 
+        public PageContent(ComponentJson owner, Content contentRow) : base(owner) 
         {
-            Content = new Div(this) { CssClass = "content" };
-            new Html(Content) { TextHtml = content.TextHtml, IsNoSanatize = true, IsNoSanatizeScript = "Prism.highlightAll();" }; // IsNoSanatize because of html id for named anchor.
-            this.ComponentOwner<AppJson>().Title = content.TitleLong;
-            this.ComponentOwner<AppJson>().Description = content.Description;
-            NavigatePath = content.NavigatePath;
+            // Content
+            new Html(this) { TextHtml = contentRow.TextHtml, IsNoSanatize = true, IsNoSanatizeScript = "if (typeof Prism != 'undefined') { Prism.highlightAll(); }" }; // IsNoSanatize because of html id for named anchor.
+            
+            // Title, Description
+            this.ComponentOwner<AppJson>().Title = contentRow.TitleLong;
+            this.ComponentOwner<AppJson>().Description = contentRow.Description;
+            NavigatePath = contentRow.NavigatePath;
         }
-
-        public Div Content;
 
         public string NavigatePath;
 
         public override async Task InitAsync()
         {
-            await new PageFeedback(Content, NavigatePath).InitAsync();
+            await new PageFeedback(this, NavigatePath).InitAsync();
         }
     }
 }

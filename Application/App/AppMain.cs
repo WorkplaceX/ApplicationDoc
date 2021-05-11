@@ -10,6 +10,9 @@
     using System.Text.Json;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// ApplicationDoc.
+    /// </summary>
     public class AppMain : AppJson
     {
         public override async Task InitAsync()
@@ -18,6 +21,8 @@
 
             // Offset navbar
             HtmlNavbarOffset = new Html(this) { TextHtml = "<div class=\"is-fixed-top-offset\"></div>" };
+
+            AlertContainer = new Div(this);
 
             PageMain = new PageMain(this);
             await PageMain.InitAsync();
@@ -180,8 +185,7 @@
             {
                 if (AlertSessionExpired == null)
                 {
-                    AlertSessionExpired = new Alert(this, "Session expired!", AlertEnum.Warning, HtmlNavbarOffset.ComponentIndex() + 1);
-                    IsScrollToTop = true;
+                    AlertSessionExpired = new Alert(this, "Session expired!", AlertEnum.Warning);
                 }
             }
             else
