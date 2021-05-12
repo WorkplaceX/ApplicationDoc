@@ -19,7 +19,7 @@
         {
             get
             {
-                return $"v1.10 (Framework { Framework.UtilFramework.Version })";
+                return $"v1.11 (Framework { Framework.UtilFramework.Version })";
             }
         }
 

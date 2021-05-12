@@ -39,6 +39,12 @@
         {
             await this.ComponentOwner<PageAdminLoginUser>().GridLoginUserRole.LoadAsync();
         }
+
+        protected override async Task UpdateAsync(UpdateArgs args, UpdateResult result)
+        {
+            await Data.UpdateAsync(args.Row);
+            result.IsHandled = true;
+        }
     }
 
     public class GridAdminLoginUserRole : Grid<LoginUserRoleDisplay>

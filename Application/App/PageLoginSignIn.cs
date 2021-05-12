@@ -36,6 +36,7 @@
                 var loginUserRoleAppList = (await Data.Query<LoginUserRoleApp>().Where(item => item.LoginUserName == loginUserSession.Name && item.LoginUserRoleIsActive == true).QueryExecuteAsync());
                 if (!loginUserRoleAppList.Any())
                 {
+                    // Username does not exist
                     this.AlertError = new Alert(this.ComponentOwner<AppJson>(), "Username or password wrong!", AlertEnum.Error);
                 }
                 else
@@ -46,19 +47,29 @@
                     string passwordSalt = loginUserRoleAppList.First().LoginUserPasswordSalt; // In db stored salt
                     if (passwordHash != null && !UtilFramework.PasswordIsValid(password, passwordHash, passwordSalt))
                     {
+                        // Password wrong
                         this.AlertError = new Alert(this.ComponentOwner<AppJson>(), "Username or password wrong!", AlertEnum.Error);
                     }
                     else
                     {
-                        pageMain.LoginUserRoleAppList = loginUserRoleAppList;
-                        foreach (var item in pageMain.LoginUserRoleAppList)
+                        if (!loginUserRoleAppList.First().LoginUserIsActive)
                         {
-                            item.LoginUserPasswordHash = null; // Remoe from session
-                            item.LoginUserPasswordSalt = null; // Remove from session
+                            // User not active
+                            this.AlertError = new Alert(this.ComponentOwner<AppJson>(), "User not (yet) active.", AlertEnum.Warning);
                         }
-                        var loginUserId = pageMain.LoginUserRoleAppList.First().LoginUserId;
-                        await pageMain.GridNavigate.LoadAsync();
-                        this.ComponentOwner<AppJson>().Navigate("/"); // Navigate to home after login
+                        else
+                        {
+                            // Login successful
+                            pageMain.LoginUserRoleAppList = loginUserRoleAppList;
+                            foreach (var item in pageMain.LoginUserRoleAppList)
+                            {
+                                item.LoginUserPasswordHash = null; // Remoe from session
+                                item.LoginUserPasswordSalt = null; // Remove from session
+                            }
+                            var loginUserId = pageMain.LoginUserRoleAppList.First().LoginUserId;
+                            await pageMain.GridNavigate.LoadAsync();
+                            this.ComponentOwner<AppJson>().Navigate("/"); // Navigate to home after login
+                        }
                     }
                 }
 
@@ -90,6 +101,14 @@
         {
             result.ConfigName = "SignIn"; // Special configuration. Same grid also used in user role mapping.
             result.GridMode = GridMode.Stack;
+        }
+
+        protected override void CellAnnotation(AnnotationArgs args, AnnotationResult result)
+        {
+            if (args.FieldName == nameof(LoginUser.PasswordHash))
+            {
+                result.IsPassword = true;
+            }
         }
 
         protected override Task UpdateAsync(UpdateArgs args, UpdateResult result)

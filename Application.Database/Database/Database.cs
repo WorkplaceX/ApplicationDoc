@@ -241,6 +241,9 @@ namespace Database.Doc
         [SqlField("PasswordSalt", FrameworkTypeEnum.Nvarcahr)]
         public string PasswordSalt { get; set; }
 
+        [SqlField("IsActive", FrameworkTypeEnum.Bit)]
+        public bool IsActive { get; set; }
+
         [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
         public bool IsIntegrate { get; set; }
 
@@ -271,6 +274,9 @@ namespace Database.Doc
 
         [SqlField("PasswordSalt", FrameworkTypeEnum.Nvarcahr)]
         public string PasswordSalt { get; set; }
+
+        [SqlField("IsActive", FrameworkTypeEnum.Bit)]
+        public bool IsActive { get; set; }
 
         [SqlField("IsIntegrate", FrameworkTypeEnum.Bit)]
         public bool IsIntegrate { get; set; }
@@ -312,6 +318,9 @@ namespace Database.Doc
 
         [SqlField("LoginUserPasswordSalt", FrameworkTypeEnum.Nvarcahr)]
         public string LoginUserPasswordSalt { get; set; }
+
+        [SqlField("LoginUserIsActive", FrameworkTypeEnum.Bit)]
+        public bool LoginUserIsActive { get; set; }
 
         [SqlField("LoginRoleName", FrameworkTypeEnum.Nvarcahr)]
         public string LoginRoleName { get; set; }

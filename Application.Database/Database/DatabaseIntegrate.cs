@@ -78,10 +78,10 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginUserIntegrate>
                 {
-                    new LoginUserIntegrate { Id = 0, Name = "a", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "a" },
-                    new LoginUserIntegrate { Id = 0, Name = "c", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "c" },
-                    new LoginUserIntegrate { Id = 0, Name = "d", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "d" },
-                    new LoginUserIntegrate { Id = 0, Name = "Guest", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsIntegrate = true, IsDelete = false, IdName = "Guest" },
+                    new LoginUserIntegrate { Id = 0, Name = "a", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "a" },
+                    new LoginUserIntegrate { Id = 0, Name = "c", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "c" },
+                    new LoginUserIntegrate { Id = 0, Name = "d", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "d" },
+                    new LoginUserIntegrate { Id = 0, Name = "Guest", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "Guest" },
                 };
                 return result;
             }

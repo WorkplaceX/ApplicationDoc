@@ -8,6 +8,7 @@ CREATE TABLE Doc.LoginUser
     Email NVARCHAR(256),
     PasswordHash NVARCHAR(128),
     PasswordSalt NVARCHAR(128),
+    IsActive BIT NOT NULL,
     IsIntegrate BIT NOT NULL, -- Built into CSharp code with IdNameEnum and deployed with cli deployDb command
     IsDelete BIT NOT NULL,
 )
@@ -75,6 +76,7 @@ SELECT
     LoginUser.Name AS LoginUserName,
     LoginUser.PasswordHash AS LoginUserPasswordHash,
     LoginUser.PasswordSalt AS LoginUserPasswordSalt,
+    LoginUser.IsActive AS LoginUserIsActive,
     LoginRole.Name AS LoginRoleName,
     LoginUserRole.IsActive AS LoginUserRoleIsActive
 FROM
