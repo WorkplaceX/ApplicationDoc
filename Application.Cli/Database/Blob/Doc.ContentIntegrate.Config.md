@@ -1,4 +1,4 @@
-# Configuration (Feature)
+# Configuration Environment (Feature)
 All configuration values are stored in the file **ConfigCli.json**. It contains for example different configurations for DEV, TEST and PROD environment.
 
 * File **ConfigCli.json** contains DEV, TEST and PROD configuration values

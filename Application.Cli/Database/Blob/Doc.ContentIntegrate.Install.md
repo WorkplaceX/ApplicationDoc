@@ -1,4 +1,4 @@
-# Getting Started <i class="fas fa-window-maximize"></i>
+# Install and Getting Started
 The following components need to be installed on the machine as prerequisite:
 * [Node.js](https://nodejs.org/en/) (LTS Version)
 * [.NET Core](https://dotnet.microsoft.com/download) (Version 5.0)
