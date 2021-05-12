@@ -1,6 +1,7 @@
 ﻿namespace Application.Doc
 {
     using Database.Doc;
+    using Framework;
     using Framework.DataAccessLayer;
     using Framework.Json;
     using System.Collections.Generic;
@@ -30,7 +31,8 @@
             AlertError.ComponentRemove();
             if (Button.IsClick)
             {
-                var loginUserSession = (LoginUser)Grid.RowSelect;
+                var loginUserSession = Grid.RowSelect;
+
                 var loginUserRoleAppList = (await Data.Query<LoginUserRoleApp>().Where(item => item.LoginUserName == loginUserSession.Name && item.LoginUserRoleIsActive == true).QueryExecuteAsync());
                 if (!loginUserRoleAppList.Any())
                 {
@@ -39,12 +41,26 @@
                 else
                 {
                     var pageMain = this.ComponentOwner<PageMain>();
-                    pageMain.LoginUserRoleAppList = loginUserRoleAppList;
-                    var loginUserId = pageMain.LoginUserRoleAppList.First().LoginUserId;
-                    await pageMain.GridNavigate.LoadAsync();
-                    this.ComponentOwner<AppJson>().Navigate("/"); // Navigate to home after login
+                    string password = loginUserSession.PasswordHash; // User entered password
+                    string passwordHash = loginUserRoleAppList.First().LoginUserPasswordHash; // In db stored hash
+                    string passwordSalt = loginUserRoleAppList.First().LoginUserPasswordSalt; // In db stored salt
+                    if (passwordHash != null && !UtilFramework.PasswordIsValid(password, passwordHash, passwordSalt))
+                    {
+                        this.AlertError = new Alert(this.ComponentOwner<AppJson>(), "Username or password wrong!", AlertEnum.Error);
+                    }
+                    else
+                    {
+                        pageMain.LoginUserRoleAppList = loginUserRoleAppList;
+                        foreach (var item in pageMain.LoginUserRoleAppList)
+                        {
+                            item.LoginUserPasswordHash = null; // Remoe from session
+                            item.LoginUserPasswordSalt = null; // Remove from session
+                        }
+                        var loginUserId = pageMain.LoginUserRoleAppList.First().LoginUserId;
+                        await pageMain.GridNavigate.LoadAsync();
+                        this.ComponentOwner<AppJson>().Navigate("/"); // Navigate to home after login
+                    }
                 }
-                Button.TextHtml = string.Format("User={0};", ((LoginUser)Grid.RowSelect).Name);
 
                 // Render grid ConfigDeveloper (coffee icon) if user is a developer.
                 await Grid.LoadAsync();

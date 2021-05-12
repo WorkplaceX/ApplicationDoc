@@ -2,6 +2,7 @@
 {
     using Database.Doc;
     using DatabaseIntegrate.Doc;
+    using Framework;
     using Framework.DataAccessLayer;
     using Framework.Json;
     using System.Collections.Generic;
@@ -28,23 +29,38 @@
             Alert.ComponentRemove();
             if (Button.IsClick)
             {
+                var appMain = this.ComponentOwner<AppMain>();
+
                 // Insert LoginUser
                 var userLocal = Grid.RowList.Single();
-                var user = new LoginUser { IsDelete = false };
-                user.Name = userLocal.Name;
-                user.PasswordHash = userLocal.PasswordHash;
-                user.PasswordSalt = userLocal.PasswordSalt;
-                await Data.InsertAsync(user);
-                var appMain = this.ComponentOwner<AppMain>();
-                Alert = new Alert(appMain, "Sign up successfull! Email has been sent for confirmation! Go to <a href='/signin/'>Sign in</a>", AlertEnum.Success);
+                string password = userLocal.PasswordHash; // User entered password
+                string passwordConfirm = userLocal.PasswordSalt; // User entered password confirmation
+                if (password != passwordConfirm)
+                {
+                    Alert = new Alert(appMain, "Password and password confirmation do not match!", AlertEnum.Warning);
+                }
+                else
+                {
+                    if (password.Length <= 3)
+                    {
+                        Alert = new Alert(appMain, "Password too short!", AlertEnum.Warning);
+                    }
+                    else
+                    {
+                        UtilFramework.PasswordHash(password, out var passwordHash, out var passwordSalt);
+                        var user = new LoginUser { Name = userLocal.Name, NameFirst = userLocal.NameFirst, NameLast = userLocal.NameLast, Email = userLocal.Email, PasswordHash = passwordHash, PasswordSalt = passwordSalt, IsDelete = false };
+                        await Data.InsertAsync(user);
+                        Alert = new Alert(appMain, "Sign up successfull! Email has been sent for confirmation! Go to <a href='/signin/'>Sign in</a>", AlertEnum.Success);
 
-                // InsertUserRole (assign Guest and Customer role)
-                int loginRoleid = await LoginRoleIntegrateApp.IdEnum.Guest.Id();
-                LoginUserRole userRole = new LoginUserRole { LoginUserId = user.Id, LoginRoleId = loginRoleid, IsActive = true };
-                await Data.InsertAsync(userRole);
-                loginRoleid = await LoginRoleIntegrateApp.IdEnum.Customer.Id();
-                userRole = new LoginUserRole { LoginUserId = user.Id, LoginRoleId = loginRoleid, IsActive = true };
-                await Data.InsertAsync(userRole);
+                        // InsertUserRole (assign Guest and Customer role)
+                        int loginRoleid = await LoginRoleIntegrateApp.IdEnum.Guest.Id();
+                        LoginUserRole userRole = new LoginUserRole { LoginUserId = user.Id, LoginRoleId = loginRoleid, IsActive = true };
+                        await Data.InsertAsync(userRole);
+                        loginRoleid = await LoginRoleIntegrateApp.IdEnum.Customer.Id();
+                        userRole = new LoginUserRole { LoginUserId = user.Id, LoginRoleId = loginRoleid, IsActive = true };
+                        await Data.InsertAsync(userRole);
+                    }
+                }
             }
         }
 

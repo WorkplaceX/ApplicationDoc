@@ -3,6 +3,7 @@
     using Application.Doc;
     using Database.Doc;
     using DatabaseIntegrate.Doc;
+    using Framework;
     using Framework.Cli;
     using Framework.Cli.Config;
     using Framework.DataAccessLayer;
@@ -32,7 +33,7 @@
             string appTypeName = UtilCli.AppTypeName(typeof(AppMain));
             configCli.WebsiteList.Add(new ConfigCliWebsite()
             {
-                DomainNameList = new List<ConfigCliWebsiteDomain>(new ConfigCliWebsiteDomain[] { new ConfigCliWebsiteDomain { EnvironmentName = "DEV", DomainName = "localhost", AppTypeName = appTypeName } }),
+                DomainNameList = new List<ConfigCliWebsiteDomain>(new ConfigCliWebsiteDomain[] { new ConfigCliWebsiteDomain { EnvironmentName = "DEV", DomainName = "localhost", AppTypeName = appTypeName, PasswordSalt = UtilFramework.PasswordSaltConfigCreate() } }),
                 FolderNameAngular = "Application.Website/",
             });
 
