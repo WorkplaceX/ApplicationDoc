@@ -50,7 +50,7 @@ namespace DatabaseIntegrate.Doc
 
     public static class LoginUserIntegrateApp
     {
-        public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("a")]a = -1, [IdEnum("c")]c = -2, [IdEnum("d")]d = -3, [IdEnum("Guest")]Guest = -4 }
+        public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("c")]c = -2, [IdEnum("d")]d = -3, [IdEnum("Guest")]Guest = -4 }
 
         public static LoginUserIntegrate Row(this IdEnum value)
         {
@@ -78,7 +78,7 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginUserIntegrate>
                 {
-                    new LoginUserIntegrate { Id = 0, Name = "a", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "a" },
+                    new LoginUserIntegrate { Id = 0, Name = "Admin", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "Admin" },
                     new LoginUserIntegrate { Id = 0, Name = "c", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "c" },
                     new LoginUserIntegrate { Id = 0, Name = "d", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "d" },
                     new LoginUserIntegrate { Id = 0, Name = "Guest", NameFirst = null, NameLast = null, Email = null, PasswordHash = null, PasswordSalt = null, IsActive = true, IsIntegrate = true, IsDelete = false, IdName = "Guest" },

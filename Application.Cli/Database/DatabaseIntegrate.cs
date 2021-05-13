@@ -174,11 +174,11 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LoginUserRoleIntegrate>
                 {
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Admin" },
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Customer" },
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = null, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Developer" },
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "Guest" },
-                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = null, LoginUserIsIntegrate = true, LoginUserIdName = "a", LoginRoleIdName = "LoginShow" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Admin", LoginRoleIdName = "Admin" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Admin", LoginRoleIdName = "Customer" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = null, LoginUserIsIntegrate = true, LoginUserIdName = "Admin", LoginRoleIdName = "Developer" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "Admin", LoginRoleIdName = "Guest" },
+                    new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = null, LoginUserIsIntegrate = true, LoginUserIdName = "Admin", LoginRoleIdName = "LoginShow" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "c", LoginRoleIdName = "Customer" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "c", LoginRoleIdName = "Guest" },
                     new LoginUserRoleIntegrate { Id = 0, LoginUserId = 0, LoginRoleId = 0, IsActive = true, LoginUserIsIntegrate = true, LoginUserIdName = "d", LoginRoleIdName = "Admin" },
