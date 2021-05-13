@@ -1,7 +1,10 @@
 # Web Application Framework <i class="fas fa-home"></i>
-WorkplaceX is an opensource framework to develop administrative web applications. It's a platform to build data solutions (ERP and CRM) together with content management systems (CMS) in one product. It helps to streamline business application development and is built with latest technology and standards.
+WorkplaceX is an opensource framework to develop administrative web applications. It's a platform to build data solutions (ERP and CRM) together with content management systems (CMS) in one product. It helps to streamline business application development and it is built with latest technology and standards.
 
-Target audience are companies to organize data, content, documentation and business processes.
+Target audience are companies to:
+* Manage, capture and coordinate transactional data
+* Organize and publish content and documentation
+* Handle business processes and workflows
 
 (Note)
 **Info:** WorkplaceX applications run on **Windows** and **Linux** web servers.
