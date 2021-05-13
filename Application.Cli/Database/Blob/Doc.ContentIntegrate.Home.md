@@ -1,5 +1,7 @@
 # Web Application Framework <i class="fas fa-home"></i>
-WorkplaceX is an open source framework to provide business data solutions (EPR and CRM) and content management (CMS) in one unified platform for the web. It's based on ASP.NET Core 5.0, MS-SQL and Angular. It helps to streamline business application development and provides the following features “out of the box”:
+WorkplaceX is an opensource framework to develop administrative web applications. It's a platform to build data solutions (ERP and CRM) together with content management systems (CMS) in one product. It helps to streamline business application development and is built with latest technology and standards.
+
+Target audience are companies to organize data, content, documentation and business processes.
 
 (Note)
 **Info:** WorkplaceX applications run on **Windows** and **Linux** web servers.
@@ -12,7 +14,9 @@ WorkplaceX is an open source framework to provide business data solutions (EPR a
 (Image Src="/assets/database.jpg" Href="/" Title="Database" Description="Framework runs on MS-SQL server")
 (Image Src="/assets/markdown.jpg" Href="/md-markdown/" Title="Content" Description="Manage business data (ERP) and content with the built in content management system (CMS).")
 
-* Data grids (high performance with millions of records and hundreds of columns)
+WorkplaceX is based on ASP.NET Core 5.0, MS-SQL and Angular and provides the following features “out of the box”:
+
+* Data grids (optimized for high performance with millions of records and hundreds of columns)
 * Paging (horizontal and vertical), sorting, filtering
 * Lookup window and autocomplete function
 * Data grid master detail relations
