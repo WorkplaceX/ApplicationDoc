@@ -7,10 +7,10 @@ WorkplaceX is an open source framework to provide business data solutions (EPR a
 
 (Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=ORDp3uNPrSY" Title="Spreadsheet" Description="Edit business data (ERP) with with spreadsheet like data grid in browser")
 (Image Src="/assets/config-video.jpg" Href="https://www.youtube.com/watch?v=XR-5Ej_zTqg" Title="Configuration" Description="Every data grid and field can be configured. Configuration is stored in SQL database.")
+(Image Src="/assets/application-doc-cms.jpg" Href="https://youtu.be/8Pk2ZXOwknU" Title="CMS Application" Description="See how the product 'Application Doc (CMS)' can fit into your content development and publish process")
 (Image Src="/assets/language.jpg" Href="/" Title="Multilanguage" Description="WorkplaceX framework comes with native built in multi language support")
 (Image Src="/assets/database.jpg" Href="/" Title="Database" Description="Framework runs on MS-SQL server")
 (Image Src="/assets/markdown.jpg" Href="/md-markdown/" Title="Content" Description="Manage business data (ERP) and content with the built in content management system (CMS).")
-(Image Src="/assets/cloud.jpg" Href="/" Title="Cloud Hosting" Description="Deploy application to Azure with one CLI command")
 
 * Data grids (high performance with millions of records and hundreds of columns)
 * Paging (horizontal and vertical), sorting, filtering
