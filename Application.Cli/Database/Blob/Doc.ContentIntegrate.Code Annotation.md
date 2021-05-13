@@ -3,7 +3,7 @@ Adding visual icons to a data grid can improve readability substantially. Follow
 ![](/assets/data-grid-annotation.png)
 
 ## Implementation
-This example builds on [Data Grid Example](/data-grid) and shows how to annotate data grid cells.
+This example builds on [Data Grid Example](/data-grid/) and shows how to annotate data grid cells.
 
 ```csharp
 // File: Application/App/AppMain.cs

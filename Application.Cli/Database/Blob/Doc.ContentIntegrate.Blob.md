@@ -1,5 +1,5 @@
 # Blob (Feature)
-The Blob feature is part of the **[Integrate](/feature-integrate/)**. By default the **Integrate** feature writes all data into C# code. For binary data such as images one might prefer to store such data into a file.
+The Blob feature is part of the **[Integrate](/integrate/)**. By default the **Integrate** feature writes all data into C# code. For binary data such as images one might prefer to store such data into a file.
 
 (Note)
 Storing large text sql data in external files (for cli command generate) can also help to better track text changes with git DIFF before comiting to the repo.
