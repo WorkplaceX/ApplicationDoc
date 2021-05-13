@@ -73,7 +73,7 @@
 
         protected override void QueryConfig(QueryConfigArgs args, QueryConfigResult result)
         {
-            result.GridMode = GridMode.Stack;
+            result.GridModeEnum = GridModeEnum.Stack;
         }
 
         protected override async Task UpdateAsync(UpdateArgs args, UpdateResult result)

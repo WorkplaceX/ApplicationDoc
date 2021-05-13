@@ -94,7 +94,7 @@
         protected override void QueryConfig(QueryConfigArgs args, QueryConfigResult result)
         {
             result.ConfigName = "SignUp";
-            result.GridMode = GridMode.Stack;
+            result.GridModeEnum = GridModeEnum.Stack;
         }
 
         protected override void CellAnnotation(AnnotationArgs args, AnnotationResult result)

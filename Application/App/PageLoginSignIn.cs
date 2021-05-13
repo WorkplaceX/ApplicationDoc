@@ -100,7 +100,7 @@
         protected override void QueryConfig(QueryConfigArgs args, QueryConfigResult result)
         {
             result.ConfigName = "SignIn"; // Special configuration. Same grid also used in user role mapping.
-            result.GridMode = GridMode.Stack;
+            result.GridModeEnum = GridModeEnum.Stack;
         }
 
         protected override void CellAnnotation(AnnotationArgs args, AnnotationResult result)
