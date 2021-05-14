@@ -2,9 +2,11 @@
 {
     using Database.Doc;
     using DatabaseIntegrate.Doc;
+    using Framework;
     using Framework.DataAccessLayer;
     using Framework.Json;
     using System;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Text.Json;
@@ -135,6 +137,15 @@
 
         protected override async Task NavigateSessionAsync(NavigateArgs args, NavigateSessionResult result)
         {
+            if (args.IsFileName("/", out string fileNameRoot))
+            {
+                if (fileNameRoot == "log.csv")
+                {
+                    result.Data = File.ReadAllBytes(UtilFramework.FileNameLog);
+                    return;
+                }
+            }
+
             var row = PageMain.GridNavigate.RowList.SingleOrDefault(item => item.NavigatePath == args.NavigatePath);
 
             if (row != null)
