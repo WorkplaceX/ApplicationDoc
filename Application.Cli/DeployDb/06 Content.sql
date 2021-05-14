@@ -20,3 +20,16 @@ SELECT
     Content.Name AS IdName
 FROM
     Doc.Content Content
+
+
+GO
+CREATE VIEW Doc.ContentSitemap AS
+SELECT
+  Content.Name,
+  Content.NavigatePath, -- Site url
+  '/assets/' + StorageFile.FileName AS FileName, -- Image(s) on site
+  Content.SitemapDate
+FROM
+  Doc.Content Content
+LEFT JOIN
+  Doc.StorageFile StorageFile ON (Content.TextHtml LIKE '%/assets/' + StorageFile.FileName + '%')

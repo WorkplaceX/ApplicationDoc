@@ -57,17 +57,28 @@
                 }
                 if (fileNameRoot == "sitemap.xml")
                 {
+                    var rowList = (await Data.Query<ContentSitemap>().QueryExecuteAsync());
+                    rowList = rowList.OrderBy(item => item.NavigatePath).ThenBy(item => item.FileName).ToList(); // In memory sort
                     var sitemap = new StringBuilder();
                     sitemap.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-                    sitemap.Append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
-                    var rowList = (await Data.Query<Navigate>().Where(item => item.IsContent == true).QueryExecuteAsync());
-                    foreach (var row in rowList)
+                    sitemap.Append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\">");
+                    for (int i = 0; i < rowList.Count; i++)
                     {
+                        var row = rowList[i];
                         if (row.NavigatePath != null) // Not a group
                         {
                             sitemap.Append("<url>");
                             var loc = string.Format("{0}{1}", args.RequestUrlHost, row.NavigatePath?.Substring(1));
                             sitemap.Append("<loc>" + loc + "</loc>");
+                            var navigatePath = row.NavigatePath;
+                            while (i < rowList.Count && (row = rowList[i]).FileName != null && row.NavigatePath == navigatePath)
+                            {
+                                // See also: https://developers.google.com/search/docs/advanced/sitemaps/image-sitemaps
+                                sitemap.Append("<image:image>");
+                                sitemap.Append($"<image:loc>{ args.RequestUrlHost + row.FileName.Substring(1) }</image:loc>");
+                                sitemap.Append("</image:image>");
+                                i += 1;
+                            }
                             if (row.SitemapDate is DateTime sitemapDate)
                             {
                                 var lastmod = sitemapDate.ToString("yyyy-MM-dd");
@@ -82,7 +93,6 @@
                     result.Data = Encoding.UTF8.GetBytes(sitemap.ToString());
                     return;
                 }
-
                 if (fileNameRoot == "ads.txt" && args.ConfigCustom is JsonElement jsonElement && jsonElement.TryGetProperty("GoogleAdsTxt", out var googleAdsTxt))
                 {
                     result.Data = Encoding.UTF8.GetBytes(googleAdsTxt.GetString());

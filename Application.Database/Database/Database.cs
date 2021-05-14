@@ -82,6 +82,22 @@ namespace Database.Doc
         public string IdName { get; set; }
     }
 
+    [SqlTable("Doc", "ContentSitemap")]
+    public class ContentSitemap : Row
+    {
+        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
+        public string Name { get; set; }
+
+        [SqlField("NavigatePath", FrameworkTypeEnum.Nvarcahr)]
+        public string NavigatePath { get; set; }
+
+        [SqlField("FileName", FrameworkTypeEnum.Nvarcahr)]
+        public string FileName { get; set; }
+
+        [SqlField("SitemapDate", FrameworkTypeEnum.Datetime2)]
+        public DateTime? SitemapDate { get; set; }
+    }
+
     [SqlTable("Doc", "Feedback")]
     public class Feedback : Row
     {
