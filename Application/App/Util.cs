@@ -1,6 +1,7 @@
 ﻿namespace Application.Doc
 {
     using Database.Doc;
+    using Framework;
     using Framework.DataAccessLayer;
     using System;
     using System.Collections.Generic;
@@ -19,7 +20,7 @@
         {
             get
             {
-                return $"v1.11 (Framework { Framework.UtilFramework.Version })";
+                return $"v1.11 (Framework { UtilFramework.Version }) - Heartbeat { UtilFramework.BackgroundServiceTimeHeartbeat }";
             }
         }
 

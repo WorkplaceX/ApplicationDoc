@@ -34,7 +34,7 @@
             GridLanguage = new Grid<Language>(this) { IsHide = true };
 
             // Footer
-            new Custom02(this) { TextHtml = Util.Version };
+            Footer = new Custom02(this);
 
             BulmaNavbar.GridAdd(GridLanguage, isNavbarEnd: true, isSelectMode: true);
             BulmaNavbar.GridAdd(GridNavigate);
@@ -42,10 +42,20 @@
             new BulmaNavbarMenu(column0) { Grid = GridNavigate };
         }
 
+        protected override Task ProcessAsync()
+        {
+            Footer.TextHtml= Util.Version; // Displays service heartbeat
+
+            return base.ProcessAsync();
+        }
+
         public override async Task InitAsync()
         {
-            await Task.WhenAll(GridNavigate.LoadAsync(), GridLanguage.LoadAsync());
+            await GridLanguage.LoadAsync();
+            await GridNavigate.LoadAsync(); // Navigate depends on language selection for translate
         }
+
+        public Custom02 Footer;
 
         public Div Content;
 
