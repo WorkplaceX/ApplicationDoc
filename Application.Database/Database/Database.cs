@@ -186,6 +186,9 @@ namespace Database.Doc
 
         [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
         public string TextHtml { get; set; }
+
+        [SqlField("LanguageId", FrameworkTypeEnum.Int)]
+        public int LanguageId { get; set; }
     }
 
     [SqlTable("Doc", "LanguageIntegrate")]
@@ -199,6 +202,9 @@ namespace Database.Doc
 
         [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
         public string TextHtml { get; set; }
+
+        [SqlField("LanguageId", FrameworkTypeEnum.Int)]
+        public int LanguageId { get; set; }
 
         [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
         public string IdName { get; set; }

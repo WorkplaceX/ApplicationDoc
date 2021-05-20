@@ -36,13 +36,19 @@
 
         protected override void Setting(SettingArgs args, SettingResult result)
         {
-            if (args.Grid != null)
-            {
-                // IsShowConfig for LoginRole Admin
-                result.GridIsShowConfig = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Admin.IdName()).Any();
+            // IsShowConfig for LoginRole Admin
+            result.GridIsShowConfig = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Admin.IdName()).Any();
 
-                // IsShowConfigDeveloper for LoginRole Developer
-                result.GridIsShowConfigDeveloper = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Developer.IdName()).Any();
+            // IsShowConfigDeveloper for LoginRole Developer
+            result.GridIsShowConfigDeveloper = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Developer.IdName()).Any();
+
+            // Language
+            result.GridLanguageId = ((Language)PageMain.GridLanguage.RowSelect).LanguageId;
+         
+            // Rerender after language change
+            if (args.Grid == PageMain.GridLanguage)
+            {
+                result.GridIsRowSelectRerender = true;
             }
         }
 

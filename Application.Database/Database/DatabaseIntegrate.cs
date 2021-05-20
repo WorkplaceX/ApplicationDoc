@@ -40,8 +40,8 @@ namespace DatabaseIntegrate.Doc
             {
                 var result = new List<LanguageIntegrate>
                 {
-                    new LanguageIntegrate { Id = 0, Name = "English", TextHtml = "<span class=\"flag-icon flag-icon-gb\"></span> English", IdName = "English" },
-                    new LanguageIntegrate { Id = 0, Name = "German", TextHtml = "<span class=\"flag-icon flag-icon-de\"></span> German", IdName = "German" },
+                    new LanguageIntegrate { Id = 0, Name = "English", TextHtml = "<span class=\"flag-icon flag-icon-gb\"></span> English", LanguageId = 1, IdName = "English" },
+                    new LanguageIntegrate { Id = 0, Name = "German", TextHtml = "<span class=\"flag-icon flag-icon-de\"></span> German", LanguageId = 2, IdName = "German" },
                 };
                 return result;
             }
