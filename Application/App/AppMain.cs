@@ -43,7 +43,7 @@
             result.GridIsShowConfigDeveloper = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Developer.IdName()).Any();
 
             // Language
-            result.GridLanguageId = ((Language)PageMain.GridLanguage.RowSelect).LanguageId;
+            result.GridLanguageId = PageMain.GridLanguage.RowSelect.LanguageId;
          
             // Rerender after language change
             if (args.Grid == PageMain.GridLanguage)

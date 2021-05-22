@@ -31,7 +31,7 @@
             // Content = column1;
 
             GridNavigate = new GridNavigate(this) { IsHide = true };
-            GridLanguage = new Grid<Language>(this) { IsHide = true };
+            GridLanguage = new GridLanguage(this) { IsHide = true };
 
             // Footer
             Footer = new Custom02(this);
@@ -40,6 +40,12 @@
             BulmaNavbar.GridAdd(GridNavigate);
 
             new BulmaNavbarMenu(column0) { Grid = GridNavigate };
+
+            // Preserve login user
+            if (this.ComponentOwner<AppMain>().IsNavigateReload<AppMain>(out var appJsonPrevious))
+            {
+                LoginUserRoleAppList = appJsonPrevious.PageMain.LoginUserRoleAppList;
+            }
         }
 
         protected override Task ProcessAsync()
@@ -91,7 +97,7 @@
         /// <summary>
         /// Gets GridLanguage. Currently selected language. Loaded once on login.
         /// </summary>
-        public Grid GridLanguage;
+        public GridLanguage GridLanguage;
 
         public BulmaNavbar BulmaNavbar;
     }
@@ -127,8 +133,26 @@
                 loginUserName = LoginUserIntegrateApp.IdEnum.Guest.IdName();
             }
 
-            result.IsRowSelectFirst = false;
+            result.RowSelect = null;
             result.Query = args.Query.Where(item => item.LoginUserName == loginUserName);
+        }
+    }
+
+    public class GridLanguage : Grid<Language>
+    {
+        public GridLanguage(ComponentJson owner) 
+            : base(owner)
+        {
+
+        }
+
+        protected override void Query(QueryArgs args, QueryResult result)
+        {
+            if (this.ComponentOwner<AppMain>().IsNavigateReload<AppMain>(out var appPrevious))
+            {
+                // Preserve language
+                result.RowSelect = (rowList) => rowList.SingleOrDefault(item => item.LanguageId == appPrevious.PageMain.GridLanguage.RowSelect.LanguageId);
+            }
         }
     }
 }
