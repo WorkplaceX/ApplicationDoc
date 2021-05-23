@@ -148,9 +148,12 @@
 
         protected override void Query(QueryArgs args, QueryResult result)
         {
+            // English by default
+            result.RowSelect = (rowList) => rowList.Where(item => item.Name == LanguageIntegrateApp.IdName(LanguageIntegrateApp.IdEnum.English)).Single();
+
+            // Preserve language from previous session on browser refresh
             if (this.ComponentOwner<AppMain>().IsNavigateReload<AppMain>(out var appPrevious))
             {
-                // Preserve language
                 result.RowSelect = (rowList) => rowList.SingleOrDefault(item => item.LanguageId == appPrevious.PageMain.GridLanguage.RowSelect.LanguageId);
             }
         }
