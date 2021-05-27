@@ -2,6 +2,7 @@
 {
     using Database.dbo;
     using Database.Doc;
+    using DatabaseIntegrate.dbo;
     using DatabaseIntegrate.Doc;
     using Framework.Json;
     using Framework.Json.Bulma;
@@ -138,7 +139,7 @@
         }
     }
 
-    public class GridLanguage : Grid<Language>
+    public class GridLanguage : Grid<FrameworkLanguage>
     {
         public GridLanguage(ComponentJson owner) 
             : base(owner)
@@ -149,12 +150,12 @@
         protected override void Query(QueryArgs args, QueryResult result)
         {
             // English by default
-            result.RowSelect = (rowList) => rowList.Where(item => item.Name == LanguageIntegrateApp.IdName(LanguageIntegrateApp.IdEnum.English)).Single();
+            result.RowSelect = (rowList) => rowList.Where(item => item.Name == FrameworkLanguageIntegrateApp.IdName(FrameworkLanguageIntegrateApp.IdEnum.English)).Single();
 
             // Preserve language from previous session on browser refresh
             if (this.ComponentOwner<AppMain>().IsNavigateReload<AppMain>(out var appPrevious))
             {
-                result.RowSelect = (rowList) => rowList.SingleOrDefault(item => item.LanguageId == appPrevious.PageMain.GridLanguage.RowSelect.LanguageId);
+                result.RowSelect = (rowList) => rowList.SingleOrDefault(item => item.Name == appPrevious.PageMain.GridLanguage.RowSelect.Name);
             }
         }
     }

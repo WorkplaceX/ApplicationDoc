@@ -175,41 +175,6 @@ namespace Database.Doc
         public Guid? IdName { get; set; }
     }
 
-    [SqlTable("Doc", "Language")]
-    public class Language : Row
-    {
-        [SqlField("Id", true, FrameworkTypeEnum.Int)]
-        public int Id { get; set; }
-
-        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
-        public string Name { get; set; }
-
-        [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
-        public string TextHtml { get; set; }
-
-        [SqlField("LanguageId", FrameworkTypeEnum.Int)]
-        public int LanguageId { get; set; }
-    }
-
-    [SqlTable("Doc", "LanguageIntegrate")]
-    public class LanguageIntegrate : Row
-    {
-        [SqlField("Id", FrameworkTypeEnum.Int)]
-        public int Id { get; set; }
-
-        [SqlField("Name", FrameworkTypeEnum.Nvarcahr)]
-        public string Name { get; set; }
-
-        [SqlField("TextHtml", FrameworkTypeEnum.Nvarcahr)]
-        public string TextHtml { get; set; }
-
-        [SqlField("LanguageId", FrameworkTypeEnum.Int)]
-        public int LanguageId { get; set; }
-
-        [SqlField("IdName", FrameworkTypeEnum.Nvarcahr)]
-        public string IdName { get; set; }
-    }
-
     [SqlTable("Doc", "LoginRole")]
     public class LoginRole : Row
     {

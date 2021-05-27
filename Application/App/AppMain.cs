@@ -42,8 +42,11 @@
             // IsShowConfigDeveloper for LoginRole Developer
             result.GridIsShowConfigDeveloper = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Developer.IdName()).Any();
 
+            // IsLanguage for LoginRole Language
+            result.GridIsShowLanguage = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Language.IdName()).Any();
+
             // Language
-            result.GridLanguageId = PageMain.GridLanguage.RowSelect.LanguageId;
+            result.GridLanguageName = PageMain.GridLanguage.RowSelect?.Name;
          
             // Rerender after language change
             if (args.Grid == PageMain.GridLanguage)

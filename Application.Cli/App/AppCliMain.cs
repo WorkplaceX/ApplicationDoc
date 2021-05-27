@@ -19,7 +19,7 @@
     {
         public AppCliMain() :
             base(
-                typeof(Language).Assembly, // Register Application.Database dll
+                typeof(Content).Assembly, // Register Application.Database dll
                 typeof(AppMain).Assembly) // Register Application dll
         {
 
@@ -71,10 +71,6 @@
             result.AddKey<Navigate>(nameof(Navigate.Name));
             result.AddReference<Navigate, Navigate>(nameof(Navigate.ParentId));
 
-            // Language
-            result.Add(Data.Query<LanguageIntegrate>().OrderBy(item => item.IdName), isApplication: true);
-            result.AddKey<Language>(nameof(Language.Name));
-
             // LoginUser
             result.Add(Data.Query<LoginUserIntegrate>().Where(item => item.IsIntegrate == true).OrderBy(item => item.IdName), isApplication: true);
             result.AddKey<LoginUser>(nameof(LoginUser.Name));
@@ -117,9 +113,6 @@
         /// </summary>
         protected override void CommandDeployDbIntegrate(DeployDbIntegrateResult result)
         {
-            // Language
-            result.Add(LanguageIntegrateApp.RowList);
-
             // Navigate
             var rowList = NavigateIntegrateAppCli.RowList;
             result.Add(rowList, (item) => item.IdName, (item) => item.ParentIdName, (item) => item.Sort);
