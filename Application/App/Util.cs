@@ -20,7 +20,7 @@
         {
             get
             {
-                return $"v1.11 (Framework { UtilFramework.Version }) - Heartbeat { UtilFramework.BackgroundServiceTimeHeartbeat }";
+                return $"v1.11 (Framework { UtilFramework.Version } &hearts; { UtilFramework.BackgroundServiceTimeHeartbeat })";
             }
         }
 
