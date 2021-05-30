@@ -41,5 +41,5 @@ Server side rendering module turns a json object into html. It does never access
 * http://localhost:4001/ (Application running in Visual Studio)
 * https://www.workplacex.org/Framework/Application.Website/Website01/server/main.js (Application running on IIS)
 
-(Image Src="/assets/continuous-integration.jpg" Href="/continues-integration/" Title="Continues Integration" Description="Update application with continues integration (CI)")
+(Image Src="/assets/continuous-integration.jpg" Href="/continues-integration/" Title="Continuous Integration" Description="Update application to new version with continuous integration (CI)")
 (Image Src="/assets/architecture.jpg" Href="/architecture/" Title="Architecture" Description="Article explains difference between CLI and Web application and how they work together")
