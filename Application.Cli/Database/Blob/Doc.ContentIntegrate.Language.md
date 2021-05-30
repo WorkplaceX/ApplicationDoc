@@ -1,5 +1,5 @@
 # Multi Language Translation (Feature)
-WorkplaceX applications can be translated online and on the fly into other languages.  Like this a new customer can translate the application into his own language. Thanks to the [Integrate](/feature/integrate/) feature it is possible to read back the new translation entries to the source code and make it available to all customers on new updates.
+WorkplaceX applications can be translated online and on the fly into other languages.  Like this a new customer can translate the application into his own language. Thanks to the [Integrate](/integrate/) feature it is possible to read back the new translation entries to the source code and make it available to all customers on new updates.
 
 ![](/assets/language.jpg)
 
