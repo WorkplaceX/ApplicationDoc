@@ -14,7 +14,7 @@ export function app(): express.Express {
 
   server.use(express.json()); // Framework: Enable SSR POST 
 
-  var distFolder = join(process.cwd(), 'dist/application/browser');
+  var distFolder = join(process.cwd(), 'dist/application/browser'); // Framework: Enable SSR POST change const to var
 
   // Framework: Enable SSR POST
   var mode = "Console";

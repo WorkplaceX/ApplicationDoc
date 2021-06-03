@@ -1,4 +1,4 @@
-# Angular 11 Client Application
+# Angular 12 Client Application
 Provides an empty template to start develop a web application with WorkplaceX. Add Bootstrap or Bulma as following:
 
 ## Add Bootstrap
@@ -77,7 +77,7 @@ ng add @nguniversal/express-engine
 # Test
 npm start
 npm run dev:ssr
-ng run build:ssr
+npm run build:ssr
 ´´´
 
 ## Add Framework Component
@@ -87,9 +87,6 @@ ng generate component grid --skip-import --inlineStyle=true --skipTests=true
 ng generate component bootstrapNavbar --skip-import --inlineStyle=true --skipTests=true
 ng generate component bulma-navbar --skip-import --inlineStyle=true --skipTests=true
 ```
-
-## Modify File package.json
-Add "--outputHashing=none --progress=false"
 
 ## Modify Files
 * angular.json (Add deployUrl) Ensures Angular css and js files start with absolute path /
