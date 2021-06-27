@@ -6,4 +6,4 @@ WorkplaceX applications can be translated online and on the fly into other langu
 ## Translate
 Following video shows how to add a new language and translate a data column title into Spanish:
 
-(Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=Wy3Hz5fzNr8")
+(Image Src="/assets/data-grid-tile.jpg" Href="https://www.youtube.com/watch?v=b6CU1Kb4-ng")
