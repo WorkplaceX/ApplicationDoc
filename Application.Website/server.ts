@@ -37,6 +37,7 @@ export function app(): express.Express {
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule,
+    inlineCriticalCss: false, // Framework: SSR slow for big styles.scss (First Contentful Paint)
   }));
 
   server.set('view engine', 'html');
