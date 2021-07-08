@@ -32,12 +32,11 @@
             // Content = column1;
 
             GridNavigate = new GridNavigate(this) { IsHide = true };
-            GridLanguage = new GridLanguage(this) { IsHide = true };
 
             // Footer
             Footer = new Custom02(this);
 
-            BulmaNavbar.GridAdd(GridLanguage, isNavbarEnd: true, isSelectMode: true);
+            // TODO Language BulmaNavbar.GridAdd(GridLanguage, isNavbarEnd: true, isSelectMode: true);
             BulmaNavbar.GridAdd(GridNavigate);
 
             new BulmaNavbarMenu(column0) { Grid = GridNavigate };
@@ -58,7 +57,7 @@
 
         public override async Task InitAsync()
         {
-            await GridLanguage.LoadAsync();
+            // TODO Language await GridLanguage.LoadAsync();
             await GridNavigate.LoadAsync(); // Navigate depends on language selection for translate
         }
 
@@ -94,11 +93,6 @@
         /// Gets GridNavigate. Loaded once on login.
         /// </summary>
         public GridNavigate GridNavigate;
-
-        /// <summary>
-        /// Gets GridLanguage. Currently selected language. Loaded once on login.
-        /// </summary>
-        public GridLanguage GridLanguage;
 
         public BulmaNavbar BulmaNavbar;
     }
@@ -136,27 +130,6 @@
 
             result.RowSelect = null;
             result.Query = args.Query.Where(item => item.LoginUserName == loginUserName);
-        }
-    }
-
-    public class GridLanguage : Grid<FrameworkLanguage>
-    {
-        public GridLanguage(ComponentJson owner) 
-            : base(owner)
-        {
-
-        }
-
-        protected override void Query(QueryArgs args, QueryResult result)
-        {
-            // English by default
-            result.RowSelect = (rowList) => rowList.Where(item => item.Name == FrameworkLanguageIntegrateApp.IdName(FrameworkLanguageIntegrateApp.IdEnum.English)).Single();
-
-            // Preserve language from previous session on browser refresh
-            if (this.ComponentOwner<AppMain>().IsNavigateReload<AppMain>(out var appPrevious))
-            {
-                result.RowSelect = (rowList) => rowList.SingleOrDefault(item => item.Name == appPrevious.PageMain.GridLanguage.RowSelect.Name);
-            }
         }
     }
 }

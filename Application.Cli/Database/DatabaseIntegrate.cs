@@ -7,6 +7,9 @@ namespace DatabaseIntegrate.dbo
     using System.Globalization;
     using Database.dbo;
 
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkConfigGridIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class FrameworkConfigGridIntegrateAppCli
     {
         public static List<FrameworkConfigGridIntegrate> RowList
@@ -31,6 +34,9 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkConfigFieldIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class FrameworkConfigFieldIntegrateAppCli
     {
         public static List<FrameworkConfigFieldIntegrate> RowList
@@ -105,114 +111,6 @@ namespace DatabaseIntegrate.dbo
             }
         }
     }
-
-    public static class FrameworkLanguageItemAppCli
-    {
-        public static List<FrameworkLanguageItem> RowList
-        {
-            get
-            {
-                var result = new List<FrameworkLanguageItem>
-                {
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.Description.ColumnText()", TextDefault = "Description" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.Name.ColumnText()", TextDefault = "Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.NavigatePath.ColumnText()", TextDefault = "Path" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.NavigateTree.ColumnText()", TextDefault = "Navigate Tree" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.Sort.ColumnText()", TextDefault = "Sort" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.TitleHtml.ColumnText()", TextDefault = "Title Html" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.TitleLong.ColumnText()", TextDefault = "Title Long" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.AttachmentFileName.ColumnText()", TextDefault = "Upload Attachment" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.Email.ColumnText()", TextDefault = "Email (Optional)" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.Message.ColumnText()", TextDefault = "Message" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.Name.ColumnText()", TextDefault = "Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.TextHtml.CellText(<span class=\"flag-icon flag-icon-de\"></span> German)", TextDefault = "<span class=\"flag-icon flag-icon-de\"></span> German" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.TextHtml.CellText(<span class=\"flag-icon flag-icon-gb\"></span> English)", TextDefault = "<span class=\"flag-icon flag-icon-gb\"></span> English" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.TextHtml.ColumnText()", TextDefault = "Text Html" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.Email.ColumnText()", TextDefault = "Email" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.Name.ColumnText()", TextDefault = "User Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.NameFirst.ColumnText()", TextDefault = "First Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.NameLast.ColumnText()", TextDefault = "Last Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.PasswordHash.ColumnText()", TextDefault = "Password" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.PasswordSalt.ColumnText()", TextDefault = "Confirm Password" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.IsDivider.ColumnText()", TextDefault = "Is Divider" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.IsNavbarEnd.ColumnText()", TextDefault = "Is Navbar End" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.LoginUserName.ColumnText()", TextDefault = "Login User Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.Name.ColumnText()", TextDefault = "Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fab fa-expeditedssl\"></i> SSL Certificate)", TextDefault = "<i class=\"fab fa-expeditedssl\"></i> SSL Certificate" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fab fa-git-square\"></i> ExternalGit)", TextDefault = "<i class=\"fab fa-git-square\"></i> ExternalGit" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fab fa-markdown\"></i> Markdown)", TextDefault = "<i class=\"fab fa-markdown\"></i> Markdown" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"far fa-comment\"></i> Feedback)", TextDefault = "<i class=\"far fa-comment\"></i> Feedback" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"far fa-compass\"></i> Navigate Request)", TextDefault = "<i class=\"far fa-compass\"></i> Navigate Request" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"far fa-folder\"></i> Storage)", TextDefault = "<i class=\"far fa-folder\"></i> Storage" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-asterisk\"></i> Annotation)", TextDefault = "<i class=\"fas fa-asterisk\"></i> Annotation" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-book\"></i> Application Doc (CMS))", TextDefault = "<i class=\"fas fa-book\"></i> Application Doc (CMS)" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-book\"></i> Content)", TextDefault = "<i class=\"fas fa-book\"></i> Content" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-box-open\"></i> Install)", TextDefault = "<i class=\"fas fa-box-open\"></i> Install" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-code-branch\"></i> Code)", TextDefault = "<i class=\"fas fa-code-branch\"></i> Code" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-coffee\"></i> Develop)", TextDefault = "<i class=\"fas fa-coffee\"></i> Develop" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-coffee\"></i> Developer)", TextDefault = "<i class=\"fas fa-coffee\"></i> Developer" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-cog\"></i> Config Environment)", TextDefault = "<i class=\"fas fa-cog\"></i> Config Environment" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-cube\"></i> Products)", TextDefault = "<i class=\"fas fa-cube\"></i> Products" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-cubes\"></i> Feature)", TextDefault = "<i class=\"fas fa-cubes\"></i> Feature" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-desktop\"></i> CLI)", TextDefault = "<i class=\"fas fa-desktop\"></i> CLI" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-file-excel\"></i> Excel)", TextDefault = "<i class=\"fas fa-file-excel\"></i> Excel" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-globe\"></i> Hello World)", TextDefault = "<i class=\"fas fa-globe\"></i> Hello World" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-globe\"></i> Multi Language)", TextDefault = "<i class=\"fas fa-globe\"></i> Multi Language" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-home\"></i> Home)", TextDefault = "<i class=\"fas fa-home\"></i> Home" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-industry\"></i> Integrate)", TextDefault = "<i class=\"fas fa-industry\"></i> Integrate" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-info-circle\"></i> About)", TextDefault = "<i class=\"fas fa-info-circle\"></i> About" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-language\"></i> Multi Language)", TextDefault = "<i class=\"fas fa-language\"></i> Multi Language" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-mouse\"></i> Counter)", TextDefault = "<i class=\"fas fa-mouse\"></i> Counter" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-plus-square\"></i> New Application)", TextDefault = "<i class=\"fas fa-plus-square\"></i> New Application" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-ruler-combined\"></i> Architecture)", TextDefault = "<i class=\"fas fa-ruler-combined\"></i> Architecture" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-server\"></i> Build Server CI)", TextDefault = "<i class=\"fas fa-server\"></i> Build Server CI" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-server\"></i> IIS Server)", TextDefault = "<i class=\"fas fa-server\"></i> IIS Server" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-shield-alt\"></i> Admin)", TextDefault = "<i class=\"fas fa-shield-alt\"></i> Admin" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-sign-in-alt\"></i> Sign in)", TextDefault = "<i class=\"fas fa-sign-in-alt\"></i> Sign in" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-sign-out-alt\"></i> Sign out)", TextDefault = "<i class=\"fas fa-sign-out-alt\"></i> Sign out" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-sitemap\"></i> Navigate)", TextDefault = "<i class=\"fas fa-sitemap\"></i> Navigate" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-splotch\"></i> Blob)", TextDefault = "<i class=\"fas fa-splotch\"></i> Blob" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-sync\"></i> Continuous Integration )", TextDefault = "<i class=\"fas fa-sync\"></i> Continuous Integration " },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-table\"></i> Config Data Grid)", TextDefault = "<i class=\"fas fa-table\"></i> Config Data Grid" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-table\"></i> Data Grid)", TextDefault = "<i class=\"fas fa-table\"></i> Data Grid" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-upload\"></i> Deploy)", TextDefault = "<i class=\"fas fa-upload\"></i> Deploy" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-user\"></i> User)", TextDefault = "<i class=\"fas fa-user\"></i> User" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-user-plus\"></i> Sign up)", TextDefault = "<i class=\"fas fa-user-plus\"></i> Sign up" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.TextHtml.ColumnText()", TextDefault = "Text Html" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.StorageFileDisplay.Description.ColumnText()", TextDefault = "Description" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.StorageFileDisplay.FileName.ColumnText()", TextDefault = "File Name" },
-                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.StorageFileDisplay.SourceUrl.ColumnText()", TextDefault = "Source Url" },
-                };
-                return result;
-            }
-        }
-    }
-
-    public static class FrameworkLanguageTextIntegrateAppCli
-    {
-        public static List<FrameworkLanguageTextIntegrate> RowList
-        {
-            get
-            {
-                var result = new List<FrameworkLanguageTextIntegrate>
-                {
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Datei hochladen", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.Feedback.AttachmentFileName.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Nachricht", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.Feedback.Message.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Benutzer Name", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.LoginUser.Name.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Vorname", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.LoginUser.NameFirst.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Familienname", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.LoginUser.NameLast.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Passwort", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.LoginUser.PasswordHash.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Passwort bestätigen", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.LoginUser.PasswordSalt.ColumnText()" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "<i class=\"fas fa-box-open\"></i> Installieren", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-box-open\"></i> Install)" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "<i class=\"fas fa-coffee\"></i> Entwicklung", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-coffee\"></i> Develop)" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "<i class=\"fas fa-cube\"></i> Produkte", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-cube\"></i> Products)" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "Start", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-home\"></i> Home)" },
-                    new FrameworkLanguageTextIntegrate { Id = 0, AppTypeName = "Application.Doc.AppMain", LanguageId = 0, ItemId = 0, Text = "<i class=\"fas fa-info-circle\"></i> Über uns", LanguageIdName = "German", ItemIdName = "Application.Doc.AppMain; Database.Doc.NavigateDisplay.TextHtml.CellText(<i class=\"fas fa-info-circle\"></i> About)" },
-                };
-                return result;
-            }
-        }
-    }
 }
 
 namespace DatabaseIntegrate.Doc
@@ -222,6 +120,9 @@ namespace DatabaseIntegrate.Doc
     using System.Globalization;
     using Database.Doc;
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[NavigateIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class NavigateIntegrateAppCli
     {
         public static List<NavigateIntegrate> RowList
@@ -275,6 +176,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[LoginUserRoleIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class LoginUserRoleIntegrateAppCli
     {
         public static List<LoginUserRoleIntegrate> RowList
@@ -305,6 +209,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[NavigateRoleIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class NavigateRoleIntegrateAppCli
     {
         public static List<NavigateRoleIntegrate> RowList
@@ -369,6 +276,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[StorageFileIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class StorageFileIntegrateAppCli
     {
         public static List<StorageFileIntegrate> RowList
@@ -417,6 +327,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[ContentIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class ContentIntegrateAppCli
     {
         public static List<ContentIntegrate> RowList
@@ -460,6 +373,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[Feedback]; Assembly=Cli;
+    /// </summary>
     public static class FeedbackAppCli
     {
         public static List<Feedback> RowList

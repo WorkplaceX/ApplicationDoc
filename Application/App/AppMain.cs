@@ -46,13 +46,7 @@
             result.GridIsShowLanguage = PageMain.LoginUserRoleAppList.Where(item => item.LoginRoleName == LoginRoleIntegrateApp.IdEnum.Language.IdName()).Any();
 
             // Language
-            result.GridLanguageName = PageMain.GridLanguage.RowSelect?.Name;
-         
-            // Rerender after language change
-            if (args.Grid == PageMain.GridLanguage)
-            {
-                result.GridIsRowSelectRerender = true;
-            }
+            // TODO Language result.GridLanguageName = PageMain.GridLanguage.RowSelect?.Name;
         }
 
         protected override async Task NavigateAsync(NavigateArgs args, NavigateResult result)
