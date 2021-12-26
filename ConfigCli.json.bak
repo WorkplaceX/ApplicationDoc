@@ -1,0 +1,34 @@
+{
+  "EnvironmentName": "DEV",
+  "EnvironmentList": [
+    {
+      "EnvironmentName": "DEV",
+      "IsUseDeveloperExceptionPage": true,
+      "IsRedirectHttps": false,
+      "IsRedirectWww": false,
+      "ConnectionStringFramework": "Data Source=localhost\SQLEXPRESS; Initial Catalog=ApplicationDoc; Integrated Security=True;",
+      "ConnectionStringApplication": "Data Source=localhost\SQLEXPRESS; Initial Catalog=ApplicationDoc; Integrated Security=True;",
+      "DeployAzureGitUrl": null,
+      "DeployLocalFolderName": null
+    }
+  ],
+  "WebsiteList": [
+    {
+      "FolderNameAngular": "Application.Website/",
+      "DomainNameList": [
+        {
+          "EnvironmentName": "DEV",
+          "DomainName": "localhost",
+          "AppTypeName": "Application.Doc.AppMain, Application",
+          "IsRedirectHttps": false,
+          "BingMapKey": null,
+          "GoogleAnalyticsId": null,
+          "GoogleAdSenseId": null,
+          "Custom": null,
+          "PasswordSalt": "B897FF43624A580ED83072FB41D194AEFF326925ED0A88BA32E3A22E4770A8A0C6952C22025B926BF1AA3D339429D22AC47CBA16994FFE4633BF39BC5DFC3E54"
+        }
+      ]
+    }
+  ],
+  "ExternalGitList": []
+}
