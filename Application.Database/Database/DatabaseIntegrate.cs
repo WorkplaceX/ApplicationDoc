@@ -10,7 +10,10 @@ namespace DatabaseIntegrate.dbo
     using Framework.DataAccessLayer;
     using Database.dbo;
 
-    public static class FrameworkLanguageIntegrateApp
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkLanguageIntegrate]; AppTypeName=Application.Doc.AppMain; Assembly=App;
+    /// </summary>
+    public static class FrameworkLanguageIntegrateAppApplicationDocAppMain
     {
         public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("English")]English = -1, [IdEnum("German")]German = -2 }
 
@@ -59,6 +62,9 @@ namespace DatabaseIntegrate.Doc
     using Framework.DataAccessLayer;
     using Database.Doc;
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[LoginUserIntegrate]; Assembly=App;
+    /// </summary>
     public static class LoginUserIntegrateApp
     {
         public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("c")]c = -2, [IdEnum("d")]d = -3, [IdEnum("Guest")]Guest = -4 }
@@ -99,6 +105,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[LoginRoleIntegrate]; Assembly=App;
+    /// </summary>
     public static class LoginRoleIntegrateApp
     {
         public enum IdEnum { [IdEnum(null)]None = 0, [IdEnum("Admin")]Admin = -1, [IdEnum("Customer")]Customer = -2, [IdEnum("Developer")]Developer = -3, [IdEnum("Guest")]Guest = -4, [IdEnum("Language")]Language = -5, [IdEnum("LoginShow")]LoginShow = -6 }

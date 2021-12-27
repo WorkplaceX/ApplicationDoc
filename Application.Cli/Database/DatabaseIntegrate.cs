@@ -7,6 +7,9 @@ namespace DatabaseIntegrate.dbo
     using System.Globalization;
     using Database.dbo;
 
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkConfigGridIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class FrameworkConfigGridIntegrateAppCli
     {
         public static List<FrameworkConfigGridIntegrate> RowList
@@ -31,6 +34,9 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkConfigFieldIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class FrameworkConfigFieldIntegrateAppCli
     {
         public static List<FrameworkConfigFieldIntegrate> RowList
@@ -106,7 +112,10 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
-    public static class FrameworkLanguageItemAppCli
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkLanguageItem]; AppTypeName=Application.Doc.AppMain; Assembly=Cli;
+    /// </summary>
+    public static class FrameworkLanguageItemAppCliApplicationDocAppMain
     {
         public static List<FrameworkLanguageItem> RowList
         {
@@ -188,7 +197,10 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
-    public static class FrameworkLanguageTextIntegrateAppCli
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkLanguageTextIntegrate]; AppTypeName=Application.Doc.AppMain; Assembly=Cli;
+    /// </summary>
+    public static class FrameworkLanguageTextIntegrateAppCliApplicationDocAppMain
     {
         public static List<FrameworkLanguageTextIntegrate> RowList
         {
@@ -222,6 +234,9 @@ namespace DatabaseIntegrate.Doc
     using System.Globalization;
     using Database.Doc;
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[NavigateIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class NavigateIntegrateAppCli
     {
         public static List<NavigateIntegrate> RowList
@@ -275,6 +290,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[LoginUserRoleIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class LoginUserRoleIntegrateAppCli
     {
         public static List<LoginUserRoleIntegrate> RowList
@@ -305,6 +323,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[NavigateRoleIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class NavigateRoleIntegrateAppCli
     {
         public static List<NavigateRoleIntegrate> RowList
@@ -369,6 +390,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[StorageFileIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class StorageFileIntegrateAppCli
     {
         public static List<StorageFileIntegrate> RowList
@@ -417,6 +441,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[ContentIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class ContentIntegrateAppCli
     {
         public static List<ContentIntegrate> RowList
@@ -460,6 +487,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[Feedback]; Assembly=Cli;
+    /// </summary>
     public static class FeedbackAppCli
     {
         public static List<Feedback> RowList

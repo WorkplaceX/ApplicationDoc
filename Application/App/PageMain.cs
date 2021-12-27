@@ -150,7 +150,7 @@
         protected override void Query(QueryArgs args, QueryResult result)
         {
             // English by default
-            result.RowSelect = (rowList) => rowList.Where(item => item.Name == FrameworkLanguageIntegrateApp.IdName(FrameworkLanguageIntegrateApp.IdEnum.English)).Single();
+            result.RowSelect = (rowList) => rowList.Where(item => item.Name == FrameworkLanguageIntegrateAppApplicationDocAppMain.IdName(FrameworkLanguageIntegrateAppApplicationDocAppMain.IdEnum.English)).Single();
 
             // Preserve language from previous session on browser refresh
             if (this.ComponentOwner<AppMain>().IsNavigateReload<AppMain>(out var appPrevious))
