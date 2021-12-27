@@ -17,7 +17,7 @@ Target audience are companies to:
 (Image Src="/assets/config-video.jpg" Href="https://www.youtube.com/watch?v=XR-5Ej_zTqg" Title="Configuration" Description="Every data grid and field can be configured. Configuration is stored in SQL database.")
 (Image Src="/assets/application-doc-cms.jpg" Href="https://youtu.be/8Pk2ZXOwknU" Title="CMS Application" Description="See how the product 'Application Doc (CMS)' can fit into your content development and publish process")
 
-WorkplaceX is based on ASP.NET Core 5.0, MS-SQL and Angular and provides the following features “out of the box”:
+WorkplaceX is based on ASP.NET Core 6.0, MS-SQL and Angular and provides the following features “out of the box”:
 
 * Data grids (optimized for high performance with millions of records and hundreds of columns)
 * Paging (horizontal and vertical), sorting, filtering
@@ -31,9 +31,9 @@ WorkplaceX is based on ASP.NET Core 5.0, MS-SQL and Angular and provides the fol
 
 It standardizes and simplifies the process of building enterprise business applications on top of existing SQL Server Databases. It can be hosted on premise or in the cloud and is based on the following products:
 
-* ASP.NET Core 5.0
+* ASP.NET Core 6.0
 * Bootstrap 4 and/or Bulma
-* Angular 11 (Also server side rendering for high performance first page load)
+* Angular 13 (Also server side rendering for high performance first page load)
 * SQL Server
 
 Allow thousands of users to access and manage your companies data in a controlled manner. Be flexible and evolve business models as the marked changes.
