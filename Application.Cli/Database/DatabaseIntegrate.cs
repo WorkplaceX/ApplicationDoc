@@ -7,6 +7,9 @@ namespace DatabaseIntegrate.dbo
     using System.Globalization;
     using Database.dbo;
 
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkConfigGridIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class FrameworkConfigGridIntegrateAppCli
     {
         public static List<FrameworkConfigGridIntegrate> RowList
@@ -31,6 +34,9 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkConfigFieldIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class FrameworkConfigFieldIntegrateAppCli
     {
         public static List<FrameworkConfigFieldIntegrate> RowList
@@ -106,7 +112,10 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
-    public static class FrameworkLanguageItemAppCli
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkLanguageItem]; AppTypeName=Application.Doc.AppMain; Assembly=Cli;
+    /// </summary>
+    public static class FrameworkLanguageItemAppCliApplicationDocAppMain
     {
         public static List<FrameworkLanguageItem> RowList
         {
@@ -123,17 +132,27 @@ namespace DatabaseIntegrate.dbo
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Content.TitleLong.ColumnText()", TextDefault = "Title Long" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.AttachmentFileName.ColumnText()", TextDefault = "Upload Attachment" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.Email.ColumnText()", TextDefault = "Email (Optional)" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.IpAddress.ColumnText()", TextDefault = "Ip Address" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.IsDone.ColumnText()", TextDefault = "Is Done" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.Message.ColumnText()", TextDefault = "Message" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.NavigatePath.ColumnText()", TextDefault = "Navigate Path" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.Time.ColumnText()", TextDefault = "Time" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Feedback.UserAgent.ColumnText()", TextDefault = "User Agent" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.Name.ColumnText()", TextDefault = "Name" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.TextHtml.CellText(<span class=\"flag-icon flag-icon-de\"></span> German)", TextDefault = "<span class=\"flag-icon flag-icon-de\"></span> German" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.TextHtml.CellText(<span class=\"flag-icon flag-icon-gb\"></span> English)", TextDefault = "<span class=\"flag-icon flag-icon-gb\"></span> English" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.Language.TextHtml.ColumnText()", TextDefault = "Text Html" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.Email.ColumnText()", TextDefault = "Email" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.IsActive.ColumnText()", TextDefault = "Is Active" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.IsIntegrate.ColumnText()", TextDefault = "Is Integrate" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.Name.ColumnText()", TextDefault = "User Name" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.NameFirst.ColumnText()", TextDefault = "First Name" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.NameLast.ColumnText()", TextDefault = "Last Name" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.PasswordHash.ColumnText()", TextDefault = "Password" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUser.PasswordSalt.ColumnText()", TextDefault = "Confirm Password" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUserRoleDisplay.IsActive.ColumnText()", TextDefault = "Is Active" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUserRoleDisplay.LoginRoleName.ColumnText()", TextDefault = "Role" },
+                    new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.LoginUserRoleDisplay.LoginUserName.ColumnText()", TextDefault = "User Name" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.IsDivider.ColumnText()", TextDefault = "Is Divider" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.IsNavbarEnd.ColumnText()", TextDefault = "Is Navbar End" },
                     new FrameworkLanguageItem { Id = 0, AppTypeName = "Application.Doc.AppMain", Name = "Database.Doc.NavigateDisplay.LoginUserName.ColumnText()", TextDefault = "Login User Name" },
@@ -188,7 +207,10 @@ namespace DatabaseIntegrate.dbo
         }
     }
 
-    public static class FrameworkLanguageTextIntegrateAppCli
+    /// <summary>
+    /// Integrate Sql=[dbo].[FrameworkLanguageTextIntegrate]; AppTypeName=Application.Doc.AppMain; Assembly=Cli;
+    /// </summary>
+    public static class FrameworkLanguageTextIntegrateAppCliApplicationDocAppMain
     {
         public static List<FrameworkLanguageTextIntegrate> RowList
         {
@@ -222,6 +244,9 @@ namespace DatabaseIntegrate.Doc
     using System.Globalization;
     using Database.Doc;
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[NavigateIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class NavigateIntegrateAppCli
     {
         public static List<NavigateIntegrate> RowList
@@ -275,6 +300,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[LoginUserRoleIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class LoginUserRoleIntegrateAppCli
     {
         public static List<LoginUserRoleIntegrate> RowList
@@ -305,6 +333,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[NavigateRoleIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class NavigateRoleIntegrateAppCli
     {
         public static List<NavigateRoleIntegrate> RowList
@@ -369,6 +400,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[StorageFileIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class StorageFileIntegrateAppCli
     {
         public static List<StorageFileIntegrate> RowList
@@ -417,6 +451,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[ContentIntegrate]; Assembly=Cli;
+    /// </summary>
     public static class ContentIntegrateAppCli
     {
         public static List<ContentIntegrate> RowList
@@ -460,6 +497,9 @@ namespace DatabaseIntegrate.Doc
         }
     }
 
+    /// <summary>
+    /// Integrate Sql=[Doc].[Feedback]; Assembly=Cli;
+    /// </summary>
     public static class FeedbackAppCli
     {
         public static List<Feedback> RowList
