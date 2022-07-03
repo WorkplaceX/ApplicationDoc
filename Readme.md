@@ -32,6 +32,9 @@ wpx config connectionString="Data Source=localhost; Initial Catalog=ApplicationD
 ### Deploy Database
 wpx deployDb
 
+### Build
+wpx build # build Angular and .NET
+
 ### Start
 wpx start # http://localhost:5000/
 
